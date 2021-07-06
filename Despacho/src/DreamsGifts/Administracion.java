@@ -252,7 +252,6 @@ public class Administracion extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable3.setColumnSelectionAllowed(false);
         jTable3.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(jTable3);
         if (jTable3.getColumnModel().getColumnCount() > 0) {
@@ -1374,7 +1373,7 @@ public class Administracion extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        PanelAdministracion.addTab("RRSS", PanelEstados);
+        PanelAdministracion.addTab("Estado de venta", PanelEstados);
 
         PanelComunas.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -1619,7 +1618,7 @@ public class Administracion extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        PanelAdministracion.addTab("RRSS", PanelComunas);
+        PanelAdministracion.addTab("Comunas", PanelComunas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
