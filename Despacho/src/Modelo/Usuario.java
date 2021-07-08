@@ -3,7 +3,7 @@ package Modelo;
 
 import java.util.Date;
 
-public class Usuarios {
+public class Usuario {
     private int idUsuario;
     private String nombre;
     private String rut;
