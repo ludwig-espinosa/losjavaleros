@@ -1,0 +1,17 @@
+Estado de Orden / Estado de Pago
+Ingresada = En Espera de Pago
+Anulada = Cancelado
+Completado = Pagado
+Espera Despacho = Pagado
+En Ruta = Pagado
+Devuelto = Cancelado
+
+Ingresada,Anulada,Completado,Espera Despacho,En Ruta,Devuelto
+
+En Espera de Pago,Cancelado,Pagado
+
+8:00  a 12:00
+12:00 a 16:00
+16:00 a 20:00
+
+8:00  a 12:00, 12:00 a 16:00, 16:00 a 20:00
