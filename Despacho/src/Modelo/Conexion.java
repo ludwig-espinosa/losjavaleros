@@ -14,7 +14,7 @@ public class Conexion {
     private static final String url = "mysql://uxjgvc882rjz86cl:wgMnwIN4ORfjfZOp4gnm@bhhkcs5kos45dcpink4e-mysql.services.clever-cloud.com:3306/bhhkcs5kos45dcpink4e";
 
     public Conexion(){
-        conn = null;
+        conn = null ;
         try{
             Class.forName(driver);
             conn = DriverManager.getConnection(url, usuario, pass);   
