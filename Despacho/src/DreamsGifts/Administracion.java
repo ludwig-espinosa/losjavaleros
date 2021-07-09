@@ -55,15 +55,15 @@ public class Administracion extends javax.swing.JFrame {
         jButton18 = new javax.swing.JButton();
         PanelBancos = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
+        textCode = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jTextField15 = new javax.swing.JTextField();
+        textName = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        estadoActive = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
+        botonCancel = new javax.swing.JButton();
+        botonGuardar = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel25 = new javax.swing.JLabel();
         jTextField16 = new javax.swing.JTextField();
@@ -429,9 +429,9 @@ public class Administracion extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel21.setText("Gestión de Bancos");
 
-        jTextField14.addActionListener(new java.awt.event.ActionListener() {
+        textCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField14ActionPerformed(evt);
+                textCodeActionPerformed(evt);
             }
         });
 
@@ -441,42 +441,47 @@ public class Administracion extends javax.swing.JFrame {
         jLabel23.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel23.setText("Nombre:");
 
-        jTextField15.addActionListener(new java.awt.event.ActionListener() {
+        textName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField15ActionPerformed(evt);
+                textNameActionPerformed(evt);
             }
         });
 
         jLabel24.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel24.setText("Estado:");
 
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setText("Activa");
-        jRadioButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(estadoActive);
+        estadoActive.setText("Activa");
+        estadoActive.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        estadoActive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                estadoActiveActionPerformed(evt);
             }
         });
 
         buttonGroup1.add(jRadioButton4);
         jRadioButton4.setText("Desactiva");
         jRadioButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jButton11.setText("Cancelar");
-        jButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                jRadioButton4ActionPerformed(evt);
             }
         });
 
-        jButton12.setText("Guardar");
-        jButton12.setToolTipText("");
-        jButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        botonCancel.setText("Cancelar");
+        botonCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                botonCancelActionPerformed(evt);
+            }
+        });
+
+        botonGuardar.setText("Guardar");
+        botonGuardar.setToolTipText("");
+        botonGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonGuardarActionPerformed(evt);
             }
         });
 
@@ -602,22 +607,22 @@ public class Administracion extends javax.swing.JFrame {
                                         .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(10, 10, 10))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBancosLayout.createSequentialGroup()
-                                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(botonGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(botonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(11, 11, 11))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBancosLayout.createSequentialGroup()
                                         .addComponent(jLabel22)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(textCode, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel23)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(textName, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel24)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jRadioButton3)
+                                        .addComponent(estadoActive)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jRadioButton4)
                                         .addGap(91, 91, 91)))))
@@ -639,17 +644,17 @@ public class Administracion extends javax.swing.JFrame {
                 .addGroup(PanelBancosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelBancosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel22)
-                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(textCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelBancosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel23)
-                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel24)
-                        .addComponent(jRadioButton3)
+                        .addComponent(estadoActive)
                         .addComponent(jRadioButton4)))
                 .addGap(19, 19, 19)
                 .addGroup(PanelBancosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -1764,25 +1769,25 @@ public class Administracion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton18ActionPerformed
 
-    private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
+    private void textCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCodeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField14ActionPerformed
+    }//GEN-LAST:event_textCodeActionPerformed
 
-    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
+    private void textNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField15ActionPerformed
+    }//GEN-LAST:event_textNameActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+    private void estadoActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadoActiveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    }//GEN-LAST:event_estadoActiveActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void botonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_botonCancelActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
+    }//GEN-LAST:event_botonGuardarActionPerformed
 
     private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
         // TODO add your handling code here:
@@ -1876,6 +1881,10 @@ public class Administracion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField21ActionPerformed
 
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1919,11 +1928,12 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JPanel PanelEstados;
     private javax.swing.JPanel PanelRrss;
     private javax.swing.JPanel PanelUsuarios;
+    private javax.swing.JButton botonCancel;
+    private javax.swing.JButton botonGuardar;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JRadioButton estadoActive;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
@@ -1996,7 +2006,6 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
@@ -2023,8 +2032,6 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
@@ -2039,5 +2046,7 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField textCode;
+    private javax.swing.JTextField textName;
     // End of variables declaration//GEN-END:variables
 }
