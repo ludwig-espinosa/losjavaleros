@@ -1,7 +1,0 @@
-host: bhhkcs5kos45dcpink4e-mysql.services.clever-cloud.com
-database name: bhhkcs5kos45dcpink4e
-user: uxjgvc882rjz86cl
-password: wgMnwIN4ORfjfZOp4gnm
-port: 3306
-conecction URI:
- mysql://uxjgvc882rjz86cl:wgMnwIN4ORfjfZOp4gnm@bhhkcs5kos45dcpink4e-mysql.services.clever-cloud.com:3306/bhhkcs5kos45dcpink4e
