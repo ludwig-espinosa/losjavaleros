@@ -16,6 +16,7 @@ public class Despacho extends javax.swing.JFrame {
      */
     public Despacho() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -640,6 +641,11 @@ public class Despacho extends javax.swing.JFrame {
         jTabbedPane1.addTab("Cancelar Orden", jPanel3);
 
         jButton8.setText("Home");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel11.setText("DreamGifts");
@@ -700,6 +706,12 @@ public class Despacho extends javax.swing.JFrame {
     private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField13ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        Principal h = new Principal();
+        h.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
