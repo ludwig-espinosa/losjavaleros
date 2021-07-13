@@ -22,7 +22,7 @@ public class Banco {
         this.nombre = nombre;
     }
 
-    public boolean isEstado() {
+    public boolean getEstado() {
         return estado;
     }
 

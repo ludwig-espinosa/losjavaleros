@@ -22,9 +22,9 @@ public class Conexion {
             }
         } catch (ClassNotFoundException | SQLException e){
             System.out.println("error al conectar " + e);
-        }
+        
     }
-
+   }
     public static Connection getConn() {
         return conn;
     }
@@ -34,13 +34,5 @@ public class Conexion {
         if(conn == null){
             System.out.print("Desconexion Lista");
         }
-    }
-}
-
-
-class Run{
-    public static void main(String[] args) {
-        Conexion con = new Conexion();
-        
     }
 }
