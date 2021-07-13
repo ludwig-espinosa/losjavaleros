@@ -635,7 +635,7 @@ public class Inventario extends javax.swing.JFrame {
 
         jLabel23.setText("Nombre");
 
-        jLabel24.setText("Codigo");
+        jLabel24.setText("Código");
 
         jLabel25.setText("Proveedor");
 
