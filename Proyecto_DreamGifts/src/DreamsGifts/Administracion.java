@@ -32,22 +32,22 @@ public class Administracion extends javax.swing.JFrame {
         PanelAdministracion = new javax.swing.JTabbedPane();
         PanelBancos = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
-        textCode = new javax.swing.JTextField();
+        bancosTextcode = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        textName = new javax.swing.JTextField();
+        bancosTextName = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
-        estadoActive = new javax.swing.JRadioButton();
-        estadoDes = new javax.swing.JRadioButton();
-        buttonCancel = new javax.swing.JButton();
-        buttonSave = new javax.swing.JButton();
+        bancosEstadoActive = new javax.swing.JRadioButton();
+        bancosEstadoDes = new javax.swing.JRadioButton();
+        bancosButtonCancel = new javax.swing.JButton();
+        bancosButtonSave = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel25 = new javax.swing.JLabel();
         textSearch = new javax.swing.JTextField();
-        comboOrder = new javax.swing.JComboBox<>();
+        bancosComboOrder = new javax.swing.JComboBox<>();
         jLabel26 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        BancosTable = new javax.swing.JTable();
+        bancosTable = new javax.swing.JTable();
         bancosEdit = new javax.swing.JButton();
         BancosEliminar = new javax.swing.JButton();
         bancosSave = new javax.swing.JButton();
@@ -181,9 +181,9 @@ public class Administracion extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel21.setText("Gestión de Bancos");
 
-        textCode.addActionListener(new java.awt.event.ActionListener() {
+        bancosTextcode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textCodeActionPerformed(evt);
+                bancosTextcodeActionPerformed(evt);
             }
         });
 
@@ -193,42 +193,42 @@ public class Administracion extends javax.swing.JFrame {
         jLabel23.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel23.setText("Nombre:");
 
-        textName.addActionListener(new java.awt.event.ActionListener() {
+        bancosTextName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textNameActionPerformed(evt);
+                bancosTextNameActionPerformed(evt);
             }
         });
 
         jLabel24.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel24.setText("Estado:");
 
-        buttonGroup1.add(estadoActive);
-        estadoActive.setText("Activa");
-        estadoActive.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        estadoActive.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(bancosEstadoActive);
+        bancosEstadoActive.setText("Activa");
+        bancosEstadoActive.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bancosEstadoActive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                estadoActiveActionPerformed(evt);
+                bancosEstadoActiveActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(estadoDes);
-        estadoDes.setText("Desactiva");
-        estadoDes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buttonGroup1.add(bancosEstadoDes);
+        bancosEstadoDes.setText("Desactiva");
+        bancosEstadoDes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        buttonCancel.setText("Cancelar");
-        buttonCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonCancel.addActionListener(new java.awt.event.ActionListener() {
+        bancosButtonCancel.setText("Cancelar");
+        bancosButtonCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bancosButtonCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCancelActionPerformed(evt);
+                bancosButtonCancelActionPerformed(evt);
             }
         });
 
-        buttonSave.setText("Guardar");
-        buttonSave.setToolTipText("");
-        buttonSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonSave.addActionListener(new java.awt.event.ActionListener() {
+        bancosButtonSave.setText("Guardar");
+        bancosButtonSave.setToolTipText("");
+        bancosButtonSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bancosButtonSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSaveActionPerformed(evt);
+                bancosButtonSaveActionPerformed(evt);
             }
         });
 
@@ -243,18 +243,18 @@ public class Administracion extends javax.swing.JFrame {
             }
         });
 
-        comboOrder.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Codigo", "Nombre", "Estado" }));
-        comboOrder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        comboOrder.addActionListener(new java.awt.event.ActionListener() {
+        bancosComboOrder.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Codigo", "Nombre", "Estado" }));
+        bancosComboOrder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bancosComboOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboOrderActionPerformed(evt);
+                bancosComboOrderActionPerformed(evt);
             }
         });
 
         jLabel26.setText("Ordenar por:");
 
-        BancosTable.setBackground(new java.awt.Color(250, 250, 250));
-        BancosTable.setModel(new javax.swing.table.DefaultTableModel(
+        bancosTable.setBackground(new java.awt.Color(250, 250, 250));
+        bancosTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -293,10 +293,10 @@ public class Administracion extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(BancosTable);
-        if (BancosTable.getColumnModel().getColumnCount() > 0) {
-            BancosTable.getColumnModel().getColumn(0).setResizable(false);
-            BancosTable.getColumnModel().getColumn(1).setResizable(false);
+        jScrollPane4.setViewportView(bancosTable);
+        if (bancosTable.getColumnModel().getColumnCount() > 0) {
+            bancosTable.getColumnModel().getColumn(0).setResizable(false);
+            bancosTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
         bancosEdit.setText("Editar");
@@ -348,7 +348,7 @@ public class Administracion extends javax.swing.JFrame {
                         .addGap(55, 55, 55)
                         .addComponent(jLabel26)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(comboOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bancosComboOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 295, Short.MAX_VALUE)
                         .addComponent(jLabel25)
                         .addGap(18, 18, 18)
@@ -360,22 +360,22 @@ public class Administracion extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBancosLayout.createSequentialGroup()
                                 .addComponent(jLabel22)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textCode, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bancosTextcode, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel23)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textName, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bancosTextName, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel24)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(estadoActive)
+                                .addComponent(bancosEstadoActive)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(estadoDes)
+                                .addComponent(bancosEstadoDes)
                                 .addGap(107, 107, 107))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBancosLayout.createSequentialGroup()
-                                .addComponent(buttonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bancosButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(buttonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bancosButtonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(27, 27, 27))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBancosLayout.createSequentialGroup()
                                 .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -400,17 +400,17 @@ public class Administracion extends javax.swing.JFrame {
                 .addGroup(PanelBancosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelBancosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel22)
-                        .addComponent(textCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(bancosTextcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelBancosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel23)
-                        .addComponent(textName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bancosTextName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel24)
-                        .addComponent(estadoActive)
-                        .addComponent(estadoDes)))
+                        .addComponent(bancosEstadoActive)
+                        .addComponent(bancosEstadoDes)))
                 .addGap(19, 19, 19)
                 .addGroup(PanelBancosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bancosButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bancosButtonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -418,7 +418,7 @@ public class Administracion extends javax.swing.JFrame {
                     .addComponent(jLabel25)
                     .addComponent(textSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26)
-                    .addComponent(comboOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bancosComboOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1838,33 +1838,33 @@ public class Administracion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton18ActionPerformed
 
-    private void textCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCodeActionPerformed
+    private void bancosTextcodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancosTextcodeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textCodeActionPerformed
+    }//GEN-LAST:event_bancosTextcodeActionPerformed
 
-    private void textNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNameActionPerformed
+    private void bancosTextNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancosTextNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textNameActionPerformed
+    }//GEN-LAST:event_bancosTextNameActionPerformed
 
-    private void estadoActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadoActiveActionPerformed
+    private void bancosEstadoActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancosEstadoActiveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_estadoActiveActionPerformed
+    }//GEN-LAST:event_bancosEstadoActiveActionPerformed
 
-    private void buttonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelActionPerformed
+    private void bancosButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancosButtonCancelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buttonCancelActionPerformed
+    }//GEN-LAST:event_bancosButtonCancelActionPerformed
 
-    private void buttonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaveActionPerformed
+    private void bancosButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancosButtonSaveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buttonSaveActionPerformed
+    }//GEN-LAST:event_bancosButtonSaveActionPerformed
 
     private void textSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textSearchActionPerformed
 
-    private void comboOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboOrderActionPerformed
+    private void bancosComboOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancosComboOrderActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_comboOrderActionPerformed
+    }//GEN-LAST:event_bancosComboOrderActionPerformed
 
     private void bancosEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancosEditActionPerformed
         // TODO add your handling code here:
@@ -2033,7 +2033,6 @@ public class Administracion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BancosEliminar;
-    public javax.swing.JTable BancosTable;
     private javax.swing.JTabbedPane PanelAdministracion;
     private javax.swing.JPanel PanelBancos;
     private javax.swing.JPanel PanelClientes;
@@ -2041,20 +2040,23 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JPanel PanelEstados;
     private javax.swing.JPanel PanelRrss;
     private javax.swing.JPanel PanelUsuarios;
+    public javax.swing.JButton bancosButtonCancel;
+    public javax.swing.JButton bancosButtonSave;
+    public javax.swing.JComboBox<String> bancosComboOrder;
     private javax.swing.JButton bancosEdit;
+    public javax.swing.JRadioButton bancosEstadoActive;
+    public javax.swing.JRadioButton bancosEstadoDes;
     private javax.swing.JButton bancosSave;
-    public javax.swing.JButton buttonCancel;
+    public javax.swing.JTable bancosTable;
+    public javax.swing.JTextField bancosTextName;
+    public javax.swing.JTextField bancosTextcode;
     private javax.swing.ButtonGroup buttonGroup1;
-    public javax.swing.JButton buttonSave;
     private javax.swing.JButton buttonVolver;
     private javax.swing.JButton buttonVolver1;
     private javax.swing.JButton buttonVolver2;
     private javax.swing.JButton buttonVolver3;
     private javax.swing.JButton buttonVolver4;
     private javax.swing.JButton buttonVolver5;
-    public javax.swing.JComboBox<String> comboOrder;
-    public javax.swing.JRadioButton estadoActive;
-    public javax.swing.JRadioButton estadoDes;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton13;
@@ -2162,8 +2164,6 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
-    public javax.swing.JTextField textCode;
-    public javax.swing.JTextField textName;
     public javax.swing.JTextField textSearch;
     // End of variables declaration//GEN-END:variables
 }

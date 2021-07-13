@@ -10,7 +10,7 @@ public class Conexion {
     private static final String driver = "com.mysql.jdbc.Driver";
     private static final String usuario = "uxjgvc882rjz86cl";
     private static final String pass = "wgMnwIN4ORfjfZOp4gnm";
-    private static final String url = "mysql://uxjgvc882rjz86cl:wgMnwIN4ORfjfZOp4gnm@bhhkcs5kos45dcpink4e-mysql.services.clever-cloud.com:3306/bhhkcs5kos45dcpink4e";
+    private static final String url = "jdbc:mysql://bhhkcs5kos45dcpink4e-mysql.services.clever-cloud.com:3306/bhhkcs5kos45dcpink4e";
 
     public Conexion(){
         conn = null ;
@@ -34,5 +34,13 @@ public class Conexion {
         if(conn == null){
             System.out.print("Desconexion Lista");
         }
+    }
+}
+
+
+class Run{
+    public static void main(String[] args) {
+        Conexion con = new Conexion();
+        
     }
 }
