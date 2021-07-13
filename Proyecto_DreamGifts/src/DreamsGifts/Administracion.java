@@ -48,9 +48,9 @@ public class Administracion extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         BancosTable = new javax.swing.JTable();
-        jButton16 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
+        bancosEdit = new javax.swing.JButton();
+        BancosEliminar = new javax.swing.JButton();
+        bancosSave = new javax.swing.JButton();
         buttonVolver1 = new javax.swing.JButton();
         PanelRrss = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -299,27 +299,27 @@ public class Administracion extends javax.swing.JFrame {
             BancosTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        jButton16.setText("Editar");
-        jButton16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
+        bancosEdit.setText("Editar");
+        bancosEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bancosEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
+                bancosEditActionPerformed(evt);
             }
         });
 
-        jButton19.setText("Eliminar");
-        jButton19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        BancosEliminar.setText("Eliminar");
+        BancosEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BancosEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                BancosEliminarActionPerformed(evt);
             }
         });
 
-        jButton20.setText("Guardar");
-        jButton20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
+        bancosSave.setText("Guardar");
+        bancosSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bancosSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
+                bancosSaveActionPerformed(evt);
             }
         });
 
@@ -338,11 +338,11 @@ public class Administracion extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelBancosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBancosLayout.createSequentialGroup()
-                        .addComponent(jButton16)
+                        .addComponent(bancosEdit)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton19)
+                        .addComponent(BancosEliminar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bancosSave, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28))
                     .addGroup(PanelBancosLayout.createSequentialGroup()
                         .addGap(55, 55, 55)
@@ -424,9 +424,9 @@ public class Administracion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelBancosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelBancosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton16)
-                        .addComponent(jButton19))
-                    .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(bancosEdit)
+                        .addComponent(BancosEliminar))
+                    .addComponent(bancosSave, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1866,17 +1866,17 @@ public class Administracion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboOrderActionPerformed
 
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+    private void bancosEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancosEditActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
+    }//GEN-LAST:event_bancosEditActionPerformed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+    private void BancosEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BancosEliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton19ActionPerformed
+    }//GEN-LAST:event_BancosEliminarActionPerformed
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+    private void bancosSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancosSaveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
+    }//GEN-LAST:event_bancosSaveActionPerformed
 
     private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
         // TODO add your handling code here:
@@ -2032,6 +2032,7 @@ public class Administracion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BancosEliminar;
     public javax.swing.JTable BancosTable;
     private javax.swing.JTabbedPane PanelAdministracion;
     private javax.swing.JPanel PanelBancos;
@@ -2040,6 +2041,8 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JPanel PanelEstados;
     private javax.swing.JPanel PanelRrss;
     private javax.swing.JPanel PanelUsuarios;
+    private javax.swing.JButton bancosEdit;
+    private javax.swing.JButton bancosSave;
     public javax.swing.JButton buttonCancel;
     private javax.swing.ButtonGroup buttonGroup1;
     public javax.swing.JButton buttonSave;
@@ -2057,12 +2060,9 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
