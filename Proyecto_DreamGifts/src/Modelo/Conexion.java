@@ -2,6 +2,7 @@ package Modelo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Conexion {
@@ -10,7 +11,9 @@ public class Conexion {
     private static final String driver = "com.mysql.jdbc.Driver";
     private static final String usuario = "uxjgvc882rjz86cl";
     private static final String pass = "wgMnwIN4ORfjfZOp4gnm";
+    private static final String base = "bhhkcs5kos45dcpink4e";
     private static final String url = "jdbc:mysql://bhhkcs5kos45dcpink4e-mysql.services.clever-cloud.com:3306/bhhkcs5kos45dcpink4e";
+    private PreparedStatement ps;
 
     public Conexion(){
         conn = null ;
