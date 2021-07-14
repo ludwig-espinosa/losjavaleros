@@ -5,6 +5,8 @@ import Modelo.Banco;
 import Modelo.ConsultasBanco;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
@@ -13,22 +15,27 @@ public class CtrAdministracion implements ActionListener {
    private static Administracion admin = new Administracion();
    private static ConsultasBanco con = new ConsultasBanco();
 
-  
+   public void iniciar(){
+       if (!admin.isVisible()){
+           admin.setVisible(true);
+       }
+   }  
+   
    public CtrAdministracion(){
-       admin.bancosButtonCancel.addActionListener(this);
-       admin.bancosButtonSave.addActionListener(this);
+       this.iniciarBanco();
        this.actualizarTablaBancos();
    }
    
    
    
-   
-   public void iniciar(){
-       if (!admin.isVisible()){
-           admin.setVisible(true);
-       }
-   }
+ /*Implementacion CRUD Banco */
 
+   public void iniciarBanco(){
+       admin.bancosButtonCancel.addActionListener(this);
+       admin.bancosButtonSave.addActionListener(this);
+            
+   }
+   
    public boolean agregarBancos(){
        Banco ban = new Banco();
        ban.setCodigo(admin.bancosTextcode.getText());
@@ -81,6 +88,7 @@ public class CtrAdministracion implements ActionListener {
             this.agregarBancos();
             this.actualizarTablaBancos();
         }
+
     }
     
 }
