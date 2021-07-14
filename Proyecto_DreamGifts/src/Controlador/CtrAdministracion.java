@@ -3,12 +3,15 @@ package Controlador;
 import DreamsGifts.Administracion;
 import Modelo.Banco;
 import Modelo.ConsultaRedSocial;
+import Modelo.ConsultaUsuarios;
 import Modelo.ConsultasBanco;
 import Modelo.RedSocial;
+import Modelo.Usuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashSet;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -16,6 +19,7 @@ public class CtrAdministracion implements ActionListener {
    private static Administracion admin = new Administracion();
    private static ConsultasBanco conBanco = new ConsultasBanco();
    private static ConsultaRedSocial conRrss = new ConsultaRedSocial();
+   private static ConsultaUsuarios conUser = new ConsultaUsuarios();
 
    public void iniciar(){
        if (!admin.isVisible()){
@@ -26,6 +30,7 @@ public class CtrAdministracion implements ActionListener {
    public CtrAdministracion(){
        this.iniciarBanco();
        this.iniciarRedSocial();
+       this.iniciarUsuarios();
    }
    
    
@@ -36,6 +41,12 @@ public class CtrAdministracion implements ActionListener {
        }
    }
       
+   
+   
+   
+   
+   
+   
    
  /*Implementacion CRUD Banco */
 
@@ -85,8 +96,12 @@ public class CtrAdministracion implements ActionListener {
    
     /*       Fin CRUD Banco        */
     
+    
+    
+    
     /*       inicio CRUD Red Social        */
 
+    
    public void iniciarRedSocial(){
        admin.RrssBtnSave.addActionListener(this);
        admin.RrssBtnCancel.addActionListener(this);
@@ -129,13 +144,70 @@ public class CtrAdministracion implements ActionListener {
         }
     }
    
+   
+    /*       Fin CRUD Redes Sociales        */
     
     
     
-    
-    
-    
-    
+    /*       inicio CRUD Usuarios        */
+
+   public void iniciarUsuarios(){
+       admin.usuariosBtnAdd.addActionListener(this);
+       admin.usuariosBtnCancel.addActionListener(this);
+       this.actualizarTablaUsuarios();
+   }
+   
+   public boolean agregarUsuario(){
+       Usuario user = new Usuario();
+       user.setUser(admin.usuariosTextUser.getText());
+       user.setEstado(admin.usuariosEstadoAct.isSelected());
+       user.setNombre(admin.usuariosTextName.getText());
+       user.setContraseña(admin.usuariosTextPassw.getText());
+       user.setRut(admin.usuariosTextRut.getText());
+       admin.usuariosTextName.setText("");
+       admin.usuariosTextUser.setText("");
+       admin.usuariosTextPassw.setText("");
+       admin.usuariosTextRut.setText("");
+
+         if (!conUser.buscar(user)) {
+             System.out.println("intentando agregar");
+             conUser.registrar(user);
+            return true;
+        } else{
+             System.out.println("a modificar");
+             return conUser.modificar(user);
+         }
+        
+   }
+   
+   public void actualizarTablaUsuarios(){
+        this.borrarTabla(admin.usuariosTable);
+        ResultSet rs = conUser.llamarTodos();
+        Object[] row;
+        row = new Object[5];
+        DefaultTableModel rm = (DefaultTableModel) admin.usuariosTable.getModel();
+        try {
+            while (rs.next()){
+                row[0] = rs.getString("RUT");
+                row[1] = rs.getString("Usuario");
+                row[2] = rs.getString("Nombre");
+                row[3] = rs.getString("Contraseña");
+                row[4] = rs.getBoolean("estado");
+
+                rm.addRow(row);  
+            }
+            } catch (SQLException ex) {
+                System.out.println(ex);
+        }
+    }
+   
+
+   
+   
+   
+   
+   
+   
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == admin.bancosButtonSave){
@@ -146,6 +218,11 @@ public class CtrAdministracion implements ActionListener {
             this.agregarRrss();
             this.actualizarTablaRrss();
         }
+        if (e.getSource() == admin.usuariosBtnAdd) {
+            this.agregarUsuario();
+            this.actualizarTablaUsuarios();
+        }
+        
     }
     
 }

@@ -1,7 +1,6 @@
 
 package Controlador;
 
-import DreamsGifts.Administracion;
 import DreamsGifts.Principal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

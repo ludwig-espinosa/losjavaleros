@@ -7,9 +7,8 @@ public class Usuario {
     private int idUsuario;
     private String nombre;
     private String rut;
+    private String user;
     private String contraseña;
-    private Date inicio;
-    private Date fin;
     private boolean estado;
 
     public int getIdUsuario() {
@@ -44,28 +43,21 @@ public class Usuario {
         this.contraseña = contraseña;
     }
 
-    public Date getInicio() {
-        return inicio;
-    }
-
-    public void setInicio(Date inicio) {
-        this.inicio = inicio;
-    }
-
-    public Date getFin() {
-        return fin;
-    }
-
-    public void setFin(Date fin) {
-        this.fin = fin;
-    }
-
-    public boolean isEstado() {
+    public boolean getEstado() {
         return estado;
     }
 
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+    
     
 }
