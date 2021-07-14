@@ -60,26 +60,24 @@ public class Administracion extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         bancosTable = new javax.swing.JTable();
-        bancosSave = new javax.swing.JButton();
         PanelRrss = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        RrssTable = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jButton8 = new javax.swing.JButton();
+        RrssSearch = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        RrssTextName = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        RrssBtnSave = new javax.swing.JButton();
+        RrssBtnCancel = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        RrssEstadoAct = new javax.swing.JRadioButton();
+        RrssEstadoDes = new javax.swing.JRadioButton();
         jLabel11 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        RrssTextCode = new javax.swing.JTextField();
         PanelUsuarios = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -229,7 +227,6 @@ public class Administracion extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel25.setText("Buscar:");
 
-        bancosTextSearch.setForeground(new java.awt.Color(200, 200, 200));
         bancosTextSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bancosTextSearchActionPerformed(evt);
@@ -304,14 +301,6 @@ public class Administracion extends javax.swing.JFrame {
             bancosTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        bancosSave.setText("Guardar");
-        bancosSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        bancosSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bancosSaveActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout PanelBancosLayout = new javax.swing.GroupLayout(PanelBancos);
         PanelBancos.setLayout(PanelBancosLayout);
         PanelBancosLayout.setHorizontalGroup(
@@ -319,9 +308,6 @@ public class Administracion extends javax.swing.JFrame {
             .addGroup(PanelBancosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelBancosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBancosLayout.createSequentialGroup()
-                        .addComponent(bancosSave, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28))
                     .addGroup(PanelBancosLayout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addComponent(jLabel26)
@@ -396,17 +382,15 @@ public class Administracion extends javax.swing.JFrame {
                     .addComponent(bancosComboOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bancosSave, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         PanelAdministracion.addTab("Bancos", PanelBancos);
 
         PanelRrss.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jTable2.setBackground(new java.awt.Color(250, 250, 250));
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        RrssTable.setBackground(new java.awt.Color(250, 250, 250));
+        RrssTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -445,29 +429,29 @@ public class Administracion extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable2.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(jTable2);
-        if (jTable2.getColumnModel().getColumnCount() > 0) {
-            jTable2.getColumnModel().getColumn(0).setResizable(false);
-            jTable2.getColumnModel().getColumn(1).setResizable(false);
+        RrssTable.getTableHeader().setReorderingAllowed(false);
+        RrssTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RrssTableMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(RrssTable);
+        if (RrssTable.getColumnModel().getColumnCount() > 0) {
+            RrssTable.getColumnModel().getColumn(0).setResizable(false);
+            RrssTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("Buscar:");
 
-        jTextField5.setForeground(new java.awt.Color(200, 200, 200));
-        jTextField5.setText("Nombre,codigp....");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        RrssSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                RrssSearchActionPerformed(evt);
             }
         });
-
-        jButton8.setText("Guardar");
-        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+        RrssSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                RrssSearchKeyReleased(evt);
             }
         });
 
@@ -477,9 +461,9 @@ public class Administracion extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel9.setText("Nombre:");
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        RrssTextName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                RrssTextNameActionPerformed(evt);
             }
         });
 
@@ -493,45 +477,45 @@ public class Administracion extends javax.swing.JFrame {
             }
         });
 
-        jButton9.setText("Guardar");
-        jButton9.setToolTipText("");
-        jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        RrssBtnSave.setText("Guardar");
+        RrssBtnSave.setToolTipText("");
+        RrssBtnSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        RrssBtnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                RrssBtnSaveActionPerformed(evt);
             }
         });
 
-        jButton10.setText("Cancelar");
-        jButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        RrssBtnCancel.setText("Cancelar");
+        RrssBtnCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        RrssBtnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                RrssBtnCancelActionPerformed(evt);
             }
         });
 
         jLabel10.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel10.setText("Estado:");
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("Activa");
-        jRadioButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(RrssEstadoAct);
+        RrssEstadoAct.setText("Activa");
+        RrssEstadoAct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        RrssEstadoAct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                RrssEstadoActActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Desactiva");
-        jRadioButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buttonGroup1.add(RrssEstadoDes);
+        RrssEstadoDes.setText("Desactiva");
+        RrssEstadoDes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel11.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel11.setText("Codigo:");
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        RrssTextCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                RrssTextCodeActionPerformed(evt);
             }
         });
 
@@ -543,9 +527,6 @@ public class Administracion extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelRrssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRrssLayout.createSequentialGroup()
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
                     .addGroup(PanelRrssLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(PanelRrssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -557,13 +538,13 @@ public class Administracion extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel7)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(RrssSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRrssLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(RrssBtnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(RrssBtnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(11, 11, 11))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRrssLayout.createSequentialGroup()
                                 .addGroup(PanelRrssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -574,17 +555,17 @@ public class Administracion extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRrssLayout.createSequentialGroup()
                                         .addComponent(jLabel11)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(RrssTextCode, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel9)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(RrssTextName, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel10)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jRadioButton1)
+                                        .addComponent(RrssEstadoAct)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jRadioButton2)))
+                                        .addComponent(RrssEstadoDes)))
                                 .addGap(0, 96, Short.MAX_VALUE))))
                     .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
@@ -598,30 +579,28 @@ public class Administracion extends javax.swing.JFrame {
                 .addGroup(PanelRrssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelRrssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel11)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(RrssTextCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelRrssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel9)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(RrssTextName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel10)
-                        .addComponent(jRadioButton1)
-                        .addComponent(jRadioButton2)))
+                        .addComponent(RrssEstadoAct)
+                        .addComponent(RrssEstadoDes)))
                 .addGap(19, 19, 19)
                 .addGroup(PanelRrssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(RrssBtnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RrssBtnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(PanelRrssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RrssSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         PanelAdministracion.addTab("RRSS", PanelRrss);
@@ -631,33 +610,33 @@ public class Administracion extends javax.swing.JFrame {
         jTable1.setBackground(new java.awt.Color(250, 250, 250));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "Usuario", "Nombre", "Contraseña", "Estado"
+                "Usuario", "Nombre", "Contraseña", "Estado"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -668,13 +647,13 @@ public class Administracion extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
             jTable1.getColumnModel().getColumn(1).setResizable(false);
             jTable1.getColumnModel().getColumn(2).setResizable(false);
             jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setResizable(false);
         }
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -702,7 +681,6 @@ public class Administracion extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel3.setText("Nombre:");
 
-        jTextField2.setText("jTextField2");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -712,7 +690,6 @@ public class Administracion extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel4.setText("Usuario:");
 
-        jTextField3.setText("jTextField2");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
@@ -722,7 +699,6 @@ public class Administracion extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel5.setText("Contraseña:");
 
-        jTextField4.setText("jTextField2");
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
@@ -1647,41 +1623,33 @@ public class Administracion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void RrssTextCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RrssTextCodeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_RrssTextCodeActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void RrssEstadoActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RrssEstadoActActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_RrssEstadoActActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void RrssBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RrssBtnCancelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_RrssBtnCancelActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void RrssBtnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RrssBtnSaveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_RrssBtnSaveActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void RrssTextNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RrssTextNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_RrssTextNameActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void RrssSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RrssSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void bancosSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancosSaveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bancosSaveActionPerformed
+    }//GEN-LAST:event_RrssSearchActionPerformed
 
     private void bancosComboOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancosComboOrderActionPerformed
         // TODO add your handling code here:
@@ -1728,6 +1696,23 @@ public class Administracion extends javax.swing.JFrame {
         this.filtrar(this.bancosTextSearch.getText(), this.bancosTable);
     }//GEN-LAST:event_bancosTextSearchKeyReleased
 
+    private void RrssSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RrssSearchKeyReleased
+        this.filtrar(this.RrssSearch.getText(), this.RrssTable);
+    }//GEN-LAST:event_RrssSearchKeyReleased
+
+    private void RrssTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RrssTableMouseClicked
+        DefaultTableModel tm = (DefaultTableModel) this.RrssTable.getModel();
+        int selectedRowIndex = this.RrssTable.getSelectedRow();
+        
+        this.RrssTextCode.setText(tm.getValueAt(selectedRowIndex, 0).toString());
+        this.RrssTextName.setText(tm.getValueAt(selectedRowIndex, 1).toString());
+        if ((Boolean)tm.getValueAt(selectedRowIndex, 2)) {
+            this.RrssEstadoAct.doClick();
+        } else {
+            this.RrssEstadoDes.doClick();
+        }
+    }//GEN-LAST:event_RrssTableMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1771,18 +1756,24 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JPanel PanelEstados;
     private javax.swing.JPanel PanelRrss;
     private javax.swing.JPanel PanelUsuarios;
+    public javax.swing.JButton RrssBtnCancel;
+    public javax.swing.JButton RrssBtnSave;
+    public javax.swing.JRadioButton RrssEstadoAct;
+    public javax.swing.JRadioButton RrssEstadoDes;
+    public javax.swing.JTextField RrssSearch;
+    public javax.swing.JTable RrssTable;
+    public javax.swing.JTextField RrssTextCode;
+    public javax.swing.JTextField RrssTextName;
     public javax.swing.JButton bancosButtonCancel;
     public javax.swing.JButton bancosButtonSave;
     public javax.swing.JComboBox<String> bancosComboOrder;
     public javax.swing.JRadioButton bancosEstadoActive;
     public javax.swing.JRadioButton bancosEstadoDes;
-    private javax.swing.JButton bancosSave;
     public javax.swing.JTable bancosTable;
     public javax.swing.JTextField bancosTextName;
     public javax.swing.JTextField bancosTextSearch;
     public javax.swing.JTextField bancosTextcode;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
@@ -1795,10 +1786,8 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    public javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
@@ -1840,8 +1829,6 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1857,7 +1844,6 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
@@ -1874,9 +1860,6 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
@@ -1887,4 +1870,5 @@ public class Administracion extends javax.swing.JFrame {
         tabla.setRowSorter(tr);
         tr.setRowFilter(RowFilter.regexFilter(texto));
     }
+
 }

@@ -23,7 +23,7 @@ public class RedSocial {
         this.nombre = nombre;
     }
 
-    public boolean isEstado() {
+    public boolean getEstado() {
         return estado;
     }
 
