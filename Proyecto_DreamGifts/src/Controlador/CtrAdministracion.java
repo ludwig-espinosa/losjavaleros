@@ -17,6 +17,7 @@ public class CtrAdministracion implements ActionListener {
    public CtrAdministracion(){
        admin.bancosButtonCancel.addActionListener(this);
        admin.bancosButtonSave.addActionListener(this);
+       this.actualizarTablaBancos();
    }
    
    
@@ -33,6 +34,8 @@ public class CtrAdministracion implements ActionListener {
        ban.setCodigo(admin.bancosTextcode.getText());
        ban.setEstado(admin.bancosEstadoActive.isSelected());
        ban.setNombre(admin.bancosTextName.getText());
+       admin.bancosTextName.setText("");
+       admin.bancosTextcode.setText("");
          if (!con.buscar(ban)) {
              System.out.println("intentando agregar");
             con.registrar(ban);
@@ -45,7 +48,7 @@ public class CtrAdministracion implements ActionListener {
    }
    
    
-   public void borrarTabla(){
+   public void borrarTablaBancos(){
        DefaultTableModel rm = (DefaultTableModel) admin.bancosTable.getModel();
        while (rm.getRowCount() > 0){
            rm.removeRow(0);
@@ -53,8 +56,8 @@ public class CtrAdministracion implements ActionListener {
    }
    
 
-    public void actualizarTabla(){
-        this.borrarTabla();
+    public void actualizarTablaBancos(){
+        this.borrarTablaBancos();
         ResultSet rs = con.llamarTodos();
         Object[] row;
         row = new Object[3];
@@ -74,11 +77,10 @@ public class CtrAdministracion implements ActionListener {
    
     @Override
     public void actionPerformed(ActionEvent e) {
-       if (e.getSource() == admin.bancosButtonSave){
-        this.agregarBancos();
-        this.actualizarTabla();
-       }
+        if(e.getSource() == admin.bancosButtonSave){
+            this.agregarBancos();
+            this.actualizarTablaBancos();
+        }
     }
-   
-   
+    
 }
