@@ -118,23 +118,22 @@ public class Administracion extends javax.swing.JFrame {
         jComboBox6 = new javax.swing.JComboBox<>();
         PanelComunas = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
+        comunatable = new javax.swing.JTable();
         jLabel29 = new javax.swing.JLabel();
-        jTextField18 = new javax.swing.JTextField();
-        jButton28 = new javax.swing.JButton();
+        buscarcomuna = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
-        jTextField20 = new javax.swing.JTextField();
+        namecomuna = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
         jComboBox7 = new javax.swing.JComboBox<>();
-        jButton29 = new javax.swing.JButton();
-        jButton30 = new javax.swing.JButton();
+        savecomuna = new javax.swing.JButton();
+        cancelcomuna = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
+        comunaestadoactiv = new javax.swing.JRadioButton();
+        comunaestadodesactiv = new javax.swing.JRadioButton();
         jLabel37 = new javax.swing.JLabel();
-        jTextField21 = new javax.swing.JTextField();
+        codetxtcomuna = new javax.swing.JTextField();
         PanelClientes = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
@@ -149,26 +148,25 @@ public class Administracion extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
-        jButton13 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel19 = new javax.swing.JLabel();
         jTextField12 = new javax.swing.JTextField();
         jTextField13 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
+        saveclient = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         PanelAdministracion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PanelAdministracion.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 PanelAdministracionAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -1058,8 +1056,8 @@ public class Administracion extends javax.swing.JFrame {
 
         PanelComunas.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jTable6.setBackground(new java.awt.Color(250, 250, 250));
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+        comunatable.setBackground(new java.awt.Color(250, 250, 250));
+        comunatable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -1098,29 +1096,21 @@ public class Administracion extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane6.setViewportView(jTable6);
-        if (jTable6.getColumnModel().getColumnCount() > 0) {
-            jTable6.getColumnModel().getColumn(0).setResizable(false);
-            jTable6.getColumnModel().getColumn(1).setResizable(false);
-            jTable6.getColumnModel().getColumn(2).setResizable(false);
+        jScrollPane6.setViewportView(comunatable);
+        if (comunatable.getColumnModel().getColumnCount() > 0) {
+            comunatable.getColumnModel().getColumn(0).setResizable(false);
+            comunatable.getColumnModel().getColumn(1).setResizable(false);
+            comunatable.getColumnModel().getColumn(2).setResizable(false);
         }
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel29.setText("Buscar:");
 
-        jTextField18.setForeground(new java.awt.Color(200, 200, 200));
-        jTextField18.setText("Nombre,codigp....");
-        jTextField18.addActionListener(new java.awt.event.ActionListener() {
+        buscarcomuna.setForeground(new java.awt.Color(200, 200, 200));
+        buscarcomuna.setText("Nombre,codigp....");
+        buscarcomuna.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField18ActionPerformed(evt);
-            }
-        });
-
-        jButton28.setText("Guardar");
-        jButton28.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton28.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton28ActionPerformed(evt);
+                buscarcomunaActionPerformed(evt);
             }
         });
 
@@ -1130,9 +1120,9 @@ public class Administracion extends javax.swing.JFrame {
         jLabel34.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel34.setText("Nombre:");
 
-        jTextField20.addActionListener(new java.awt.event.ActionListener() {
+        namecomuna.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField20ActionPerformed(evt);
+                namecomunaActionPerformed(evt);
             }
         });
 
@@ -1145,45 +1135,45 @@ public class Administracion extends javax.swing.JFrame {
             }
         });
 
-        jButton29.setText("Guardar");
-        jButton29.setToolTipText("");
-        jButton29.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton29.addActionListener(new java.awt.event.ActionListener() {
+        savecomuna.setText("Guardar");
+        savecomuna.setToolTipText("");
+        savecomuna.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        savecomuna.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton29ActionPerformed(evt);
+                savecomunaActionPerformed(evt);
             }
         });
 
-        jButton30.setText("Cancelar");
-        jButton30.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton30.addActionListener(new java.awt.event.ActionListener() {
+        cancelcomuna.setText("Cancelar");
+        cancelcomuna.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cancelcomuna.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton30ActionPerformed(evt);
+                cancelcomunaActionPerformed(evt);
             }
         });
 
         jLabel36.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel36.setText("Estado:");
 
-        buttonGroup1.add(jRadioButton5);
-        jRadioButton5.setText("Activa");
-        jRadioButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(comunaestadoactiv);
+        comunaestadoactiv.setText("Activa");
+        comunaestadoactiv.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        comunaestadoactiv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton5ActionPerformed(evt);
+                comunaestadoactivActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(jRadioButton6);
-        jRadioButton6.setText("Desactiva");
-        jRadioButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buttonGroup1.add(comunaestadodesactiv);
+        comunaestadodesactiv.setText("Desactiva");
+        comunaestadodesactiv.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel37.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel37.setText("Codigo:");
 
-        jTextField21.addActionListener(new java.awt.event.ActionListener() {
+        codetxtcomuna.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField21ActionPerformed(evt);
+                codetxtcomunaActionPerformed(evt);
             }
         });
 
@@ -1195,9 +1185,6 @@ public class Administracion extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelComunasLayout.createSequentialGroup()
-                        .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
                     .addGroup(PanelComunasLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(PanelComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1209,32 +1196,32 @@ public class Administracion extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 312, Short.MAX_VALUE)
                                 .addComponent(jLabel29)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buscarcomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelComunasLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(PanelComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelComunasLayout.createSequentialGroup()
-                                        .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(savecomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(cancelcomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(11, 11, 11))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelComunasLayout.createSequentialGroup()
                                         .addComponent(jLabel37)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(codetxtcomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addGroup(PanelComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(PanelComunasLayout.createSequentialGroup()
                                                 .addComponent(jLabel34)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(namecomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(jLabel36)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jRadioButton5)
+                                                .addComponent(comunaestadoactiv)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jRadioButton6))
+                                                .addComponent(comunaestadodesactiv))
                                             .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                     .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
@@ -1248,30 +1235,28 @@ public class Administracion extends javax.swing.JFrame {
                 .addGroup(PanelComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel37)
-                        .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(codetxtcomuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel34)
-                        .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(namecomuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel36)
-                        .addComponent(jRadioButton5)
-                        .addComponent(jRadioButton6)))
+                        .addComponent(comunaestadoactiv)
+                        .addComponent(comunaestadodesactiv)))
                 .addGap(19, 19, 19)
                 .addGroup(PanelComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(savecomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelcomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(PanelComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buscarcomuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel35)
                     .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         PanelAdministracion.addTab("Comunas", PanelComunas);
@@ -1378,13 +1363,6 @@ public class Administracion extends javax.swing.JFrame {
             jTable3.getColumnModel().getColumn(4).setResizable(false);
         }
 
-        jButton13.setText("Guardar");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
-
         jLabel19.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel19.setText("Correo:");
 
@@ -1405,10 +1383,10 @@ public class Administracion extends javax.swing.JFrame {
 
         jButton17.setText("Cancelar");
 
-        jButton18.setText("Guardar");
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
+        saveclient.setText("Guardar");
+        saveclient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
+                saveclientActionPerformed(evt);
             }
         });
 
@@ -1433,9 +1411,6 @@ public class Administracion extends javax.swing.JFrame {
                                 .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)))
                         .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelClientesLayout.createSequentialGroup()
-                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelClientesLayout.createSequentialGroup()
                         .addComponent(jSeparator3)
                         .addContainerGap())))
@@ -1471,7 +1446,7 @@ public class Administracion extends javax.swing.JFrame {
                                 .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelClientesLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(saveclient, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(PanelClientesLayout.createSequentialGroup()
@@ -1510,12 +1485,12 @@ public class Administracion extends javax.swing.JFrame {
                             .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addGap(46, 46, 46))
+                    .addGroup(PanelClientesLayout.createSequentialGroup()
+                        .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(saveclient, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
         );
 
         PanelAdministracion.addTab("Clientes", PanelClientes);
@@ -1543,9 +1518,9 @@ public class Administracion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PanelAdministracionAncestorAdded
 
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+    private void saveclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveclientActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton18ActionPerformed
+    }//GEN-LAST:event_saveclientActionPerformed
 
     private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
         // TODO add your handling code here:
@@ -1554,10 +1529,6 @@ public class Administracion extends javax.swing.JFrame {
     private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField12ActionPerformed
-
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
@@ -1579,37 +1550,33 @@ public class Administracion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField8ActionPerformed
 
-    private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField21ActionPerformed
+    private void codetxtcomunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codetxtcomunaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField21ActionPerformed
+    }//GEN-LAST:event_codetxtcomunaActionPerformed
 
-    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+    private void comunaestadoactivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comunaestadoactivActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton5ActionPerformed
+    }//GEN-LAST:event_comunaestadoactivActionPerformed
 
-    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
+    private void cancelcomunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelcomunaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton30ActionPerformed
+    }//GEN-LAST:event_cancelcomunaActionPerformed
 
-    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
+    private void savecomunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savecomunaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton29ActionPerformed
+    }//GEN-LAST:event_savecomunaActionPerformed
 
     private void jComboBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox7ActionPerformed
 
-    private void jTextField20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField20ActionPerformed
+    private void namecomunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namecomunaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField20ActionPerformed
+    }//GEN-LAST:event_namecomunaActionPerformed
 
-    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+    private void buscarcomunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarcomunaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton28ActionPerformed
-
-    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField18ActionPerformed
+    }//GEN-LAST:event_buscarcomunaActionPerformed
 
     private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
         // TODO add your handling code here:
@@ -1840,16 +1807,17 @@ public class Administracion extends javax.swing.JFrame {
     public javax.swing.JTextField bancosTextName;
     public javax.swing.JTextField bancosTextSearch;
     public javax.swing.JTextField bancosTextcode;
+    public javax.swing.JTextField buscarcomuna;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton13;
+    public javax.swing.JButton cancelcomuna;
+    public javax.swing.JTextField codetxtcomuna;
+    public javax.swing.JRadioButton comunaestadoactiv;
+    public javax.swing.JRadioButton comunaestadodesactiv;
+    public javax.swing.JTable comunatable;
     private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
-    private javax.swing.JButton jButton30;
     public javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox5;
@@ -1894,8 +1862,6 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1910,18 +1876,17 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    public javax.swing.JTextField namecomuna;
+    private javax.swing.JButton saveclient;
+    public javax.swing.JButton savecomuna;
     public javax.swing.JButton usuariosBtnAdd;
     public javax.swing.JButton usuariosBtnCancel;
     public javax.swing.JRadioButton usuariosEstadoAct;

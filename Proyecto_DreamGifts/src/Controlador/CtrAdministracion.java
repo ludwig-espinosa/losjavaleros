@@ -2,6 +2,7 @@ package Controlador;
 
 import DreamsGifts.Administracion;
 import Modelo.Banco;
+import Modelo.Comuna;
 import Modelo.ConsultaRedSocial;
 import Modelo.ConsultaUsuarios;
 import Modelo.ConsultasBanco;
@@ -20,6 +21,7 @@ public class CtrAdministracion implements ActionListener {
    private static ConsultasBanco conBanco = new ConsultasBanco();
    private static ConsultaRedSocial conRrss = new ConsultaRedSocial();
    private static ConsultaUsuarios conUser = new ConsultaUsuarios();
+   private static ConsultaComuna concomuna = new ConsultaComuna();
 
    public void iniciar(){
        if (!admin.isVisible()){
@@ -203,7 +205,53 @@ public class CtrAdministracion implements ActionListener {
    
 
    
+    /*Implementacion CRUD Comuna */
+
+   public void iniciarcomuna(){
+       admin.cancelcomuna.addActionListener(this);
+       admin.savecomuna.addActionListener(this);
+       this.actualizarTablaBancos();
+            
+   }
    
+   public boolean agregarComuna(){
+       Comuna com = new Comuna();
+       com.setCodigo(admin.codetxtcomuna.getText());
+       com.setEstado(admin.comunaestadoactiv.isSelected());
+       com.setNombre(admin.namecomuna.getText());
+       admin.namecomuna.setText("");
+       admin.codetxtcomuna.setText("");
+         if (!concomuna.buscar(com)) {
+             System.out.println("intentando agregar");
+            concomuna.registrar(com);
+            return true;
+        } else{
+             System.out.println("a modificar");
+             return concomuna.modificar(com);
+         }
+        
+   }
+   
+
+
+    public void actualizarTablaComuna(){
+        this.borrarTabla(admin.comunatable);
+        ResultSet rs = concomuna.llamarTodos();
+        Object[] row;
+        row = new Object[3];
+        DefaultTableModel rm = (DefaultTableModel) admin.comunatable.getModel();
+        try {
+            while (rs.next()){
+                row[0] = rs.getString("cod_comuna");
+                row[1] = rs.getString("Nombre");
+                row[2] = rs.getBoolean("estado");
+                rm.addRow(row);  
+            }
+            } catch (SQLException ex) {
+        }
+    }
+   
+    /*       Fin CRUD Comuna        */
    
    
    
@@ -222,7 +270,10 @@ public class CtrAdministracion implements ActionListener {
             this.agregarUsuario();
             this.actualizarTablaUsuarios();
         }
-        
+        if (e.getSource() == admin.savecomuna) {
+            this.agregarComuna();
+            this.actualizarTablaComuna();
+        }
     }
     
 }
