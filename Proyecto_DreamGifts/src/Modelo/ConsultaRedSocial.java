@@ -37,6 +37,7 @@ public class ConsultaRedSocial {
           ps.execute();
           return true;
       } catch (SQLException e){
+          System.out.println(e);
           return false;
       }
     }

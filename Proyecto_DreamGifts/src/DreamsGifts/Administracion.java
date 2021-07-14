@@ -163,12 +163,12 @@ public class Administracion extends javax.swing.JFrame {
 
         PanelAdministracion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PanelAdministracion.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 PanelAdministracionAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -673,6 +673,11 @@ public class Administracion extends javax.swing.JFrame {
         usuariosSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usuariosSearchActionPerformed(evt);
+            }
+        });
+        usuariosSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                usuariosSearchKeyPressed(evt);
             }
         });
 
@@ -1752,10 +1757,11 @@ public class Administracion extends javax.swing.JFrame {
         DefaultTableModel tm = (DefaultTableModel) this.usuariosTable.getModel();
         int selectedRowIndex = this.usuariosTable.getSelectedRow();
         
-        this.usuariosTextUser.setText(tm.getValueAt(selectedRowIndex, 0).toString());
-        this.usuariosTextName.setText(tm.getValueAt(selectedRowIndex, 1).toString());
-        this.usuariosTextPassw.setText(tm.getValueAt(selectedRowIndex, 2).toString());
-        if ((Boolean)tm.getValueAt(selectedRowIndex, 3)) {
+        this.usuariosTextUser.setText(tm.getValueAt(selectedRowIndex, 1).toString());
+        this.usuariosTextRut.setText(tm.getValueAt(selectedRowIndex, 0).toString());
+        this.usuariosTextName.setText(tm.getValueAt(selectedRowIndex, 2).toString());
+        this.usuariosTextPassw.setText(tm.getValueAt(selectedRowIndex, 3).toString());
+        if ((Boolean)tm.getValueAt(selectedRowIndex, 4)) {
             this.usuariosEstadoAct.doClick();
         } else {
             this.usuariosEstadoDes.doClick();
@@ -1769,6 +1775,10 @@ public class Administracion extends javax.swing.JFrame {
     private void usuariosTextRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuariosTextRutActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usuariosTextRutActionPerformed
+
+    private void usuariosSearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usuariosSearchKeyPressed
+        this.filtrar(this.usuariosSearch.getText(), this.usuariosTable);
+    }//GEN-LAST:event_usuariosSearchKeyPressed
 
     /**
      * @param args the command line arguments

@@ -29,8 +29,7 @@ public class ConsultaUsuarios {
     public boolean modificar(Usuario user){
     
       PreparedStatement ps = null;
-      System.out.println("agregando red social");
-      String sql = "UPDATE RRSS SET nombre=?, estado=?, Contraseña=?, Usuario=? WHERE RUT=?";
+      String sql = "UPDATE Usuarios SET Nombre=?, Estado=?, Contraseña=?, Usuario=? WHERE RUT=?";
       try {
           ps =  conn.prepareStatement(sql);
           ps.setString(1, user.getNombre());
