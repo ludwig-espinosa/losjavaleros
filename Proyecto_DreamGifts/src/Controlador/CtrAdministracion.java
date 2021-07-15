@@ -9,6 +9,8 @@ import Modelo.ConsultaUsuarios;
 import Modelo.ConsultasBanco;
 import Modelo.RedSocial;
 import Modelo.Usuario;
+import Modelo.Cliente;
+import Modelo.ConsultaCliente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
@@ -23,6 +25,7 @@ public class CtrAdministracion implements ActionListener {
    private static ConsultaRedSocial conRrss = new ConsultaRedSocial();
    private static ConsultaUsuarios conUser = new ConsultaUsuarios();
    private static ConsultaComuna concomuna = new ConsultaComuna();
+   private static ConsultaCliente conCliente = new ConsultaCliente();
 
    public void iniciar(){
        if (!admin.isVisible()){
@@ -35,6 +38,7 @@ public class CtrAdministracion implements ActionListener {
        this.iniciarRedSocial();
        this.iniciarUsuarios();
        this.iniciarcomuna();
+       this.iniciarCliente();
    }
    
    
@@ -250,6 +254,61 @@ public class CtrAdministracion implements ActionListener {
     /*       Fin CRUD Comuna        */
    
    
+ /*       inicio CRUD Cliente        */
+
+   public void iniciarCliente(){
+       admin.saveclient.addActionListener(this);
+       admin.cancelclient.addActionListener(this);
+       this.actualizarTablaCliente();
+   }
+   
+   public boolean agregarCliente(){
+       Cliente client = new Cliente();
+       client.setRut(admin.rutclient.getText());
+       client.setDireccion(admin.addressclient.getText());
+       client.setNombre(admin.nameclient.getText());
+       client.setCelular(admin.fonoclient.getText());
+       client.setRedSocial(admin.rrssclient.getText());
+       client.setEstado(admin.clientestadoactiv1.isSelected());
+       admin.rutclient.setText("");
+       admin.addressclient.setText("");
+       admin.nameclient.setText("");
+       admin.fonoclient.setText("");
+       admin.rrssclient.setText("");
+
+         if (!conCliente.buscar(client)) {
+             System.out.println("intentando agregar");
+             conCliente.registrar(client);
+            return true;
+        } else{
+             System.out.println("a modificar");
+             return conCliente.modificar(client);
+         }
+        
+   }
+   
+   public void actualizarTablaCliente(){
+        this.borrarTabla(admin.clienttable);
+        ResultSet rs = conCliente.llamarTodos();
+        Object[] row;
+        row = new Object[5];
+        DefaultTableModel rm = (DefaultTableModel) admin.clienttable.getModel();
+        try {
+            while (rs.next()){
+                row[0] = rs.getString("RUT");
+                row[1] = rs.getString("Nombre");
+                row[2] = rs.getString("RedSocial");
+                row[3] = rs.getString("Direccion");
+                row[4] = rs.getString("Celular");
+                row[5] = rs.getBoolean("estado");
+
+                rm.addRow(row);  
+            }
+            } catch (SQLException ex) {
+                System.out.println(ex);
+        }
+    }
+   /* Fin CRUD Cliente*/
    
    
     @Override
@@ -269,6 +328,10 @@ public class CtrAdministracion implements ActionListener {
         if (e.getSource() == admin.savecomuna) {
             this.agregarComuna();
             this.actualizarTablaComuna();
+        }
+        if (e.getSource() == admin.saveclient) {
+            this.agregarCliente();
+            this.actualizarTablaCliente();
         }
     }
     

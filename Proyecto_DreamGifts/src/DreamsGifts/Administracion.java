@@ -150,23 +150,26 @@ public class Administracion extends javax.swing.JFrame {
         clienttable = new javax.swing.JTable();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel19 = new javax.swing.JLabel();
-        mailclient = new javax.swing.JTextField();
+        rrssclient = new javax.swing.JTextField();
         fonoclient = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         cancelclient = new javax.swing.JButton();
         saveclient = new javax.swing.JButton();
+        jLabel40 = new javax.swing.JLabel();
+        clientestadoactiv1 = new javax.swing.JRadioButton();
+        clientestadodesactiv1 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         PanelAdministracion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PanelAdministracion.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 PanelAdministracionAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -315,7 +318,7 @@ public class Administracion extends javax.swing.JFrame {
                         .addComponent(jLabel26)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(bancosComboOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 306, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
                         .addComponent(jLabel25)
                         .addGap(18, 18, 18)
                         .addComponent(bancosTextSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -568,7 +571,7 @@ public class Administracion extends javax.swing.JFrame {
                                         .addComponent(RrssEstadoAct)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(RrssEstadoDes)))
-                                .addGap(0, 102, Short.MAX_VALUE))))
+                                .addGap(0, 104, Short.MAX_VALUE))))
                     .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -804,7 +807,7 @@ public class Administracion extends javax.swing.JFrame {
                         .addComponent(usuariosEstadoAct)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(usuariosEstadoDes)
-                        .addGap(0, 99, Short.MAX_VALUE))
+                        .addGap(0, 101, Short.MAX_VALUE))
                     .addGroup(PanelUsuariosLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel39)
@@ -994,7 +997,7 @@ public class Administracion extends javax.swing.JFrame {
                                 .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEstadosLayout.createSequentialGroup()
-                                .addGap(34, 89, Short.MAX_VALUE)
+                                .addGap(34, 91, Short.MAX_VALUE)
                                 .addGroup(PanelEstadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEstadosLayout.createSequentialGroup()
                                         .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1193,7 +1196,7 @@ public class Administracion extends javax.swing.JFrame {
                                 .addComponent(jLabel35)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 312, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 314, Short.MAX_VALUE)
                                 .addComponent(jLabel29)
                                 .addGap(18, 18, 18)
                                 .addComponent(buscarcomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1335,7 +1338,7 @@ public class Administracion extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Rut", "Nombre", "Correo", "Dirección", "Telefono", "Estado"
+                "Rut", "Nombre", "RedSocial", "Dirección", "Telefono", "Estado"
             }
         ) {
             Class[] types = new Class [] {
@@ -1364,11 +1367,11 @@ public class Administracion extends javax.swing.JFrame {
         }
 
         jLabel19.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel19.setText("Correo:");
+        jLabel19.setText("RRSS:");
 
-        mailclient.addActionListener(new java.awt.event.ActionListener() {
+        rrssclient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mailclientActionPerformed(evt);
+                rrssclientActionPerformed(evt);
             }
         });
 
@@ -1389,6 +1392,22 @@ public class Administracion extends javax.swing.JFrame {
                 saveclientActionPerformed(evt);
             }
         });
+
+        jLabel40.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel40.setText("Estado:");
+
+        buttonGroup1.add(clientestadoactiv1);
+        clientestadoactiv1.setText("Activa");
+        clientestadoactiv1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        clientestadoactiv1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientestadoactiv1ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(clientestadodesactiv1);
+        clientestadodesactiv1.setText("Desactiva");
+        clientestadodesactiv1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout PanelClientesLayout = new javax.swing.GroupLayout(PanelClientes);
         PanelClientes.setLayout(PanelClientesLayout);
@@ -1412,52 +1431,66 @@ public class Administracion extends javax.swing.JFrame {
                                 .addGap(10, 10, 10))
                             .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(PanelClientesLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(PanelClientesLayout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(addressclient, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelClientesLayout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rutclient, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
                         .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelClientesLayout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(PanelClientesLayout.createSequentialGroup()
-                                        .addComponent(jLabel16)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(addressclient, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelClientesLayout.createSequentialGroup()
-                                        .addGap(21, 21, 21)
-                                        .addComponent(jLabel15)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(rutclient, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(PanelClientesLayout.createSequentialGroup()
-                                        .addComponent(jLabel14)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(nameclient, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(PanelClientesLayout.createSequentialGroup()
-                                        .addComponent(jLabel19)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(mailclient, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(33, 33, 33)
-                                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(PanelClientesLayout.createSequentialGroup()
-                                        .addComponent(jLabel20)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(fonoclient, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(PanelClientesLayout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(saveclient, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(cancelclient, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(nameclient, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelClientesLayout.createSequentialGroup()
-                                .addGap(212, 212, 212)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 78, Short.MAX_VALUE)))
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rrssclient, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(38, 38, 38)
+                        .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelClientesLayout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(fonoclient, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PanelClientesLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(saveclient, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(cancelclient, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 75, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(PanelClientesLayout.createSequentialGroup()
+                .addGap(212, 212, 212)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel40)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(clientestadoactiv1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(clientestadodesactiv1)
+                .addGap(44, 44, 44))
         );
         PanelClientesLayout.setVerticalGroup(
             PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelClientesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelClientesLayout.createSequentialGroup()
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelClientesLayout.createSequentialGroup()
+                        .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel40)
+                            .addComponent(clientestadoactiv1)
+                            .addComponent(clientestadodesactiv1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(rutclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1472,7 +1505,7 @@ public class Administracion extends javax.swing.JFrame {
                             .addComponent(jLabel16)
                             .addComponent(addressclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel19)
-                            .addComponent(mailclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(rrssclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -1498,7 +1531,7 @@ public class Administracion extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 9, Short.MAX_VALUE)
+                .addGap(0, 7, Short.MAX_VALUE)
                 .addComponent(PanelAdministracion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
@@ -1524,9 +1557,9 @@ public class Administracion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_fonoclientActionPerformed
 
-    private void mailclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mailclientActionPerformed
+    private void rrssclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rrssclientActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_mailclientActionPerformed
+    }//GEN-LAST:event_rrssclientActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
@@ -1745,6 +1778,10 @@ public class Administracion extends javax.swing.JFrame {
         this.filtrar(this.usuariosSearch.getText(), this.usuariosTable);
     }//GEN-LAST:event_usuariosSearchKeyPressed
 
+    private void clientestadoactiv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientestadoactiv1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientestadoactiv1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1796,7 +1833,7 @@ public class Administracion extends javax.swing.JFrame {
     public javax.swing.JTable RrssTable;
     public javax.swing.JTextField RrssTextCode;
     public javax.swing.JTextField RrssTextName;
-    private javax.swing.JTextField addressclient;
+    public javax.swing.JTextField addressclient;
     public javax.swing.JButton bancosButtonCancel;
     public javax.swing.JButton bancosButtonSave;
     public javax.swing.JComboBox<String> bancosComboOrder;
@@ -1806,21 +1843,23 @@ public class Administracion extends javax.swing.JFrame {
     public javax.swing.JTextField bancosTextName;
     public javax.swing.JTextField bancosTextSearch;
     public javax.swing.JTextField bancosTextcode;
-    private javax.swing.JTextField buscarclient;
+    public javax.swing.JTextField buscarclient;
     public javax.swing.JTextField buscarcomuna;
     private javax.swing.JTextField buscarstatusventa;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton cancelclient;
+    public javax.swing.JButton cancelclient;
     public javax.swing.JButton cancelcomuna;
     private javax.swing.JButton cancelstatusventa;
-    private javax.swing.JTable clienttable;
+    public javax.swing.JRadioButton clientestadoactiv1;
+    public javax.swing.JRadioButton clientestadodesactiv1;
+    public javax.swing.JTable clienttable;
     private javax.swing.JTextField codestatusventa;
     public javax.swing.JTextField codetxtcomuna;
     public javax.swing.JRadioButton comunaestadoactiv;
     public javax.swing.JRadioButton comunaestadodesactiv;
     public javax.swing.JTable comunatable;
     private javax.swing.JComboBox<String> estadopago;
-    private javax.swing.JTextField fonoclient;
+    public javax.swing.JTextField fonoclient;
     private javax.swing.JButton jButton23;
     public javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -1860,6 +1899,7 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1877,11 +1917,11 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JTextField mailclient;
-    private javax.swing.JTextField nameclient;
+    public javax.swing.JTextField nameclient;
     public javax.swing.JTextField namecomuna;
-    private javax.swing.JTextField rutclient;
-    private javax.swing.JButton saveclient;
+    public javax.swing.JTextField rrssclient;
+    public javax.swing.JTextField rutclient;
+    public javax.swing.JButton saveclient;
     public javax.swing.JButton savecomuna;
     private javax.swing.JButton savestatusventa;
     private javax.swing.JTable statusventatable;
