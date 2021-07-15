@@ -34,6 +34,7 @@ public class CtrAdministracion implements ActionListener {
        this.iniciarBanco();
        this.iniciarRedSocial();
        this.iniciarUsuarios();
+       this.iniciarcomuna();
    }
    
    
@@ -205,7 +206,7 @@ public class CtrAdministracion implements ActionListener {
    public void iniciarcomuna(){
        admin.cancelcomuna.addActionListener(this);
        admin.savecomuna.addActionListener(this);
-       this.actualizarTablaBancos();
+       this.actualizarTablaComuna();
             
    }
    

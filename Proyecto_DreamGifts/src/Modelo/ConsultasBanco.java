@@ -2,11 +2,12 @@
 package Modelo;
 
 import DreamsGifts.Administracion;
+import static Modelo.Conexion.conn;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ConsultasBanco extends Conexion{
+public class ConsultasBanco{
     
     public boolean registrar(Banco ban){
     

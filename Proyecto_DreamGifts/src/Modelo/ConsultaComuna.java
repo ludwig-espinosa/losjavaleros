@@ -5,6 +5,7 @@
  */
 package Modelo;
 
+import static Modelo.Conexion.conn;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author Usuario
  */
-public class ConsultaComuna extends Conexion {
+public class ConsultaComuna{
     
     public boolean registrar(Comuna com){
     
@@ -35,7 +36,7 @@ public class ConsultaComuna extends Conexion {
     public boolean modificar(Comuna com){
     
       PreparedStatement ps = null;
-      String sql = "UPDATE Comunas SET nombre=?, estado=? WHERE cod_comuna=?";
+      String sql = "UPDATE comunas SET nombre=?, estado=? WHERE cod_comuna=?";
       try {
           ps =  conn.prepareStatement(sql);
           ps.setString(1, com.getNombre());
@@ -50,7 +51,7 @@ public class ConsultaComuna extends Conexion {
     public boolean buscar(Comuna com){
       PreparedStatement ps = null;
       ResultSet rs = null;
-      String sql = "SELECT * FROM Comuna WHERE cod_comuna=?";
+      String sql = "SELECT * FROM comunas WHERE cod_comuna=?";
       try {
           ps =  conn.prepareStatement(sql);
           ps.setString(1, com.getCodigo());
@@ -68,7 +69,7 @@ public class ConsultaComuna extends Conexion {
      public ResultSet llamarTodos(){
       PreparedStatement ps = null;
       ResultSet rs = null;
-      String sql = "SELECT * FROM Comunas";
+      String sql = "SELECT * FROM comunas";
       try {
           ps =  conn.prepareStatement(sql);
           rs = ps.executeQuery();
