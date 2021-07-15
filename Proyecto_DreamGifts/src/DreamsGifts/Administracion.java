@@ -102,20 +102,20 @@ public class Administracion extends javax.swing.JFrame {
         usuariosTextRut = new javax.swing.JTextField();
         PanelEstados = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        statusventatable = new javax.swing.JTable();
         jLabel27 = new javax.swing.JLabel();
-        jTextField17 = new javax.swing.JTextField();
+        buscarstatusventa = new javax.swing.JTextField();
         jButton23 = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel28 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jComboBox5 = new javax.swing.JComboBox<>();
-        jButton24 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
+        savestatusventa = new javax.swing.JButton();
+        cancelstatusventa = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        jTextField19 = new javax.swing.JTextField();
-        jComboBox6 = new javax.swing.JComboBox<>();
+        codestatusventa = new javax.swing.JTextField();
+        estadopago = new javax.swing.JComboBox<>();
         PanelComunas = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         comunatable = new javax.swing.JTable();
@@ -136,24 +136,24 @@ public class Administracion extends javax.swing.JFrame {
         codetxtcomuna = new javax.swing.JTextField();
         PanelClientes = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        rutclient = new javax.swing.JTextField();
+        addressclient = new javax.swing.JTextField();
+        nameclient = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        buscarclient = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        clienttable = new javax.swing.JTable();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel19 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
+        mailclient = new javax.swing.JTextField();
+        fonoclient = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        jButton17 = new javax.swing.JButton();
+        cancelclient = new javax.swing.JButton();
         saveclient = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -863,8 +863,8 @@ public class Administracion extends javax.swing.JFrame {
 
         PanelEstados.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jTable5.setBackground(new java.awt.Color(250, 250, 250));
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        statusventatable.setBackground(new java.awt.Color(250, 250, 250));
+        statusventatable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -903,21 +903,21 @@ public class Administracion extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable5.getTableHeader().setReorderingAllowed(false);
-        jScrollPane5.setViewportView(jTable5);
-        if (jTable5.getColumnModel().getColumnCount() > 0) {
-            jTable5.getColumnModel().getColumn(0).setResizable(false);
-            jTable5.getColumnModel().getColumn(1).setResizable(false);
+        statusventatable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane5.setViewportView(statusventatable);
+        if (statusventatable.getColumnModel().getColumnCount() > 0) {
+            statusventatable.getColumnModel().getColumn(0).setResizable(false);
+            statusventatable.getColumnModel().getColumn(1).setResizable(false);
         }
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel27.setText("Buscar:");
 
-        jTextField17.setForeground(new java.awt.Color(200, 200, 200));
-        jTextField17.setText("Codigo De  Venta....");
-        jTextField17.addActionListener(new java.awt.event.ActionListener() {
+        buscarstatusventa.setForeground(new java.awt.Color(200, 200, 200));
+        buscarstatusventa.setText("Codigo De  Venta....");
+        buscarstatusventa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField17ActionPerformed(evt);
+                buscarstatusventaActionPerformed(evt);
             }
         });
 
@@ -941,20 +941,20 @@ public class Administracion extends javax.swing.JFrame {
             }
         });
 
-        jButton24.setText("Guardar");
-        jButton24.setToolTipText("");
-        jButton24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton24.addActionListener(new java.awt.event.ActionListener() {
+        savestatusventa.setText("Guardar");
+        savestatusventa.setToolTipText("");
+        savestatusventa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        savestatusventa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton24ActionPerformed(evt);
+                savestatusventaActionPerformed(evt);
             }
         });
 
-        jButton25.setText("Cancelar");
-        jButton25.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
+        cancelstatusventa.setText("Cancelar");
+        cancelstatusventa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cancelstatusventa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton25ActionPerformed(evt);
+                cancelstatusventaActionPerformed(evt);
             }
         });
 
@@ -964,14 +964,14 @@ public class Administracion extends javax.swing.JFrame {
         jLabel32.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel32.setText("Codigo Venta:");
 
-        jTextField19.addActionListener(new java.awt.event.ActionListener() {
+        codestatusventa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField19ActionPerformed(evt);
+                codestatusventaActionPerformed(evt);
             }
         });
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pago Pendiente", "Confirmando Pago", "Pago listo", "Espera Despacho", "En Camino", "Completada" }));
-        jComboBox6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        estadopago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pago Pendiente", "Confirmando Pago", "Pago listo", "Espera Despacho", "En Camino", "Completada" }));
+        estadopago.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout PanelEstadosLayout = new javax.swing.GroupLayout(PanelEstados);
         PanelEstados.setLayout(PanelEstadosLayout);
@@ -987,7 +987,7 @@ public class Administracion extends javax.swing.JFrame {
                                 .addGap(26, 26, 26)
                                 .addComponent(jLabel27)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buscarstatusventa, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel30)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1000,18 +1000,18 @@ public class Administracion extends javax.swing.JFrame {
                                         .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(12, 12, 12))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEstadosLayout.createSequentialGroup()
-                                        .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(savestatusventa, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(cancelstatusventa, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(60, 60, 60))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEstadosLayout.createSequentialGroup()
                                         .addComponent(jLabel32)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(codestatusventa, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(43, 43, 43)
                                         .addComponent(jLabel31)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(estadopago, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(151, 151, 151)))))
                         .addGap(16, 16, 16))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEstadosLayout.createSequentialGroup()
@@ -1030,19 +1030,19 @@ public class Administracion extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(PanelEstadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
-                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(codestatusventa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel31)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(estadopago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(PanelEstadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(savestatusventa, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelstatusventa, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(PanelEstadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel27)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buscarstatusventa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel30)
                     .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1266,21 +1266,21 @@ public class Administracion extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setText("Administracion de Clientes");
 
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        rutclient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                rutclientActionPerformed(evt);
             }
         });
 
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        addressclient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                addressclientActionPerformed(evt);
             }
         });
 
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        nameclient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
+                nameclientActionPerformed(evt);
             }
         });
 
@@ -1293,11 +1293,11 @@ public class Administracion extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel16.setText("Direccion");
 
-        jTextField11.setForeground(new java.awt.Color(200, 200, 200));
-        jTextField11.setText("ID,Nombre,Correo....");
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+        buscarclient.setForeground(new java.awt.Color(200, 200, 200));
+        buscarclient.setText("ID,Nombre,Correo....");
+        buscarclient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+                buscarclientActionPerformed(evt);
             }
         });
 
@@ -1313,8 +1313,8 @@ public class Administracion extends javax.swing.JFrame {
 
         jLabel18.setText("Ordenar por:");
 
-        jTable3.setBackground(new java.awt.Color(250, 250, 250));
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        clienttable.setBackground(new java.awt.Color(250, 250, 250));
+        clienttable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -1353,35 +1353,35 @@ public class Administracion extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable3.getTableHeader().setReorderingAllowed(false);
-        jScrollPane3.setViewportView(jTable3);
-        if (jTable3.getColumnModel().getColumnCount() > 0) {
-            jTable3.getColumnModel().getColumn(0).setResizable(false);
-            jTable3.getColumnModel().getColumn(1).setResizable(false);
-            jTable3.getColumnModel().getColumn(2).setResizable(false);
-            jTable3.getColumnModel().getColumn(3).setResizable(false);
-            jTable3.getColumnModel().getColumn(4).setResizable(false);
+        clienttable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(clienttable);
+        if (clienttable.getColumnModel().getColumnCount() > 0) {
+            clienttable.getColumnModel().getColumn(0).setResizable(false);
+            clienttable.getColumnModel().getColumn(1).setResizable(false);
+            clienttable.getColumnModel().getColumn(2).setResizable(false);
+            clienttable.getColumnModel().getColumn(3).setResizable(false);
+            clienttable.getColumnModel().getColumn(4).setResizable(false);
         }
 
         jLabel19.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel19.setText("Correo:");
 
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        mailclient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                mailclientActionPerformed(evt);
             }
         });
 
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+        fonoclient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
+                fonoclientActionPerformed(evt);
             }
         });
 
         jLabel20.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel20.setText("Tel:");
 
-        jButton17.setText("Cancelar");
+        cancelclient.setText("Cancelar");
 
         saveclient.setText("Guardar");
         saveclient.addActionListener(new java.awt.event.ActionListener() {
@@ -1395,12 +1395,12 @@ public class Administracion extends javax.swing.JFrame {
         PanelClientesLayout.setHorizontalGroup(
             PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelClientesLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelClientesLayout.createSequentialGroup()
-                        .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane3)
-                            .addGroup(PanelClientesLayout.createSequentialGroup()
+                    .addGroup(PanelClientesLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelClientesLayout.createSequentialGroup()
                                 .addGap(55, 55, 55)
                                 .addComponent(jLabel18)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1408,51 +1408,49 @@ public class Administracion extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel17)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelClientesLayout.createSequentialGroup()
-                        .addComponent(jSeparator3)
-                        .addContainerGap())))
-            .addGroup(PanelClientesLayout.createSequentialGroup()
-                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(buscarclient, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10))
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(PanelClientesLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(PanelClientesLayout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelClientesLayout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jLabel15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
                         .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelClientesLayout.createSequentialGroup()
-                                .addComponent(jLabel14)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(PanelClientesLayout.createSequentialGroup()
-                                .addComponent(jLabel19)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(33, 33, 33)
-                        .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelClientesLayout.createSequentialGroup()
-                                .addComponent(jLabel20)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(PanelClientesLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(saveclient, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(24, 24, 24)
+                                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(PanelClientesLayout.createSequentialGroup()
+                                        .addComponent(jLabel16)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(addressclient, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelClientesLayout.createSequentialGroup()
+                                        .addGap(21, 21, 21)
+                                        .addComponent(jLabel15)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(rutclient, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(PanelClientesLayout.createSequentialGroup()
-                        .addGap(212, 212, 212)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(88, Short.MAX_VALUE))
+                                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(PanelClientesLayout.createSequentialGroup()
+                                        .addComponent(jLabel14)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(nameclient, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(PanelClientesLayout.createSequentialGroup()
+                                        .addComponent(jLabel19)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(mailclient, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(33, 33, 33)
+                                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(PanelClientesLayout.createSequentialGroup()
+                                        .addComponent(jLabel20)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(fonoclient, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(PanelClientesLayout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(saveclient, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(cancelclient, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(PanelClientesLayout.createSequentialGroup()
+                                .addGap(212, 212, 212)
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 78, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         PanelClientesLayout.setVerticalGroup(
             PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1462,25 +1460,25 @@ public class Administracion extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rutclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fonoclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20))
                 .addGap(18, 18, 18)
                 .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelClientesLayout.createSequentialGroup()
                         .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addressclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel19)
-                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(mailclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel17)
-                            .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buscarclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel18)
                             .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1488,7 +1486,7 @@ public class Administracion extends javax.swing.JFrame {
                         .addGap(46, 46, 46))
                     .addGroup(PanelClientesLayout.createSequentialGroup()
                         .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cancelclient, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(saveclient, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())))
         );
@@ -1522,33 +1520,33 @@ public class Administracion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_saveclientActionPerformed
 
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
+    private void fonoclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fonoclientActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
+    }//GEN-LAST:event_fonoclientActionPerformed
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+    private void mailclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mailclientActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_mailclientActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void buscarclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarclientActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_buscarclientActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void nameclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameclientActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_nameclientActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void addressclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressclientActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_addressclientActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void rutclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutclientActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_rutclientActionPerformed
 
     private void codetxtcomunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codetxtcomunaActionPerformed
         // TODO add your handling code here:
@@ -1578,17 +1576,17 @@ public class Administracion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_buscarcomunaActionPerformed
 
-    private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
+    private void codestatusventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codestatusventaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField19ActionPerformed
+    }//GEN-LAST:event_codestatusventaActionPerformed
 
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+    private void cancelstatusventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelstatusventaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton25ActionPerformed
+    }//GEN-LAST:event_cancelstatusventaActionPerformed
 
-    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+    private void savestatusventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savestatusventaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton24ActionPerformed
+    }//GEN-LAST:event_savestatusventaActionPerformed
 
     private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
         // TODO add your handling code here:
@@ -1598,9 +1596,9 @@ public class Administracion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton23ActionPerformed
 
-    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
+    private void buscarstatusventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarstatusventaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField17ActionPerformed
+    }//GEN-LAST:event_buscarstatusventaActionPerformed
 
     private void usuariosBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuariosBtnCancelActionPerformed
         // TODO add your handling code here:
@@ -1798,6 +1796,7 @@ public class Administracion extends javax.swing.JFrame {
     public javax.swing.JTable RrssTable;
     public javax.swing.JTextField RrssTextCode;
     public javax.swing.JTextField RrssTextName;
+    private javax.swing.JTextField addressclient;
     public javax.swing.JButton bancosButtonCancel;
     public javax.swing.JButton bancosButtonSave;
     public javax.swing.JComboBox<String> bancosComboOrder;
@@ -1807,21 +1806,25 @@ public class Administracion extends javax.swing.JFrame {
     public javax.swing.JTextField bancosTextName;
     public javax.swing.JTextField bancosTextSearch;
     public javax.swing.JTextField bancosTextcode;
+    private javax.swing.JTextField buscarclient;
     public javax.swing.JTextField buscarcomuna;
+    private javax.swing.JTextField buscarstatusventa;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton cancelclient;
     public javax.swing.JButton cancelcomuna;
+    private javax.swing.JButton cancelstatusventa;
+    private javax.swing.JTable clienttable;
+    private javax.swing.JTextField codestatusventa;
     public javax.swing.JTextField codetxtcomuna;
     public javax.swing.JRadioButton comunaestadoactiv;
     public javax.swing.JRadioButton comunaestadodesactiv;
     public javax.swing.JTable comunatable;
-    private javax.swing.JButton jButton17;
+    private javax.swing.JComboBox<String> estadopago;
+    private javax.swing.JTextField fonoclient;
     private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
     public javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1874,19 +1877,14 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField mailclient;
+    private javax.swing.JTextField nameclient;
     public javax.swing.JTextField namecomuna;
+    private javax.swing.JTextField rutclient;
     private javax.swing.JButton saveclient;
     public javax.swing.JButton savecomuna;
+    private javax.swing.JButton savestatusventa;
+    private javax.swing.JTable statusventatable;
     public javax.swing.JButton usuariosBtnAdd;
     public javax.swing.JButton usuariosBtnCancel;
     public javax.swing.JRadioButton usuariosEstadoAct;

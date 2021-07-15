@@ -3,6 +3,7 @@ package Controlador;
 import DreamsGifts.Administracion;
 import Modelo.Banco;
 import Modelo.Comuna;
+import Modelo.ConsultaComuna;
 import Modelo.ConsultaRedSocial;
 import Modelo.ConsultaUsuarios;
 import Modelo.ConsultasBanco;
@@ -43,12 +44,6 @@ public class CtrAdministracion implements ActionListener {
        }
    }
       
-   
-   
-   
-   
-   
-   
    
  /*Implementacion CRUD Banco */
 
@@ -202,7 +197,7 @@ public class CtrAdministracion implements ActionListener {
                 System.out.println(ex);
         }
     }
-   
+   /* Fin CRUD Usuario*/
 
    
     /*Implementacion CRUD Comuna */
