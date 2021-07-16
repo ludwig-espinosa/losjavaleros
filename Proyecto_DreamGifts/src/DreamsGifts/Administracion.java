@@ -164,12 +164,12 @@ public class Administracion extends javax.swing.JFrame {
 
         PanelAdministracion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PanelAdministracion.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 PanelAdministracionAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -318,7 +318,7 @@ public class Administracion extends javax.swing.JFrame {
                         .addComponent(jLabel26)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(bancosComboOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
                         .addComponent(jLabel25)
                         .addGap(18, 18, 18)
                         .addComponent(bancosTextSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -571,7 +571,7 @@ public class Administracion extends javax.swing.JFrame {
                                         .addComponent(RrssEstadoAct)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(RrssEstadoDes)))
-                                .addGap(0, 104, Short.MAX_VALUE))))
+                                .addGap(0, 105, Short.MAX_VALUE))))
                     .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -807,7 +807,7 @@ public class Administracion extends javax.swing.JFrame {
                         .addComponent(usuariosEstadoAct)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(usuariosEstadoDes)
-                        .addGap(0, 101, Short.MAX_VALUE))
+                        .addGap(0, 102, Short.MAX_VALUE))
                     .addGroup(PanelUsuariosLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel39)
@@ -997,7 +997,7 @@ public class Administracion extends javax.swing.JFrame {
                                 .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEstadosLayout.createSequentialGroup()
-                                .addGap(34, 91, Short.MAX_VALUE)
+                                .addGap(34, 92, Short.MAX_VALUE)
                                 .addGroup(PanelEstadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEstadosLayout.createSequentialGroup()
                                         .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1099,6 +1099,11 @@ public class Administracion extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        comunatable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                comunatableMouseClicked(evt);
+            }
+        });
         jScrollPane6.setViewportView(comunatable);
         if (comunatable.getColumnModel().getColumnCount() > 0) {
             comunatable.getColumnModel().getColumn(0).setResizable(false);
@@ -1110,10 +1115,14 @@ public class Administracion extends javax.swing.JFrame {
         jLabel29.setText("Buscar:");
 
         buscarcomuna.setForeground(new java.awt.Color(200, 200, 200));
-        buscarcomuna.setText("Nombre,codigp....");
         buscarcomuna.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buscarcomunaActionPerformed(evt);
+            }
+        });
+        buscarcomuna.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                buscarcomunaKeyReleased(evt);
             }
         });
 
@@ -1196,45 +1205,45 @@ public class Administracion extends javax.swing.JFrame {
                                 .addComponent(jLabel35)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 314, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 315, Short.MAX_VALUE)
                                 .addComponent(jLabel29)
                                 .addGap(18, 18, 18)
                                 .addComponent(buscarcomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelComunasLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(PanelComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelComunasLayout.createSequentialGroup()
-                                        .addComponent(savecomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(cancelcomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(11, 11, 11))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelComunasLayout.createSequentialGroup()
-                                        .addComponent(jLabel37)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(codetxtcomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addGroup(PanelComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(PanelComunasLayout.createSequentialGroup()
-                                                .addComponent(jLabel34)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(namecomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jLabel36)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(comunaestadoactiv)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(comunaestadodesactiv))
-                                            .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                .addGap(0, 406, Short.MAX_VALUE)
+                                .addComponent(savecomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(cancelcomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(11, 11, 11))))
                     .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
+            .addGroup(PanelComunasLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(jLabel37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(codetxtcomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelComunasLayout.createSequentialGroup()
+                        .addComponent(namecomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel36)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(comunaestadoactiv)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(comunaestadodesactiv)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelComunasLayout.setVerticalGroup(
             PanelComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelComunasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(31, 31, 31)
                 .addGroup(PanelComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel37)
@@ -1245,7 +1254,7 @@ public class Administracion extends javax.swing.JFrame {
                         .addComponent(jLabel36)
                         .addComponent(comunaestadoactiv)
                         .addComponent(comunaestadodesactiv)))
-                .addGap(19, 19, 19)
+                .addGap(18, 18, 18)
                 .addGroup(PanelComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(savecomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cancelcomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1297,10 +1306,14 @@ public class Administracion extends javax.swing.JFrame {
         jLabel16.setText("Direccion");
 
         buscarclient.setForeground(new java.awt.Color(200, 200, 200));
-        buscarclient.setText("ID,Nombre,Correo....");
         buscarclient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buscarclientActionPerformed(evt);
+            }
+        });
+        buscarclient.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                buscarclientKeyReleased(evt);
             }
         });
 
@@ -1357,6 +1370,11 @@ public class Administracion extends javax.swing.JFrame {
             }
         });
         clienttable.getTableHeader().setReorderingAllowed(false);
+        clienttable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clienttableMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(clienttable);
         if (clienttable.getColumnModel().getColumnCount() > 0) {
             clienttable.getColumnModel().getColumn(0).setResizable(false);
@@ -1464,7 +1482,7 @@ public class Administracion extends javax.swing.JFrame {
                                 .addComponent(saveclient, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(cancelclient, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 75, Short.MAX_VALUE)))
+                        .addGap(0, 76, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(PanelClientesLayout.createSequentialGroup()
                 .addGap(212, 212, 212)
@@ -1531,7 +1549,7 @@ public class Administracion extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 7, Short.MAX_VALUE)
+                .addGap(0, 6, Short.MAX_VALUE)
                 .addComponent(PanelAdministracion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
@@ -1781,6 +1799,43 @@ public class Administracion extends javax.swing.JFrame {
     private void clientestadoactiv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientestadoactiv1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_clientestadoactiv1ActionPerformed
+
+    private void comunatableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comunatableMouseClicked
+        DefaultTableModel tm = (DefaultTableModel) this.comunatable.getModel();
+        int selectedRowIndex = this.comunatable.getSelectedRow();
+        
+        this.codetxtcomuna.setText(tm.getValueAt(selectedRowIndex, 0).toString());
+        this.namecomuna.setText(tm.getValueAt(selectedRowIndex, 1).toString());
+        if ((Boolean)tm.getValueAt(selectedRowIndex, 2)) {
+            this.comunaestadoactiv.doClick();
+        } else {
+            this.comunaestadodesactiv.doClick();
+        }
+    }//GEN-LAST:event_comunatableMouseClicked
+
+    private void buscarcomunaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscarcomunaKeyReleased
+        this.filtrar(this.buscarcomuna.getText(), this.comunatable);
+    }//GEN-LAST:event_buscarcomunaKeyReleased
+
+    private void clienttableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clienttableMouseClicked
+        DefaultTableModel tm = (DefaultTableModel) this.clienttable.getModel();
+        int selectedRowIndex = this.clienttable.getSelectedRow();
+        
+        this.rutclient.setText(tm.getValueAt(selectedRowIndex, 0).toString());
+        this.nameclient.setText(tm.getValueAt(selectedRowIndex, 1).toString());
+        this.rrssclient.setText(tm.getValueAt(selectedRowIndex, 2).toString());
+        this.addressclient.setText(tm.getValueAt(selectedRowIndex, 3).toString());
+        this.fonoclient.setText(tm.getValueAt(selectedRowIndex, 4).toString());
+        if ((Boolean)tm.getValueAt(selectedRowIndex, 5)) {
+            this.clientestadoactiv1.doClick();
+        } else {
+            this.clientestadodesactiv1.doClick();
+        }
+    }//GEN-LAST:event_clienttableMouseClicked
+
+    private void buscarclientKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscarclientKeyReleased
+        this.filtrar(this.buscarclient.getText(), this.clienttable);
+    }//GEN-LAST:event_buscarclientKeyReleased
 
     /**
      * @param args the command line arguments

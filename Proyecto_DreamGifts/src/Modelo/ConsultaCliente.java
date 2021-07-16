@@ -18,16 +18,16 @@ public class ConsultaCliente {
      public boolean registrar(Cliente client){
     
       PreparedStatement ps = null;
-      String sql = "INSERT INTO Cliente (RUT, Nombre, Estado, Nacimiento, Celular, Direccion, RedSocial) VALUES(?,?,?,?,?,?,?)";
+      String sql = "INSERT INTO Cliente (RUT, Nombre, Estado, Celular, Direccion, RRSS) VALUES(?,?,?,?,?,?)";
       try {
           ps =  conn.prepareStatement(sql);
           ps.setString(1, client.getRut());
           ps.setString(2, client.getNombre());
           ps.setBoolean(3, client.isEstado());
-          ps.setDate(4, (java.sql.Date) client.getNacimiento());
-          ps.setString(6, client.getCelular());
-          ps.setString(7, client.getDireccion());
-          ps.setString(8, client.getRedSocial());
+//          ps.setDate(4, (java.sql.Date) client.getNacimiento());
+          ps.setString(4, client.getCelular());
+          ps.setString(5, client.getDireccion());
+          ps.setString(6, client.getRedSocial());
           ps.execute();
           System.out.println("registrado");
           return true;

@@ -15,7 +15,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashSet;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -291,16 +290,16 @@ public class CtrAdministracion implements ActionListener {
         this.borrarTabla(admin.clienttable);
         ResultSet rs = conCliente.llamarTodos();
         Object[] row;
-        row = new Object[5];
+        row = new Object[6];
         DefaultTableModel rm = (DefaultTableModel) admin.clienttable.getModel();
         try {
             while (rs.next()){
                 row[0] = rs.getString("RUT");
                 row[1] = rs.getString("Nombre");
-                row[2] = rs.getString("RedSocial");
+                row[2] = rs.getString("RRSS");
                 row[3] = rs.getString("Direccion");
                 row[4] = rs.getString("Celular");
-                row[5] = rs.getBoolean("estado");
+                row[5] = rs.getBoolean("Estado");
 
                 rm.addRow(row);  
             }
