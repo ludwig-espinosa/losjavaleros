@@ -2250,7 +2250,7 @@
                                           <Group type="102" attributes="0">
                                               <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jTextField26" min="-2" pref="114" max="-2" attributes="0"/>
+                                              <Component id="jTextField26" min="-2" pref="170" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jScrollPane16" alignment="0" min="-2" pref="535" max="-2" attributes="0"/>
                                       </Group>
