@@ -74,6 +74,24 @@ public class ConsultaUsuarios {
       }
     }
 
-
+     public boolean iniciarSesion(Usuario user){
+      PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "SELECT * FROM Usuarios WHERE Usuario=? AND Contraseña=? AND Estado=? ";
+      try {
+          ps =  conn.prepareStatement(sql);
+          ps.setString(1, user.getUser());
+          ps.setString(2, user.getContraseña());
+          ps.setBoolean(3, true);
+          rs = ps.executeQuery();
+          if (!rs.absolute(1)) {
+              System.out.println("Usuario no encontrado");
+            return false; 
+          }
+          return true;
+      } catch (SQLException e){
+          return false;
+      }
+     }
   
 }

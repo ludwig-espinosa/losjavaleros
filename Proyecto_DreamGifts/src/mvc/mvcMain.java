@@ -1,10 +1,11 @@
 package mvc;
 
+import Controlador.CtrLogin;
 import Controlador.CtrPrincipal;
 
 public class mvcMain {
     
     public static void main(String args[]){
-        CtrPrincipal crP = new CtrPrincipal();
+        CtrLogin lgn= new CtrLogin();
     }
 }

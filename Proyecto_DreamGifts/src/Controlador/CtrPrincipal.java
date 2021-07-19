@@ -8,15 +8,18 @@ import java.awt.event.ActionListener;
 
 public class CtrPrincipal implements ActionListener{
     private Principal princ = new Principal();
-    public Conexion conn = new Conexion();
+//    public Conexion conn = new Conexion();
     private CtrAdministracion ctAd = new CtrAdministracion();
     
     public CtrPrincipal(){
-        this.princ.setVisible(true);
         this.princ.btnAdmin.addActionListener(this);
     }
 
-    
+       public void iniciar(){
+       if (!princ.isVisible()){
+           princ.setVisible(true);
+       }
+   }  
     @Override
     public void actionPerformed(ActionEvent e) {
         
