@@ -214,6 +214,11 @@ public class Administracion extends javax.swing.JFrame {
 
         bancosButtonCancel.setText("Cancelar");
         bancosButtonCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bancosButtonCancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bancosButtonCancelMouseClicked(evt);
+            }
+        });
         bancosButtonCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bancosButtonCancelActionPerformed(evt);
@@ -1403,6 +1408,16 @@ public class Administracion extends javax.swing.JFrame {
         jLabel20.setText("Tel:");
 
         cancelclient.setText("Cancelar");
+        cancelclient.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cancelclientMouseClicked(evt);
+            }
+        });
+        cancelclient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelclientActionPerformed(evt);
+            }
+        });
 
         saveclient.setText("Guardar");
         saveclient.addActionListener(new java.awt.event.ActionListener() {
@@ -1608,7 +1623,8 @@ public class Administracion extends javax.swing.JFrame {
     }//GEN-LAST:event_comunaestadoactivActionPerformed
 
     private void cancelcomunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelcomunaActionPerformed
-        // TODO add your handling code here:
+        this.codetxtcomuna.setText("");
+        this.namecomuna.setText("");
     }//GEN-LAST:event_cancelcomunaActionPerformed
 
     private void savecomunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savecomunaActionPerformed
@@ -1652,7 +1668,10 @@ public class Administracion extends javax.swing.JFrame {
     }//GEN-LAST:event_buscarstatusventaActionPerformed
 
     private void usuariosBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuariosBtnCancelActionPerformed
-        // TODO add your handling code here:
+        this.usuariosTextName.setText("");
+        this.usuariosTextPassw.setText("");
+        this.usuariosTextRut.setText("");
+        this.usuariosTextUser.setText("");
     }//GEN-LAST:event_usuariosBtnCancelActionPerformed
 
     private void usuariosBtnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuariosBtnAddActionPerformed
@@ -1688,7 +1707,8 @@ public class Administracion extends javax.swing.JFrame {
     }//GEN-LAST:event_RrssEstadoActActionPerformed
 
     private void RrssBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RrssBtnCancelActionPerformed
-        // TODO add your handling code here:
+        this.RrssTextCode.setText("");
+        this.RrssTextName.setText("");
     }//GEN-LAST:event_RrssBtnCancelActionPerformed
 
     private void RrssBtnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RrssBtnSaveActionPerformed
@@ -1720,7 +1740,8 @@ public class Administracion extends javax.swing.JFrame {
     }//GEN-LAST:event_bancosButtonSaveActionPerformed
 
     private void bancosButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancosButtonCancelActionPerformed
-        // TODO add your handling code here:
+        this.bancosTextName.setText("");
+        this.bancosTextcode.setText("");
     }//GEN-LAST:event_bancosButtonCancelActionPerformed
 
     private void bancosEstadoActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancosEstadoActiveActionPerformed
@@ -1836,6 +1857,22 @@ public class Administracion extends javax.swing.JFrame {
     private void buscarclientKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscarclientKeyReleased
         this.filtrar(this.buscarclient.getText(), this.clienttable);
     }//GEN-LAST:event_buscarclientKeyReleased
+
+    private void bancosButtonCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bancosButtonCancelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bancosButtonCancelMouseClicked
+
+    private void cancelclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelclientActionPerformed
+        this.rutclient.setText("");
+        this.nameclient.setText("");
+        this.fonoclient.setText("");
+        this.addressclient.setText("");
+        this.rrssclient.setText("");
+    }//GEN-LAST:event_cancelclientActionPerformed
+
+    private void cancelclientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelclientMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancelclientMouseClicked
 
     /**
      * @param args the command line arguments
