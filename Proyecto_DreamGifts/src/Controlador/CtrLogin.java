@@ -22,6 +22,12 @@ public class CtrLogin implements ActionListener{
         lgn.setVisible(true);
         ctrp = new CtrPrincipal(lgn);
         this.lgn.btnLogin.addActionListener(this);
+        this.lgn.btnCancel.addActionListener(this);
+    }
+    
+    public void limpiarCampos(){
+        lgn.textPassw.setText("");
+        lgn.textUser.setText("");
     }
     
     public void inicioSesion(){
@@ -30,6 +36,7 @@ public class CtrLogin implements ActionListener{
         user.setUser(lgn.textUser.getText());
         if (conUser.iniciarSesion(user)){
             lgn.setVisible(false);
+            this.limpiarCampos();
             ctrp.iniciar();
         } else {
             JOptionPane.showMessageDialog(lgn, "usuario o contraseña incorrecta");
@@ -43,5 +50,10 @@ public class CtrLogin implements ActionListener{
         if (e.getSource() == lgn.btnLogin){
             this.inicioSesion();
         }
+        
+        if (e.getSource() == lgn.btnCancel){
+            this.limpiarCampos();
+        }
+        
     }
 }
