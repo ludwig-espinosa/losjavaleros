@@ -20,7 +20,7 @@ public class CtrLogin implements ActionListener{
         conUser = new ConsultaUsuarios();
         lgn = new Login();
         lgn.setVisible(true);
-        ctrp = new CtrPrincipal();
+        ctrp = new CtrPrincipal(lgn);
         this.lgn.btnLogin.addActionListener(this);
     }
     
