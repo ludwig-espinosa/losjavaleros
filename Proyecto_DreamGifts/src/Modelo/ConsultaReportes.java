@@ -15,11 +15,11 @@ public class ConsultaReportes{
     DateFormat form = new SimpleDateFormat("dd-MM-yyyy");
     ConsultaCliente conCli = new ConsultaCliente();
 
-    public ResultSet buscar(Date inicio, Date fin, String rut){
+    public ResultSet buscarTodos(Date inicio, Date fin, String rut){
       PreparedStatement ps = null;
       ResultSet rs = null;
-      int idCliente = conCli.buscarIdPorRut(rut)
-        if (rut != null) {
+      int idCliente = conCli.buscarIdPorRut(rut);
+        if (idCliente != -1) {
             String sql = "SELECT * FROM Ventas WHERE (fecha_compra BETWEEN ? AND ?) AND (ID_Cliente = ?)";
             try {
                 ps =  conn.prepareStatement(sql);
