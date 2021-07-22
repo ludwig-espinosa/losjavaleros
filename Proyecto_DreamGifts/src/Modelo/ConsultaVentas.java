@@ -10,6 +10,8 @@ import static Modelo.Conexion.conn;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import Modelo.Cliente;
+import Modelo.ConsultaCliente;
 /**
  *
  * @author lespinosa
@@ -37,6 +39,23 @@ public class ConsultaVentas {
       }
     }
 
+   public String buscar(Cliente client){
+      PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "SELECT * FROM Cliente WHERE RUT=?  ";
+      try {
+          ps =  conn.prepareStatement(sql);
+          ps.setString(1, client.getRut());
+          rs = ps.executeQuery();
+          if (!rs.absolute(1)) {
+              System.out.println("Cliente no encontrado");
+            return ("Cliente no encontrado"); 
+          }
+          return true;
+      } catch (SQLException e){
+          return ("Cliente no encontrado");
+      }
+  
     public boolean modificar(Venta vent){
     
       PreparedStatement ps = null;
