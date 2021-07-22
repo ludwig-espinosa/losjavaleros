@@ -4,17 +4,20 @@ package Controlador;
 import DreamsGifts.Login;
 import DreamsGifts.Principal;
 import Modelo.Conexion;
+import Modelo.ConsultaReportes;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class CtrPrincipal implements ActionListener{
     private Principal princ = new Principal();
-//    public Conexion conn = new Conexion();
+//    Creacion de controladores secundarios o hijos
     private CtrAdministracion ctAd = new CtrAdministracion();
+    private CtrReportes ctRep = new CtrReportes();
     static Login lgn;
     public CtrPrincipal(Login login){
         this.princ.btnAdmin.addActionListener(this);
         this.princ.BotonSalir.addActionListener(this);
+        this.princ.btnReportes.addActionListener(this);
         lgn = login;
         
     }
@@ -34,7 +37,10 @@ public class CtrPrincipal implements ActionListener{
         if (e.getSource() == princ.BotonSalir){
             princ.setVisible(false);
             lgn.setVisible(true);
-            
+        }
+        
+        if (e.getSource() == princ.btnReportes) {
+            ctRep.iniciar();
         }
     }
 }

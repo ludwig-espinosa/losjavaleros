@@ -136,7 +136,6 @@ public class Administracion extends javax.swing.JFrame {
         codetxtcomuna = new javax.swing.JTextField();
         PanelClientes = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        rutclient = new javax.swing.JTextField();
         addressclient = new javax.swing.JTextField();
         nameclient = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
@@ -158,18 +157,21 @@ public class Administracion extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         clientestadoactiv1 = new javax.swing.JRadioButton();
         clientestadodesactiv1 = new javax.swing.JRadioButton();
+        rutclient = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         PanelAdministracion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PanelAdministracion.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 PanelAdministracionAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -1283,12 +1285,6 @@ public class Administracion extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setText("Administracion de Clientes");
 
-        rutclient.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rutclientActionPerformed(evt);
-            }
-        });
-
         addressclient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addressclientActionPerformed(evt);
@@ -1442,6 +1438,12 @@ public class Administracion extends javax.swing.JFrame {
         clientestadodesactiv1.setText("Desactiva");
         clientestadodesactiv1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        rutclient.setText("RUT");
+
+        jTextField4.setText("DV");
+
+        jLabel41.setText("-");
+
         javax.swing.GroupLayout PanelClientesLayout = new javax.swing.GroupLayout(PanelClientes);
         PanelClientes.setLayout(PanelClientesLayout);
         PanelClientesLayout.setHorizontalGroup(
@@ -1464,17 +1466,22 @@ public class Administracion extends javax.swing.JFrame {
                                 .addGap(10, 10, 10))
                             .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(PanelClientesLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelClientesLayout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(rutclient, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel41)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelClientesLayout.createSequentialGroup()
+                                .addGap(24, 24, 24)
                                 .addComponent(jLabel16)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(addressclient, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelClientesLayout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jLabel15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rutclient, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(addressclient, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelClientesLayout.createSequentialGroup()
@@ -1497,12 +1504,12 @@ public class Administracion extends javax.swing.JFrame {
                                 .addComponent(saveclient, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(cancelclient, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 76, Short.MAX_VALUE)))
+                        .addGap(0, 92, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(PanelClientesLayout.createSequentialGroup()
                 .addGap(212, 212, 212)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(jLabel40)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(clientestadoactiv1)
@@ -1526,11 +1533,13 @@ public class Administracion extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(rutclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14)
                     .addComponent(nameclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fonoclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20))
+                    .addComponent(jLabel20)
+                    .addComponent(rutclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel41))
                 .addGap(18, 18, 18)
                 .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelClientesLayout.createSequentialGroup()
@@ -1539,7 +1548,7 @@ public class Administracion extends javax.swing.JFrame {
                             .addComponent(addressclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel19)
                             .addComponent(rrssclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1609,10 +1618,6 @@ public class Administracion extends javax.swing.JFrame {
     private void addressclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressclientActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_addressclientActionPerformed
-
-    private void rutclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutclientActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rutclientActionPerformed
 
     private void codetxtcomunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codetxtcomunaActionPerformed
         // TODO add your handling code here:
@@ -1992,6 +1997,7 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -2009,10 +2015,11 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JTextField jTextField4;
     public javax.swing.JTextField nameclient;
     public javax.swing.JTextField namecomuna;
     public javax.swing.JTextField rrssclient;
-    public javax.swing.JTextField rutclient;
+    private javax.swing.JTextField rutclient;
     public javax.swing.JButton saveclient;
     public javax.swing.JButton savecomuna;
     private javax.swing.JButton savestatusventa;
