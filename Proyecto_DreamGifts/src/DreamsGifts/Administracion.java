@@ -166,12 +166,12 @@ public class Administracion extends javax.swing.JFrame {
 
         PanelAdministracion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PanelAdministracion.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 PanelAdministracionAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -2015,11 +2015,11 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JTextField jTextField4;
+    public javax.swing.JTextField jTextField4;
     public javax.swing.JTextField nameclient;
     public javax.swing.JTextField namecomuna;
     public javax.swing.JTextField rrssclient;
-    private javax.swing.JTextField rutclient;
+    public javax.swing.JTextField rutclient;
     public javax.swing.JButton saveclient;
     public javax.swing.JButton savecomuna;
     private javax.swing.JButton savestatusventa;
