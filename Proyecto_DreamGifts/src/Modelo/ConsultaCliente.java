@@ -99,9 +99,11 @@ public class ConsultaCliente {
             if (!rs.absolute(1)) {
                 System.out.println("Cliente no encontrado");
               return -1; 
+            }else{
+                id = Integer.parseInt(rs.getString(1));
+                return id;
             }
-            id = Integer.parseInt(rs.getString(1));
-            return id;
+                
         } catch (SQLException e){
             return -1;
         }
