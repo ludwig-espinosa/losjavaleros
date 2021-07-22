@@ -13,25 +13,31 @@ import java.util.Date;
 public class ConsultaReportes{
 //    Establecemos formato para transformar las fechas
     DateFormat form = new SimpleDateFormat("dd-MM-yyyy");
+    ConsultaCliente conCli = new ConsultaCliente();
 
-    public boolean buscar(Date inicio, Date fin, String rut){
+    public ResultSet buscar(Date inicio, Date fin, String rut){
       PreparedStatement ps = null;
       ResultSet rs = null;
-      String sql = "SELECT * FROM Ventas WHERE (fecha_compra BETWEEN ? AND ?) AND (RUT = ?)";
-      try {
-          ps =  conn.prepareStatement(sql);
-          ps.setDate(1, (java.sql.Date) inicio);
-          ps.setString(2, fin);
-          ps.setString(3, rut);
-          rs = ps.executeQuery();
-          if (!rs.absolute(1)) {
-              System.out.println("banco no encontrado");
-            return false; 
-          }
-          return true;
-      } catch (SQLException e){
-          return false;
-      }
+      int idCliente = conCli.buscarIdPorRut(rut)
+        if (rut != null) {
+            String sql = "SELECT * FROM Ventas WHERE (fecha_compra BETWEEN ? AND ?) AND (ID_Cliente = ?)";
+            try {
+                ps =  conn.prepareStatement(sql);
+                ps.setDate(1, (java.sql.Date) inicio);
+                ps.setDate(2, (java.sql.Date) fin);
+                ps.setInt(3, idCliente);
+                rs = ps.executeQuery();
+                if (!rs.absolute(1)) {
+                    System.out.println("clientes no escontrados no encontrado");
+                  return rs; 
+                }
+                return rs;
+            } catch (SQLException e){
+                return null;
+            }   
+        } else {
+            return null;
+        }  
     }
     
      public ResultSet llamarTodos(){
