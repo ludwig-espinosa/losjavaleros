@@ -12,11 +12,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import Modelo.Cliente;
 import Modelo.ConsultaCliente;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 /**
  *
  * @author lespinosa
  */
 public class ConsultaVentas {
+    DateFormat form = new SimpleDateFormat("dd-MM-yyyy");
+    ConsultaCliente conCli = new ConsultaCliente();
+    
   public boolean registrar(Venta vent){
     
       PreparedStatement ps = null;
