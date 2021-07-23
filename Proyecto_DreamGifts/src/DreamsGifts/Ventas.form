@@ -193,7 +193,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable1">
+                <Component class="javax.swing.JTable" name="TablaVentas">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="7" rowCount="4">
@@ -249,6 +249,9 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
@@ -273,16 +276,25 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Guardar"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Modificar"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="jButton3">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cancelar"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JComboBox" name="jComboBox1">
               <Properties>
@@ -352,8 +364,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
@@ -363,9 +374,14 @@
                               </Group>
                               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField7" min="-2" pref="373" max="-2" attributes="0"/>
-                                  <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jTextField7" min="-2" pref="373" max="-2" attributes="0"/>
+                                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace pref="71" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jComboBox3" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
@@ -384,13 +400,22 @@
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField8" min="-2" pref="75" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jTextField8" min="-2" pref="75" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="CancelVenta" min="-2" pref="81" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
                           </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="SaveVenta" min="-2" pref="81" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="90" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
@@ -511,8 +536,11 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                          <Component id="SaveVenta" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -525,6 +553,7 @@
                               <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="CancelVenta" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -800,6 +829,22 @@
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="SaveVenta">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Guardar"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="CancelVenta">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cancelar"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
           </SubComponents>

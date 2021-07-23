@@ -27,7 +27,6 @@ public class CtrAdministracion implements ActionListener {
    private static ConsultaUsuarios conUser = new ConsultaUsuarios();
    private static ConsultaComuna concomuna = new ConsultaComuna();
    private static ConsultaCliente conCliente = new ConsultaCliente();
-   private static ConsultaVentas conventas = new ConsultaVentas();
 
    public void iniciar(){
        if (!admin.isVisible()){
@@ -41,7 +40,7 @@ public class CtrAdministracion implements ActionListener {
        this.iniciarUsuarios();
        this.iniciarcomuna();
        this.iniciarCliente();
-       this.iniciarVentas();
+       
    }
    
    
@@ -311,61 +310,6 @@ public class CtrAdministracion implements ActionListener {
     }
    /* Fin CRUD Cliente*/
    
-/*       inicio CRUD Ventas        */
-
-   public void iniciarVentas(){
-       admin.saveclient.addActionListener(this);
-       admin.cancelclient.addActionListener(this);
-       this.actualizarTablaCliente();
-   }
-   
-   public boolean agregarVentas(){
-       Venta vent = new Venta();
-       vent.setRut(admin.rutclient.getText());
-       vent.setDireccion(admin.addressclient.getText());
-       vent.setNombre(admin.nameclient.getText());
-       vent.setCelular(admin.fonoclient.getText());
-       vent.setRedSocial(admin.rrssclient.getText());
-       vent.setEstado(admin.clientestadoactiv1.isSelected());
-       admin.rutclient.setText("");
-       admin.addressclient.setText("");
-       admin.nameclient.setText("");
-       admin.fonoclient.setText("");
-       admin.rrssclient.setText("");
-
-         if (!conventas.buscar(vent)) {
-             System.out.println("intentando agregar");
-             conventas.registrar(vent);
-            return true;
-        } else{
-             System.out.println("a modificar");
-             return conventas.modificar(vent);
-         }
-        
-   }
-   
-   public void actualizarTablaVentas(){
-        this.borrarTabla(admin.clienttable);
-        ResultSet rs = conventas.llamarTodos();
-        Object[] row;
-        row = new Object[6];
-        DefaultTableModel rm = (DefaultTableModel) admin.clienttable.getModel();
-        try {
-            while (rs.next()){
-                row[0] = rs.getString("RUT");
-                row[1] = rs.getString("Nombre");
-                row[2] = rs.getString("RRSS");
-                row[3] = rs.getString("Direccion");
-                row[4] = rs.getString("Celular");
-                row[5] = rs.getBoolean("Estado");
-
-                rm.addRow(row);  
-            }
-            } catch (SQLException ex) {
-                System.out.println(ex);
-        }
-    }
-   /* Fin CRUD Ventas*/   
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == admin.bancosButtonSave){
