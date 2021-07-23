@@ -118,8 +118,28 @@ public class Reportes extends javax.swing.JFrame {
             new String [] {
                 "Orden de Venta", "RUT_Cliente", "Nombre_Cliente", "Fecha_de_Compra", "Fecha_de_Entrega", "Pack", "Monto"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        informeVentasTable.setColumnSelectionAllowed(true);
+        informeVentasTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(informeVentasTable);
+        informeVentasTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (informeVentasTable.getColumnModel().getColumnCount() > 0) {
+            informeVentasTable.getColumnModel().getColumn(0).setResizable(false);
+            informeVentasTable.getColumnModel().getColumn(1).setResizable(false);
+            informeVentasTable.getColumnModel().getColumn(2).setResizable(false);
+            informeVentasTable.getColumnModel().getColumn(3).setResizable(false);
+            informeVentasTable.getColumnModel().getColumn(4).setResizable(false);
+            informeVentasTable.getColumnModel().getColumn(5).setResizable(false);
+            informeVentasTable.getColumnModel().getColumn(6).setResizable(false);
+        }
 
         jLabel2.setText("Detalle de Ventas");
 

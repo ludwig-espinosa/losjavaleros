@@ -16,28 +16,24 @@ public class ConsultaReportes{
     ConsultaCliente conCli = new ConsultaCliente();
 
     public ResultSet buscarTodos(Date inicio, Date fin, String rut){
-      PreparedStatement ps = null;
-      ResultSet rs = null;
-      int idCliente = conCli.buscarIdPorRut(rut);
-        if (idCliente != -1) {
-            String sql = "SELECT * FROM Ventas WHERE (fecha_compra BETWEEN ? AND ?) AND (ID_Cliente = ?)";
-            try {
-                ps =  conn.prepareStatement(sql);
-                ps.setDate(1, (java.sql.Date) inicio);
-                ps.setDate(2, (java.sql.Date) fin);
-                ps.setInt(3, idCliente);
-                rs = ps.executeQuery();
-                if (!rs.absolute(1)) {
-                    System.out.println("clientes no escontrados no encontrado");
-                  return rs; 
-                }
-                return rs;
-            } catch (SQLException e){
-                return null;
-            }   
-        } else {
-            return null;
-        }  
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sql = "SELECT * FROM Ventas WHERE (fecha_compra BETWEEN ? AND ?) AND (ID_Cliente = ?)";
+        int idCliente = conCli.buscarIdPorRut(rut);
+        try {
+            ps =  conn.prepareStatement(sql);
+            ps.setDate(1, (java.sql.Date) inicio);
+            ps.setDate(2, (java.sql.Date) fin);
+            ps.setInt(3, idCliente);
+            rs = ps.executeQuery();
+            if (!rs.absolute(1)) {
+                System.out.println("clientes no escontrados no encontrado");
+              return rs; 
+            }
+            return rs;
+        } catch (SQLException e){
+            return rs;
+        }   
     }
     
      public ResultSet llamarTodos(){

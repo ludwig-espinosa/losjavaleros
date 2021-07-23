@@ -18,7 +18,7 @@ public class CtrReportes implements ActionListener{
     public CtrReportes(){
         repo = new Reportes();
         conRep = new ConsultaReportes();
-        this.informeVentasBuscar();
+        this.iniciarInformeVentas();
         
     }
     
@@ -54,11 +54,12 @@ public class CtrReportes implements ActionListener{
         Object[] row;
         row = new Object[7];
         DefaultTableModel rm = (DefaultTableModel) repo.informeVentasTable.getModel();
+        System.out.println();
         try {
             while (rs.next()){
-                row[0] = rs.getString("cod_banco");
+                row[0] = "row 1";
                 row[1] = rut;
-                row[2] = rs.getString("estado");
+                row[2] = "row 2";
                 row[3] = rs.getDate("fecha_compra");
                 row[4] = rs.getDate("fecha_compra");
                 row[5] = "Pack";
@@ -74,7 +75,9 @@ public class CtrReportes implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == repo.informeVentasBuscar) {
+            System.out.println("intentando buscar");
             this.informeVentasBuscar();
+            
         }
     }
     
