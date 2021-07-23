@@ -58,13 +58,13 @@ public class ConsultaArticulo {
       public boolean buscar(Articulo art){
       PreparedStatement ps = null;
       ResultSet rs = null;
-      String sql = "SELECT * FROM Usuarios WHERE RUT=?  ";
+      String sql = "SELECT * FROM Usuarios WHERE codigo=?  ";
       try {
           ps =  conn.prepareStatement(sql);
-          ps.setString(1, user.getRut());
+          ps.setInt(1, art.getCodigo());
           rs = ps.executeQuery();
           if (!rs.absolute(1)) {
-              System.out.println("Usuario no encontrado");
+              System.out.println("Codigo no encontrado");
             return false; 
           }
           return true;
