@@ -4,6 +4,11 @@ import DreamsGifts.Reportes;
 import Modelo.ConsultaReportes;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class CtrReportes implements ActionListener{
     Reportes repo;
@@ -13,6 +18,7 @@ public class CtrReportes implements ActionListener{
     public CtrReportes(){
         repo = new Reportes();
         conRep = new ConsultaReportes();
+        this.informeVentasBuscar();
         
     }
     
@@ -23,12 +29,53 @@ public class CtrReportes implements ActionListener{
             repo.setVisible(true);
         }
     }
+   
+   public void borrarTabla(JTable tabla){
+       DefaultTableModel rm = (DefaultTableModel) tabla.getModel();
+       while (rm.getRowCount() > 0){
+           rm.removeRow(0);
+       }
+   }
+    
+    
+    
+/*   Seccion Informe de Ventas  */
+
+    public void iniciarInformeVentas(){
+        repo.informeVentasBuscar.addActionListener(this);
+    }
+    
+    public void informeVentasBuscar(){
+        Date inicio = repo.informeVentasDesdeDate.getDate();
+        Date fin = repo.informeVentasHastaDate.getDate();
+        String rut = repo.informeVentasRut.getText() + repo.informeVentasDigitoV.getText();
+        this.borrarTabla(repo.informeVentasTable);
+        ResultSet rs = conRep.buscarTodos(inicio, fin, rut);
+        Object[] row;
+        row = new Object[7];
+        DefaultTableModel rm = (DefaultTableModel) repo.informeVentasTable.getModel();
+        try {
+            while (rs.next()){
+                row[0] = rs.getString("cod_banco");
+                row[1] = rut;
+                row[2] = rs.getString("estado");
+                row[3] = rs.getDate("fecha_compra");
+                row[4] = rs.getDate("fecha_compra");
+                row[5] = "Pack";
+                row[6] = "Monto";
+                rm.addRow(row);  
+            }
+            } catch (SQLException ex) {
+        }
+    }
     
     
 //  Adicion de eventos a los objetos añadidos
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (e.getSource() == repo.informeVentasBuscar) {
+            this.informeVentasBuscar();
+        }
     }
     
     
