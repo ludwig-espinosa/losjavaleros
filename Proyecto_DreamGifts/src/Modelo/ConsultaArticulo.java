@@ -58,7 +58,7 @@ public class ConsultaArticulo {
       public boolean buscar(Articulo art){
       PreparedStatement ps = null;
       ResultSet rs = null;
-      String sql = "SELECT * FROM Usuarios WHERE codigo=?  ";
+      String sql = "SELECT * FROM Articulos WHERE codigo=?  ";
       try {
           ps =  conn.prepareStatement(sql);
           ps.setInt(1, art.getCodigo());
