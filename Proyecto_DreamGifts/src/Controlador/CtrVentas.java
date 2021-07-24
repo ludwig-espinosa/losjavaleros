@@ -54,16 +54,17 @@ public class CtrVentas implements ActionListener {
    public boolean agregarVentas(){
        Venta vent = new Venta();
        vent.setRut(venta.rutvent.getText());
-       vent.setDireccion(venta.addressclient.getText());
-       vent.setNombre(venta.nameclient.getText());
-       vent.setCelular(venta.fonoclient.getText());
-       vent.setRedSocial(venta.rrssclient.getText());
-       vent.setEstado(venta.clientestadoactiv1.isSelected());
-       venta.rutclient.setText("");
-       venta.addressclient.setText("");
-       venta.nameclient.setText("");
-       venta.fonoclient.setText("");
-       venta.rrssclient.setText("");
+       vent.setDireccion(venta.VAddrClient.getText());
+       vent.setNombre(venta.VNameClient.getText());
+       vent.setRecibe(venta.VNameRecp.getText());
+       vent.setCelular(venta.VNumberContact.getText());
+       vent.setCodTransax(venta.codigoTransaccion.getText());
+       venta.rutvent.setText("");
+       venta.VAddrClient.setText("");
+       venta.VNameClient.setText("");
+       venta.VNameRecp.setText("");
+       venta.VNumberContact.setText("");
+       venta.codigoTransaccion.setText("");
 
          if (!conventas.buscar(vent)) {
              System.out.println("intentando agregar");

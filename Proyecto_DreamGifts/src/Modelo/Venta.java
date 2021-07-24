@@ -119,6 +119,10 @@ public class Venta {
     public void setIdBoleta(int idBoleta) {
         this.idBoleta = idBoleta;
     }
+
+    public void setRut(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

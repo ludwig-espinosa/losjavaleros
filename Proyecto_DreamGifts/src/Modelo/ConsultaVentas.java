@@ -23,7 +23,6 @@ public class ConsultaVentas {
     ConsultaCliente conCli = new ConsultaCliente();
     
   public boolean registrar(Venta vent){
-    
       PreparedStatement ps = null;
       String sql = "INSERT INTO Ventas (ID_Cliente, red_social, ID_Pack, banco_id, Estado_de_Pago, id_vendedor, comuna_id, Monto, fecha_compra,direccion, hora_de_compra, Nombre_receptor, Contacto_receptor, status_venta, Codigo_de_Transaccion, Estado_de_Orden, id_boleta) VALUES(?,?,?,?,?,?)";
       try {

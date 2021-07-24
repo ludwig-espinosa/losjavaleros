@@ -554,7 +554,7 @@ public class Ventas extends javax.swing.JFrame {
     public javax.swing.JTextField VNameRecp;
     public javax.swing.JTextField VNumberContact;
     public javax.swing.JComboBox<String> VRedSocialClient;
-    private javax.swing.JTextField codigoTransaccion;
+    public javax.swing.JTextField codigoTransaccion;
     private javax.swing.JTextField dvventa;
     public javax.swing.JButton jButton1;
     public javax.swing.JButton jButton2;
@@ -604,6 +604,6 @@ public class Ventas extends javax.swing.JFrame {
     public javax.swing.JTextField jTextField7;
     public javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
-    private javax.swing.JTextField rutvent;
+    public javax.swing.JTextField rutvent;
     // End of variables declaration//GEN-END:variables
 }
