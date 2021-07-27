@@ -13,12 +13,13 @@ public class CtrPrincipal implements ActionListener{
 //    Creacion de controladores secundarios o hijos
     private CtrAdministracion ctAd = new CtrAdministracion();
     private CtrReportes ctRep = new CtrReportes();
-    private CtrVentas ctVent = new CtrVentas
+    private CtrVentas ctVent = new CtrVentas();
     static Login lgn;
     public CtrPrincipal(Login login){
         this.princ.btnAdmin.addActionListener(this);
         this.princ.BotonSalir.addActionListener(this);
         this.princ.btnReportes.addActionListener(this);
+        this.princ.princVenta.addActionListener(this);
         lgn = login;
         
     }
@@ -42,6 +43,9 @@ public class CtrPrincipal implements ActionListener{
         
         if (e.getSource() == princ.btnReportes) {
             ctRep.iniciar();
+        }
+        if (e.getSource() == princ.princVenta) {
+            ctVent.iniciar();
         }
     }
 }
