@@ -52,7 +52,7 @@ public class ConsultaVentas {
           ps.setString(2, vent.getRrss());
           ps.setBoolean(3, vent.isEstado());
 //          ps.setDate(4, (java.sql.Date) client.getNacimiento());
-          ps.setString(4, vent.getCelular());
+          ps.setString(4, vent.getContactoReceptor());
           ps.setString(5, vent.getDireccion());
           ps.setString(6, vent.getRedSocial());
           ps.execute();

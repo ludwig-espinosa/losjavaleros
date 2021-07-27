@@ -13,6 +13,7 @@ public class CtrPrincipal implements ActionListener{
 //    Creacion de controladores secundarios o hijos
     private CtrAdministracion ctAd = new CtrAdministracion();
     private CtrReportes ctRep = new CtrReportes();
+    private CtrVentas ctVent = new CtrVentas
     static Login lgn;
     public CtrPrincipal(Login login){
         this.princ.btnAdmin.addActionListener(this);

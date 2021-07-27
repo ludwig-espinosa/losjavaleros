@@ -36,6 +36,7 @@ public class CtrVentas implements ActionListener {
    public void iniciarVentas(){
        venta.SaveVenta.addActionListener(this);
        venta.CancelVenta.addActionListener(this);
+       venta.SearchClient.addActionListener(this);
        this.actualizarTablaVentas();
    }
    
@@ -48,13 +49,15 @@ public class CtrVentas implements ActionListener {
       String rutobtn;
         rutobtn = (venta.rutvent.getText()+venta.dvclient.getText());
       String rutclient = rutobtn;
+      System.out.println(rutclient);
       return rutclient;
   }
     
-    public String ObtenName (){
+    public void ObtenName (){
         String NameClient;
         NameClient = conCliente.buscarNamePorRut(this.ObtenerRUT());
-        return NameClient;
+        venta.VNameClient.setText(NameClient);
+                
     }
    
     public void borrarTabla(JTable tabla){
@@ -120,6 +123,10 @@ public class CtrVentas implements ActionListener {
             this.agregarVentas();
             this.actualizarTablaVentas();
         }   
+        if (e.getSource() == venta.SearchClient) {
+            System.out.println("buscando rut");
+            this.ObtenName();
+        }
     }
     
 }

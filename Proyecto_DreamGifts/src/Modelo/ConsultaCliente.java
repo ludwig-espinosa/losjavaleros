@@ -122,11 +122,13 @@ public class ConsultaCliente {
                 System.out.println("Cliente no encontrado");
               return null; 
             }else{
+                System.out.println("cliente encontrado");
                 rut = rs.getString(2);
                 return rut;
             }
             
         } catch (SQLException e) {
+           System.out.println(e);
             return null;
         }
     }
