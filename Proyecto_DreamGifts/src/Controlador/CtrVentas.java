@@ -41,7 +41,7 @@ public class CtrVentas implements ActionListener {
    
     public CtrVentas(){
       this.iniciarVentas();
-       
+      
    }
    
     public void borrarTabla(JTable tabla){
@@ -55,10 +55,10 @@ public class CtrVentas implements ActionListener {
        Venta vent = new Venta();
        vent.setRut(venta.rutvent.getText());
        vent.setDireccion(venta.VAddrClient.getText());
-       vent.setNombre(venta.VNameClient.getText());
-       vent.setRecibe(venta.VNameRecp.getText());
-       vent.setCelular(venta.VNumberContact.getText());
-       vent.setCodTransax(venta.codigoTransaccion.getText());
+       conCliente.setIdCliente(venta.VNameClient.getText());
+       vent.setReceptor(venta.VNameRecp.getText());
+       vent.setContactoReceptor(venta.VNumberContact.getText());
+       vent.setCodigoTransaccion(venta.codigoTransaccion.getText());
        venta.rutvent.setText("");
        venta.VAddrClient.setText("");
        venta.VNameClient.setText("");

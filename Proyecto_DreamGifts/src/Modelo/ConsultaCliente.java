@@ -108,6 +108,27 @@ public class ConsultaCliente {
             return -1;
         }
     }
-
+    
+    String buscarNamePorRut (String rut){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sql = "SELECT * FROM Cliente WHERE RUT=?  ";
+        try {
+            ps = conn.prepareStatement (sql);
+            ps.setString(1, rut);
+            rs = ps.executeQuery();
+            rs.next();
+            if (!rs.absolute(1)) {
+                System.out.println("Cliente no encontrado");
+              return null; 
+            }else{
+                rut = rs.getString(1);
+                return rut;
+            }
+            
+        } catch (SQLException e) {
+            return null;
+        }
+    }
 
 }
