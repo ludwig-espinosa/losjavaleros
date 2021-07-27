@@ -43,6 +43,19 @@ public class CtrVentas implements ActionListener {
       this.iniciarVentas();
       
    }
+    
+    public String ObtenerRUT () {
+      String rutobtn;
+        rutobtn = (venta.rutvent.getText()+venta.dvclient.getText());
+      String rutclient = rutobtn;
+      return rutclient;
+  }
+    
+    public String ObtenName (){
+        String NameClient;
+        NameClient = conCliente.buscarNamePorRut(this.ObtenerRUT());
+        return NameClient;
+    }
    
     public void borrarTabla(JTable tabla){
        DefaultTableModel rm = (DefaultTableModel) tabla.getModel();
@@ -55,7 +68,7 @@ public class CtrVentas implements ActionListener {
        Venta vent = new Venta();
        vent.setRut(venta.rutvent.getText());
        vent.setDireccion(venta.VAddrClient.getText());
-       conCliente.setIdCliente(venta.VNameClient.getText());
+       vent.setIdCliente(venta.VNameClient.getText());
        vent.setReceptor(venta.VNameRecp.getText());
        vent.setContactoReceptor(venta.VNumberContact.getText());
        vent.setCodigoTransaccion(venta.codigoTransaccion.getText());

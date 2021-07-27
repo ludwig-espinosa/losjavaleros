@@ -77,8 +77,6 @@ public class Ventas extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         rutvent = new javax.swing.JTextField();
-        jLabel21 = new javax.swing.JLabel();
-        dvventa = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jComboBox5 = new javax.swing.JComboBox<>();
         jLabel23 = new javax.swing.JLabel();
@@ -87,6 +85,8 @@ public class Ventas extends javax.swing.JFrame {
         jComboBox6 = new javax.swing.JComboBox<>();
         SaveVenta = new javax.swing.JButton();
         CancelVenta = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        dvclient = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -134,8 +134,6 @@ public class Ventas extends javax.swing.JFrame {
 
         jLabel20.setText("-");
 
-        jTextField2.setText("DV");
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -181,7 +179,7 @@ public class Ventas extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator2)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE))))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 837, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -242,15 +240,9 @@ public class Ventas extends javax.swing.JFrame {
 
         jLabel6.setText("Direccion de Entrega: ");
 
-        VAddrClient.setText("jTextField4");
-
         jLabel7.setText("Nombre ¿Quien Recibe?");
 
-        VNameRecp.setText("jTextField5");
-
         jLabel8.setText("Numero de Contacto: ");
-
-        VNumberContact.setText("jTextField6");
 
         jLabel9.setText("Detalle de Orden");
 
@@ -287,17 +279,11 @@ public class Ventas extends javax.swing.JFrame {
             }
         });
 
-        jLabel21.setText("-");
-
-        dvventa.setText("DV");
-
         jLabel22.setText("Estado de Pago");
 
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "En Espera de Pago", "Cancelado", "Pagado" }));
 
         jLabel23.setText("Codigo de Transaccion");
-
-        codigoTransaccion.setText("codigoTransaccion");
 
         jLabel24.setText("Estado de Orden");
 
@@ -306,6 +292,8 @@ public class Ventas extends javax.swing.JFrame {
         SaveVenta.setText("Guardar");
 
         CancelVenta.setText("Cancelar");
+
+        jLabel21.setText("-");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -327,7 +315,7 @@ public class Ventas extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel12))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 207, Short.MAX_VALUE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel13)
@@ -388,11 +376,11 @@ public class Ventas extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rutvent, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rutvent, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel21)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(dvventa, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(dvclient, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -420,8 +408,9 @@ public class Ventas extends javax.swing.JFrame {
                             .addComponent(VAddrClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
                             .addComponent(rutvent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel21)
-                            .addComponent(dvventa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel21)
+                                .addComponent(dvclient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
@@ -560,7 +549,7 @@ public class Ventas extends javax.swing.JFrame {
     public javax.swing.JTextField VNumberContact;
     public javax.swing.JComboBox<String> VRedSocialClient;
     public javax.swing.JTextField codigoTransaccion;
-    private javax.swing.JTextField dvventa;
+    public javax.swing.JTextField dvclient;
     public javax.swing.JButton jButton1;
     public javax.swing.JButton jButton2;
     public javax.swing.JButton jButton3;

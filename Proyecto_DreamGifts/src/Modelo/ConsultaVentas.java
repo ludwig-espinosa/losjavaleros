@@ -5,6 +5,7 @@
  */
 package Modelo;
 
+import DreamsGifts.Ventas;
 import java.util.Date;
 import static Modelo.Conexion.conn;
 import java.sql.PreparedStatement;
@@ -21,7 +22,8 @@ import java.text.SimpleDateFormat;
 public class ConsultaVentas {
     DateFormat form = new SimpleDateFormat("dd-MM-yyyy");
     ConsultaCliente conCli = new ConsultaCliente();
-    
+   
+  
     
   public boolean buscar(Cliente client){
       PreparedStatement ps = null;
@@ -46,8 +48,8 @@ public class ConsultaVentas {
       String sql = "INSERT INTO Ventas (ID_Cliente, red_social, ID_Pack, banco_id, Estado_de_Pago, id_vendedor, comuna_id, Monto, fecha_compra,direccion, hora_de_compra, Nombre_receptor, Contacto_receptor, status_venta, Codigo_de_Transaccion, Estado_de_Orden, id_boleta) VALUES(?,?,?,?,?,?)";
       try {
           ps =  conn.prepareStatement(sql);
-          ps.setString(1, vent.getRut());
-          ps.setString(2, vent.getNombre());
+          ps.setString(1, vent.getIdCliente());
+          ps.setString(2, vent.getRrss());
           ps.setBoolean(3, vent.isEstado());
 //          ps.setDate(4, (java.sql.Date) client.getNacimiento());
           ps.setString(4, vent.getCelular());
@@ -62,22 +64,6 @@ public class ConsultaVentas {
       }
     }
 
-   public String buscar(Cliente client){
-      PreparedStatement ps = null;
-      ResultSet rs = null;
-      String sql = "SELECT * FROM Cliente WHERE RUT=?  ";
-      try {
-          ps =  conn.prepareStatement(sql);
-          ps.setString(1, client.getRut());
-          rs = ps.executeQuery();
-          if (!rs.absolute(1)) {
-              System.out.println("Cliente no encontrado");
-            return ("Cliente no encontrado"); 
-          }
-          return true;
-      } catch (SQLException e){
-          return ("Cliente no encontrado");
-      }
   
     public boolean modificar(Venta vent){
     

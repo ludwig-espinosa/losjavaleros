@@ -109,10 +109,10 @@ public class ConsultaCliente {
         }
     }
     
-    String buscarNamePorRut (String rut){
+    public String buscarNamePorRut (String rut){
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = "SELECT * FROM Cliente WHERE RUT=?  ";
+        String sql = "SELECT ID_Clientes, Nombre FROM Cliente where rut=?  ";
         try {
             ps = conn.prepareStatement (sql);
             ps.setString(1, rut);
@@ -122,7 +122,7 @@ public class ConsultaCliente {
                 System.out.println("Cliente no encontrado");
               return null; 
             }else{
-                rut = rs.getString(1);
+                rut = rs.getString(2);
                 return rut;
             }
             
