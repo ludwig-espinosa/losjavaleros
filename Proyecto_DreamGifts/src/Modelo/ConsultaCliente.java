@@ -86,7 +86,7 @@ public class ConsultaCliente {
       }
     }
 
-    int buscarIdPorRut(String rut) {
+    public int buscarIdPorRut(String rut) {
         PreparedStatement ps = null;
         ResultSet rs = null;
         int id;

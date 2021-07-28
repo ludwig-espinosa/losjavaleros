@@ -14,6 +14,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashSet;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -69,13 +71,16 @@ public class CtrVentas implements ActionListener {
     
    public boolean agregarVentas(){
        Venta vent = new Venta();
-       vent.setRut(venta.rutvent.getText());
+       vent.setRut(this.ObtenerRUT());
+       DefaultComboBoxModel CbRrss = (DefaultComboBoxModel) venta.VRedSocialClient.getModel();
        vent.setDireccion(venta.VAddrClient.getText());
-       vent.setIdCliente(venta.VNameClient.getText());
+       vent.setIdCliente(conCliente.buscarIdPorRut(this.ObtenerRUT()));
        vent.setReceptor(venta.VNameRecp.getText());
        vent.setContactoReceptor(venta.VNumberContact.getText());
        vent.setCodigoTransaccion(venta.codigoTransaccion.getText());
+       vent.setRrss((int) CbRrss.getSelectedItem());
        venta.rutvent.setText("");
+       venta.dvclient.setText("");
        venta.VAddrClient.setText("");
        venta.VNameClient.setText("");
        venta.VNameRecp.setText("");
