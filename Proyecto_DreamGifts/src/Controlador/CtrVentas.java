@@ -10,6 +10,7 @@ import Modelo.Venta;
 import Modelo.ConsultaVentas;
 import Modelo.Cliente;
 import Modelo.ConsultaCliente;
+import Modelo.ConsultaRedSocial;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
@@ -27,6 +28,7 @@ public class CtrVentas implements ActionListener {
     private static Ventas venta = new Ventas();
     private static ConsultaCliente conCliente = new ConsultaCliente();
     private static ConsultaVentas conventas = new ConsultaVentas();
+    private static ConsultaRedSocial conrrss = new ConsultaRedSocial();
     
     public void iniciar(){
         if (!venta.isVisible()){
@@ -61,6 +63,12 @@ public class CtrVentas implements ActionListener {
         venta.VNameClient.setText(NameClient);
                 
     }
+    
+    public void ObtenRRSS (){
+        String NameRRSS;
+        NameRRSS = conrrss.buscarIdPorNombre(this.ObtenRRSS());
+        venta.VRedSocialClient.;
+    }
    
     public void borrarTabla(JTable tabla){
        DefaultTableModel rm = (DefaultTableModel) tabla.getModel();
@@ -79,6 +87,7 @@ public class CtrVentas implements ActionListener {
        vent.setContactoReceptor(venta.VNumberContact.getText());
        vent.setCodigoTransaccion(venta.codigoTransaccion.getText());
        vent.setRrss((int) CbRrss.getSelectedItem());
+       vent.setIdEstadoPago((int) CbEstadoDePago.getSelectedItem());
        venta.rutvent.setText("");
        venta.dvclient.setText("");
        venta.VAddrClient.setText("");
@@ -132,6 +141,7 @@ public class CtrVentas implements ActionListener {
             System.out.println("buscando rut");
             this.ObtenName();
         }
+        if(e.getSource() == venta.)
     }
     
 }

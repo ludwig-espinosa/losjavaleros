@@ -71,15 +71,14 @@ public class ConsultaRedSocial {
           return null;
       }
       
-    
-    public int RrssIdPorRut(String name) {
+    public int buscarIdPorNombre(String namerrss){
         PreparedStatement ps = null;
         ResultSet rs = null;
         int id;
-        String sql = "SELECT * FROM RRSS WHERE nombre=?  ";
+        String sql = "SELECT * FROM RRSS WHERE Nombre=?  ";
         try {
             ps =  conn.prepareStatement(sql);
-            ps.setString(1, name);
+            ps.setString(1, namerrss);
             rs = ps.executeQuery();
             rs.next();
             if (!rs.absolute(1)) {
@@ -94,7 +93,5 @@ public class ConsultaRedSocial {
             return -1;
         }
     }
+    }
 
-
-
-}
