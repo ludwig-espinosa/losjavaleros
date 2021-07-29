@@ -35,13 +35,11 @@ public class CtrPrincipal implements ActionListener{
         if (e.getSource() == princ.btnAdmin){
             this.ctAd.iniciar();
         }
-        
-        if (e.getSource() == princ.BotonSalir){
+                if (e.getSource() == princ.BotonSalir){
             princ.setVisible(false);
             lgn.setVisible(true);
         }
-        
-        if (e.getSource() == princ.btnReportes) {
+                if (e.getSource() == princ.btnReportes) {
             ctRep.iniciar();
         }
         if (e.getSource() == princ.princVenta) {

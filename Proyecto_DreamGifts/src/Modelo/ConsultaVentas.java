@@ -68,10 +68,10 @@ public class ConsultaVentas {
     public boolean modificar(Venta vent){
     
       PreparedStatement ps = null;
-      String sql = "UPDATE Venta SET Nombre=?, Estado=?, Nacimiento=?, Celular=?, Direccion=?, RedSocial=? WHERE RUT=?";
+      String sql = "UPDATE Venta SET red_social, ID_Pack, banco_id, Estado_de_Pago, id_vendedor, comuna_id, Monto, fecha_compra,direccion, hora_de_compra, Nombre_receptor, Contacto_receptor, status_venta, Codigo_de_Transaccion, Estado_de_Orden, id_boleta) VALUES(?,?,?,?,?,?)";
       try {
           ps =  conn.prepareStatement(sql);
-          ps.setString(2, vent.getNombre());
+          ps.setInt(2, vent.());
           ps.setBoolean(3, vent.isEstado());
           ps.setDate(4, (java.sql.Date) vent.getNacimiento());
           ps.setString(5, vent.getCelular());

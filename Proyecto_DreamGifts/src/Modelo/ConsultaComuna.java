@@ -77,5 +77,28 @@ public class ConsultaComuna{
       } catch (SQLException e){
           return null;
       }
+     }
+     
+      public int ComunaIdPorNombre (String Comuna){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int id;
+        String sql = "SELECT * FROM RRSS WHERE Nombre=?  ";
+        try {
+            ps =  conn.prepareStatement(sql);
+            ps.setString(1, Comuna);
+            rs = ps.executeQuery();
+            rs.next();
+            if (!rs.absolute(1)) {
+                System.out.println("Cliente no encontrado");
+              return -1; 
+            }else{
+                id = Integer.parseInt(rs.getString(1));
+                return id;
+            }
+                
+        } catch (SQLException e){
+            return -1;
+        }
     }
 }

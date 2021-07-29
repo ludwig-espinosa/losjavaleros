@@ -70,8 +70,10 @@ public class ConsultaRedSocial {
       } catch (SQLException e){
           return null;
       }
+     }
+     
       
-    public int buscarIdPorNombre(String namerrss){
+    public int RRSSIdPorNombre (String namerrss){
         PreparedStatement ps = null;
         ResultSet rs = null;
         int id;
