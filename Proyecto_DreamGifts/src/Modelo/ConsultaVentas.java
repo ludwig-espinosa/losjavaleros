@@ -45,16 +45,25 @@ public class ConsultaVentas {
   
   public boolean registrar(Venta vent){
       PreparedStatement ps = null;
-      String sql = "INSERT INTO Ventas (ID_Cliente, red_social, ID_Pack, banco_id, Estado_de_Pago, id_vendedor, comuna_id, Monto, fecha_compra,direccion, hora_de_compra, Nombre_receptor, Contacto_receptor, status_venta, Codigo_de_Transaccion, Estado_de_Orden, id_boleta) VALUES(?,?,?,?,?,?)";
+      String sql = "INSERT INTO Ventas (ID_Cliente, red_social, ID_Pack, banco_id, Estado_de_Pago, comuna_id, Monto, fecha_compra,direccion, Nombre_receptor, Contacto_receptor, Codigo_de_Transaccion, Estado_de_Orden, id_boleta, fecha_entrega, Bloque_horario) VALUES(?,?,?,?,?,?)";
       try {
           ps =  conn.prepareStatement(sql);
-          ps.setString(1, vent.getIdCliente());
-          ps.setString(2, vent.getRrss());
-          ps.setBoolean(3, vent.isEstado());
-//          ps.setDate(4, (java.sql.Date) client.getNacimiento());
-          ps.setString(4, vent.getContactoReceptor());
-          ps.setString(5, vent.getDireccion());
-          ps.setString(6, vent.getRedSocial());
+          ps.setInt(1, vent.getIdCliente());
+          ps.setInt(2, vent.getRrss());
+          ps.setInt(3, vent.getIdPack());
+          ps.setInt(4, vent.getIdBanco());
+          ps.setInt(5, vent.getIdEstadoPago());
+          ps.setInt(6, vent.getIdcomuna());
+          ps.setInt(7, vent.getMonto());
+          ps.setDate(8, (java.sql.Date) vent.getFechaCompra());
+          ps.setString(9, vent.getDireccion());
+          ps.setString(10, vent.getReceptor());
+          ps.setString(11, vent.getContactoReceptor());
+          ps.setString(12, vent.getCodigoTransaccion());
+          ps.setString(13, vent.getEstadoDeOrden());
+          ps.setInt(14, vent.getIdBoleta());
+          ps.setDate(15, (java.sql.Date) vent.getFechaEntrega());
+          ps.setDate(16, (java.sql.Date) vent.getBloqueHorario());
           ps.execute();
           System.out.println("registrado");
           return true;
@@ -68,15 +77,17 @@ public class ConsultaVentas {
     public boolean modificar(Venta vent){
     
       PreparedStatement ps = null;
-      String sql = "UPDATE Venta SET red_social, ID_Pack, banco_id, Estado_de_Pago, id_vendedor, comuna_id, Monto, fecha_compra,direccion, hora_de_compra, Nombre_receptor, Contacto_receptor, status_venta, Codigo_de_Transaccion, Estado_de_Orden, id_boleta) VALUES(?,?,?,?,?,?)";
+      String sql = "UPDATE Venta SET Estado_de_Orden, red_social, ID_Pack,fecha_entrega, Bloque_horario, direccion, Nombre_receptor, Contacto_receptor) VALUES(?,?,?,?,?,?,?,?)";
       try {
           ps =  conn.prepareStatement(sql);
-          ps.setInt(2, vent.());
-          ps.setBoolean(3, vent.isEstado());
-          ps.setDate(4, (java.sql.Date) vent.getNacimiento());
-          ps.setString(5, vent.getCelular());
-          ps.setString(5, vent.getDireccion());
-          ps.setString(5, vent.getRedSocial());
+          ps.setString(1, vent.getEstadoDeOrden());
+          ps.setInt(2, vent.getRrss());
+          ps.setInt(3, vent.getIdPack());
+          ps.setDate(4, (java.sql.Date) vent.getFechaEntrega());
+          ps.setDate(5, (java.sql.Date) vent.getBloqueHorario());
+          ps.setString(6, vent.getDireccion());
+          ps.setString(7, vent.getReceptor());
+          ps.setString(8, vent.getContactoReceptor());      
           ps.execute();
           return true;
       } catch (SQLException e){
@@ -89,7 +100,7 @@ public class ConsultaVentas {
       String sql = "SELECT * FROM Ventas WHERE RUT=?  ";
       try {
           ps =  conn.prepareStatement(sql);
-          ps.setString(1, vent.getRut());
+          ps.setInt(1, vent.getIdCliente());
           rs = ps.executeQuery();
           if (!rs.absolute(1)) {
               System.out.println("Cliente no encontrado");

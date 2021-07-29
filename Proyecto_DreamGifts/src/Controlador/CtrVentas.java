@@ -33,6 +33,7 @@ public class CtrVentas implements ActionListener {
     private static ConsultaRedSocial conrrss = new ConsultaRedSocial();
     private static ConsultaComuna concomu = new ConsultaComuna();
     private static ConsultasBanco conban = new ConsultasBanco();
+   // privata static ConsultaPack conpack = new ConsultaPack();
     
     public void iniciar(){
         if (!venta.isVisible()){
@@ -64,12 +65,10 @@ public class CtrVentas implements ActionListener {
     public void ObtenName (){
         String NameClient;
         NameClient = conCliente.buscarNamePorRut(this.ObtenerRUT());
-        venta.VNameClient.setText(NameClient);
-                
+        venta.VNameClient.setText(NameClient);            
     }
     
-    
-      
+        
     public void borrarTabla(JTable tabla){
        DefaultTableModel rm = (DefaultTableModel) tabla.getModel();
        while (rm.getRowCount() > 0){
@@ -79,9 +78,9 @@ public class CtrVentas implements ActionListener {
     
    public boolean agregarVentas(){
        Venta vent = new Venta();
-       vent.setRut(this.ObtenerRUT());
        DefaultComboBoxModel CbRrss = (DefaultComboBoxModel) venta.VRedSocialClient.getModel();
        DefaultComboBoxModel CbEstadoDePago = (DefaultComboBoxModel) venta.EstadoDePago.getModel();
+       //DefaultComboBoxModel CbPack = (DefaultComboBoxModel) venta.PackVenta.getModel();
        DefaultComboBoxModel CbEstadoDeOrden = (DefaultComboBoxModel) venta.EstadoDeOrden.getModel();
        vent.setDireccion(venta.VAddrClient.getText());
        vent.setIdCliente(conCliente.buscarIdPorRut(this.ObtenerRUT()));
@@ -90,7 +89,7 @@ public class CtrVentas implements ActionListener {
        vent.setCodigoTransaccion(venta.codigoTransaccion.getText());
        vent.setRrss((int) CbRrss.getSelectedItem());
        vent.setIdEstadoPago((int) CbEstadoDePago.getSelectedItem());
-       vent.setEstado((int) CbEstadoDeOrden.getSelectedItem());
+       vent.setEstadoDeOrden((String) CbEstadoDeOrden.getSelectedItem());
        venta.rutvent.setText("");
        venta.dvclient.setText("");
        venta.VAddrClient.setText("");

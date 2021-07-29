@@ -120,7 +120,7 @@ public class ConsultaCliente {
             rs.next();
             if (!rs.absolute(1)) {
                 System.out.println("Cliente no encontrado");
-              return null; 
+              return "Cliente No Encontrado"; 
             }else{
                 System.out.println("cliente encontrado");
                 rut = rs.getString(2);

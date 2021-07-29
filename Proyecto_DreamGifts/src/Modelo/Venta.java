@@ -1,5 +1,8 @@
 package Modelo;
 
+import java.util.Date;
+
+
 
 public class Venta {
     private int id;
@@ -9,12 +12,16 @@ public class Venta {
     private int idBanco;
     private int idEstadoPago;
     private int monto;
+    private int idcomuna;
+    private Date FechaCompra;
     private String direccion;
     private String receptor;
     private String contactoReceptor;
-    private boolean estado;
     private String codigoTransaccion;
+    private String EstadoDeOrden;
     private int idBoleta;
+    private Date FechaEntrega;
+    private Date BloqueHorario;
 
     public int getId() {
         return id;
@@ -96,14 +103,6 @@ public class Venta {
         this.contactoReceptor = contactoReceptor;
     }
 
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
-
     public String getCodigoTransaccion() {
         return codigoTransaccion;
     }
@@ -120,8 +119,48 @@ public class Venta {
         this.idBoleta = idBoleta;
     }
 
-    public void setRut(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    public void setRut(String text) {
+  //      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
+
+    public int getIdcomuna() {
+        return idcomuna;
+    }
+
+    public void setIdcomuna(int idcomuna) {
+        this.idcomuna = idcomuna;
+    }
+
+    public Date getFechaCompra() {
+        return FechaCompra;
+    }
+
+    public void setFechaCompra(Date FechaCompra) {
+        this.FechaCompra = FechaCompra;
+    }
+
+    public String getEstadoDeOrden() {
+        return EstadoDeOrden;
+    }
+
+    public void setEstadoDeOrden(String EstadoDeOrden) {
+        this.EstadoDeOrden = EstadoDeOrden;
+    }
+
+    public Date getFechaEntrega() {
+        return FechaEntrega;
+    }
+
+    public void setFechaEntrega(Date FechaEntrega) {
+        this.FechaEntrega = FechaEntrega;
+    }
+
+    public Date getBloqueHorario() {
+        return BloqueHorario;
+    }
+
+    public void setBloqueHorario(Date BloqueHorario) {
+        this.BloqueHorario = BloqueHorario;
     }
     
     
