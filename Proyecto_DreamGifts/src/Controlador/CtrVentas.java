@@ -11,6 +11,7 @@ import Modelo.ConsultaVentas;
 import Modelo.Cliente;
 import Modelo.ConsultaCliente;
 import Modelo.ConsultaComuna;
+import Modelo.ConsultaPack;
 import Modelo.ConsultaRedSocial;
 import Modelo.ConsultasBanco;
 import java.awt.event.ActionEvent;
@@ -33,7 +34,7 @@ public class CtrVentas implements ActionListener {
     private static ConsultaRedSocial conrrss = new ConsultaRedSocial();
     private static ConsultaComuna concomu = new ConsultaComuna();
     private static ConsultasBanco conban = new ConsultasBanco();
-   // privata static ConsultaPack conpack = new ConsultaPack();
+    private static ConsultaPack conpack = new ConsultaPack();
     
     public void iniciar(){
         if (!venta.isVisible()){
@@ -46,6 +47,7 @@ public class CtrVentas implements ActionListener {
        venta.SaveVenta.addActionListener(this);
        venta.CancelVenta.addActionListener(this);
        venta.SearchClient.addActionListener(this);
+       venta.SearchClient1.addActionListener(this);
        this.actualizarTablaVentas();
    }
    
@@ -62,12 +64,25 @@ public class CtrVentas implements ActionListener {
       return rutclient;
   }
     
+    public String ObtenerRUTHist () {
+      String rutobtn2;
+         rutobtn2 = (venta.rutventhis.getText()+venta.dvventhist.getText());
+      String rutclient2 = rutobtn2;
+      System.out.println(rutclient2);
+      return rutclient2;
+  }
+    
     public void ObtenName (){
         String NameClient;
         NameClient = conCliente.buscarNamePorRut(this.ObtenerRUT());
         venta.VNameClient.setText(NameClient);            
     }
     
+    public void ObtenName2 (){
+        String NameClient2;
+        NameClient2 = conCliente.buscarNamePorRut(this.ObtenerRUTHist());
+        venta.namehistor.setText(NameClient2);            
+    }
         
     public void borrarTabla(JTable tabla){
        DefaultTableModel rm = (DefaultTableModel) tabla.getModel();
@@ -80,7 +95,7 @@ public class CtrVentas implements ActionListener {
        Venta vent = new Venta();
        DefaultComboBoxModel CbRrss = (DefaultComboBoxModel) venta.VRedSocialClient.getModel();
        DefaultComboBoxModel CbEstadoDePago = (DefaultComboBoxModel) venta.EstadoDePago.getModel();
-       //DefaultComboBoxModel CbPack = (DefaultComboBoxModel) venta.PackVenta.getModel();
+       DefaultComboBoxModel CbPack = (DefaultComboBoxModel) venta.PackVenta.getModel();
        DefaultComboBoxModel CbEstadoDeOrden = (DefaultComboBoxModel) venta.EstadoDeOrden.getModel();
        vent.setDireccion(venta.VAddrClient.getText());
        vent.setIdCliente(conCliente.buscarIdPorRut(this.ObtenerRUT()));
@@ -88,6 +103,7 @@ public class CtrVentas implements ActionListener {
        vent.setContactoReceptor(venta.VNumberContact.getText());
        vent.setCodigoTransaccion(venta.codigoTransaccion.getText());
        vent.setRrss((int) CbRrss.getSelectedItem());
+       vent.setIdPack((int) CbPack.getSelectedItem());
        vent.setIdEstadoPago((int) CbEstadoDePago.getSelectedItem());
        vent.setEstadoDeOrden((String) CbEstadoDeOrden.getSelectedItem());
        venta.rutvent.setText("");
@@ -139,9 +155,17 @@ public class CtrVentas implements ActionListener {
             this.agregarVentas();
             this.actualizarTablaVentas();
         }   
+        if(e.getSource() == venta.SaveVentHist){
+            this.agregarVentas();
+            this.actualizarTablaVentas();
+        }   
         if (e.getSource() == venta.SearchClient) {
             System.out.println("buscando rut");
             this.ObtenName();
+        }
+        if (e.getSource() == venta.SearchClient1) {
+            System.out.println("buscando rut");
+            this.ObtenName2();
         }
        
     }
