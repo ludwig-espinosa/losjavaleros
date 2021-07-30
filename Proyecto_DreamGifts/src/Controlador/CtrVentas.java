@@ -20,6 +20,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashSet;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -35,6 +36,7 @@ public class CtrVentas implements ActionListener {
     private static ConsultaComuna concomu = new ConsultaComuna();
     private static ConsultasBanco conban = new ConsultasBanco();
     private static ConsultaPack conpack = new ConsultaPack();
+    private static ConsultaComuna concom = new ConsultaComuna();
     
     public void iniciar(){
         if (!venta.isVisible()){
@@ -48,11 +50,15 @@ public class CtrVentas implements ActionListener {
        venta.CancelVenta.addActionListener(this);
        venta.SearchClient.addActionListener(this);
        venta.SearchClient1.addActionListener(this);
+       venta.PackVenta.addActionListener(this);
        this.actualizarTablaVentas();
    }
    
-    public CtrVentas(){
+    public CtrVentas() throws SQLException{
       this.iniciarVentas();
+      this.actualizarTablaVentas();
+      this.actualizarComboBoxComuna();
+      
       
    }
     
@@ -83,6 +89,7 @@ public class CtrVentas implements ActionListener {
         NameClient2 = conCliente.buscarNamePorRut(this.ObtenerRUTHist());
         venta.namehistor.setText(NameClient2);            
     }
+    
         
     public void borrarTabla(JTable tabla){
        DefaultTableModel rm = (DefaultTableModel) tabla.getModel();
@@ -97,15 +104,18 @@ public class CtrVentas implements ActionListener {
        DefaultComboBoxModel CbEstadoDePago = (DefaultComboBoxModel) venta.EstadoDePago.getModel();
        DefaultComboBoxModel CbPack = (DefaultComboBoxModel) venta.PackVenta.getModel();
        DefaultComboBoxModel CbEstadoDeOrden = (DefaultComboBoxModel) venta.EstadoDeOrden.getModel();
+       DefaultComboBoxModel CbComuna = (DefaultComboBoxModel) venta.ComunaVent.getModel();
        vent.setDireccion(venta.VAddrClient.getText());
        vent.setIdCliente(conCliente.buscarIdPorRut(this.ObtenerRUT()));
        vent.setReceptor(venta.VNameRecp.getText());
        vent.setContactoReceptor(venta.VNumberContact.getText());
        vent.setCodigoTransaccion(venta.codigoTransaccion.getText());
-       vent.setRrss((int) CbRrss.getSelectedItem());
-       vent.setIdPack((int) CbPack.getSelectedItem());
+       vent.setRrss((int) conrrss.RRSSIdPorNombre((String) CbRrss.getSelectedItem()));
+       vent.setIdPack((int) conpack.PackIdPorNombre((String) CbPack.getSelectedItem()));
        vent.setIdEstadoPago((int) CbEstadoDePago.getSelectedItem());
        vent.setEstadoDeOrden((String) CbEstadoDeOrden.getSelectedItem());
+       vent.setIdcomuna((int) concom.ComunaIdPorNombre((String) CbComuna.getSelectedItem()));
+       vent.setMonto(Integer.parseInt(venta.ValorVenta.getText()));
        venta.rutvent.setText("");
        venta.dvclient.setText("");
        venta.VAddrClient.setText("");
@@ -113,6 +123,7 @@ public class CtrVentas implements ActionListener {
        venta.VNameRecp.setText("");
        venta.VNumberContact.setText("");
        venta.codigoTransaccion.setText("");
+       venta.ValorVenta.setText("");
 
          if (!conventas.buscar(vent)) {
              System.out.println("intentando agregar");
@@ -137,9 +148,10 @@ public class CtrVentas implements ActionListener {
                 row[1] = rs.getString("Nombre de Cliente");
                 row[2] = rs.getString("Fecha de Entrega");
                 row[3] = rs.getString("Bloque Horario");
-                row[4] = rs.getString("Direccion de Entrega");
-                row[5] = rs.getString("Nro de Contacto");
-                row[5] = rs.getBoolean("Estado");
+                row[4] = rs.getString("Comuna");
+                row[5] = rs.getString("Direccion de Entrega");
+                row[6] = rs.getString("Nro de Contacto");
+                row[7] = rs.getBoolean("Estado");
 
                 rm.addRow(row);  
             }
@@ -147,6 +159,44 @@ public class CtrVentas implements ActionListener {
                 System.out.println(ex);
         }
     }
+   
+   
+   public void actualizarComboBoxComuna() throws SQLException{
+       DefaultComboBoxModel cbModel = (DefaultComboBoxModel) venta.ComunaVent.getModel();
+       cbModel.removeAllElements();
+       ResultSet rs = concom.llamarTodos();
+       while (rs.next()){
+           cbModel.addElement(rs.getString(2));
+       }
+          
+   }
+   
+   public void actualizarComboBoxPack() throws SQLException{
+       DefaultComboBoxModel cbModel = (DefaultComboBoxModel) venta.PackVenta.getModel();
+       cbModel.removeAllElements();
+       ResultSet rs = conpack.llamarTodos();
+       while (rs.next()){
+           cbModel.addElement(rs.getString(2));
+       }
+          
+   }
+   
+   public void actualizarComboBoxRRSS() throws SQLException{
+       DefaultComboBoxModel cbModel = (DefaultComboBoxModel) venta.VRedSocialClient.getModel();
+       cbModel.removeAllElements();
+       ResultSet rs = conrrss.llamarTodos();
+       while (rs.next()){
+           cbModel.addElement(rs.getString(2));
+       }     
+   }
+   
+   public void actualizarPrecioPack() {
+       int monto;
+       monto = conpack.buscarPrecioPorNombre(venta.PackVenta.getModel().getSelectedItem().toString());
+       venta.ValorVenta.setText(Integer.toString(monto));          
+       }
+   
+   
    /* Fin CRUD Ventas*/   
 
     @Override
@@ -167,7 +217,10 @@ public class CtrVentas implements ActionListener {
             System.out.println("buscando rut");
             this.ObtenName2();
         }
-       
+       if (e.getSource() == venta.PackVenta) {
+            System.out.println("buscando precio");
+            this.actualizarPrecioPack();
+        }
     }
     
 }
