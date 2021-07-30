@@ -99,13 +99,13 @@ public class Ventas extends javax.swing.JFrame {
 
         TablaVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Orden de Venta", "Nombre de Cliente", "Fecha de Entrega", "Bloque Horario", "Direccion de Entrega", "Nro de Contacto", "Estado"
+                "Orden de Venta", "Nombre de Cliente", "Fecha de Entrega", "Bloque Horario", "Comuna", "Direccion de Entrega", "Nro de Contacto", "Estado"
             }
         ));
         jScrollPane2.setViewportView(TablaVentas);

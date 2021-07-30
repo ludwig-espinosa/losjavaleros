@@ -93,6 +93,29 @@ public class ConsultaPack {
       }
     }
      
+    public String buscarNamePorId (String pack){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sql = "SELECT ID_Pakc, Nombre FROM Cliente where rut=?  ";
+        try {
+            ps = conn.prepareStatement (sql);
+            ps.setString(1, pack);
+            rs = ps.executeQuery();
+            rs.next();
+            if (!rs.absolute(1)) {
+                System.out.println("Cliente no encontrado");
+              return "Cliente No Encontrado"; 
+            }else{
+                System.out.println("cliente encontrado");
+                pack = rs.getString(2);
+                return pack;
+            }
+            
+        } catch (SQLException e) {
+           System.out.println(e);
+            return null;
+        }
+    }
      
      
 }
