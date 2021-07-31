@@ -77,17 +77,16 @@ public class ConsultaVentas {
     public boolean modificar(Venta vent){
     
       PreparedStatement ps = null;
-      String sql = "UPDATE Venta SET Estado_de_Orden, red_social, ID_Pack,fecha_entrega, Bloque_horario, direccion, Nombre_receptor, Contacto_receptor) VALUES(?,?,?,?,?,?,?,?)";
+      String sql = "UPDATE Venta SET Estado_de_Orden, fecha_entrega, Bloque_horario, direccion, Nombre_receptor, Contacto_receptor, comuna_id) VALUES(?,?,?,?,?,?,?)";
       try {
           ps =  conn.prepareStatement(sql);
           ps.setString(1, vent.getEstadoDeOrden());
-          ps.setInt(2, vent.getRrss());
-          ps.setInt(3, vent.getIdPack());
-          ps.setDate(4, (java.sql.Date) vent.getFechaEntrega());
-          ps.setDate(5, (java.sql.Date) vent.getBloqueHorario());
-          ps.setString(6, vent.getDireccion());
-          ps.setString(7, vent.getReceptor());
-          ps.setString(8, vent.getContactoReceptor());      
+          ps.setDate(2, (java.sql.Date) vent.getFechaEntrega());
+          ps.setDate(3, (java.sql.Date) vent.getBloqueHorario());
+          ps.setString(4, vent.getDireccion());
+          ps.setString(5, vent.getReceptor());
+          ps.setString(6, vent.getContactoReceptor());      
+          ps.setInt(7, vent.getIdcomuna()); 
           ps.execute();
           return true;
       } catch (SQLException e){

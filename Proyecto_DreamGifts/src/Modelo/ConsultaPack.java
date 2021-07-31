@@ -96,7 +96,7 @@ public class ConsultaPack {
     public String buscarNamePorId (String pack){
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = "SELECT ID_Pakc, Nombre FROM Cliente where rut=?  ";
+        String sql = "SELECT ID_Pack, nombre, precio FROM Pack ID_Pack=?  ";
         try {
             ps = conn.prepareStatement (sql);
             ps.setString(1, pack);
@@ -116,6 +116,52 @@ public class ConsultaPack {
             return null;
         }
     }
+    public int buscarPrecioPorNombre (String nombre){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int precio;
+        String sql = "SELECT * FROM Pack WHERE nombre=?  ";
+        try {
+            ps = conn.prepareStatement (sql);
+            ps.setString(1, nombre);
+            rs = ps.executeQuery();
+            rs.next();
+            if (!rs.absolute(1)) {
+                System.out.println("Cliente no encontrado");
+              return -1; 
+            }else{
+                System.out.println("cliente encontrado");
+                precio = rs.getInt(3);
+                return precio;
+            }
+            
+        } catch (SQLException e) {
+           System.out.println(e);
+            return -1;
+        }
+    }
+     public int PackIdPorNombre (String Pack){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int id;
+        String sql = "SELECT * FROM Pack WHERE nombre=?  ";
+        try {
+            ps =  conn.prepareStatement(sql);
+            ps.setString(1, Pack);
+            rs = ps.executeQuery();
+            rs.next();
+            if (!rs.absolute(1)) {
+                System.out.println("Cliente no encontrado");
+              return -1; 
+            }else{
+                id = Integer.parseInt(rs.getString(1));
+                return id;
+            }
+                
+        } catch (SQLException e){
+            return -1;
+        }
+     }
      
      
 }

@@ -79,11 +79,25 @@ public class ConsultaComuna{
       }
      }
      
+     public ResultSet llamarActivos(){
+         PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "SELECT * FROM comunas WHERE estado=true";
+      try {
+          ps =  conn.prepareStatement(sql);
+          rs = ps.executeQuery();
+          return rs;
+      } catch (SQLException e){
+          return null;
+      }
+     }
+     
+     
       public int ComunaIdPorNombre (String Comuna){
         PreparedStatement ps = null;
         ResultSet rs = null;
         int id;
-        String sql = "SELECT * FROM RRSS WHERE Nombre=?  ";
+        String sql = "SELECT * FROM comunas WHERE nombre=?  ";
         try {
             ps =  conn.prepareStatement(sql);
             ps.setString(1, Comuna);
