@@ -103,7 +103,6 @@ public class CtrVentas implements ActionListener {
     
    public boolean agregarVentas(){
        Venta vent = new Venta();
-       java.util.Date fecha = new Date();
        DefaultComboBoxModel CbRrss = (DefaultComboBoxModel) venta.VRedSocialClient.getModel();
        DefaultComboBoxModel CbEstadoDePago = (DefaultComboBoxModel) venta.EstadoDePago.getModel();
        DefaultComboBoxModel CbPack = (DefaultComboBoxModel) venta.PackVenta.getModel();

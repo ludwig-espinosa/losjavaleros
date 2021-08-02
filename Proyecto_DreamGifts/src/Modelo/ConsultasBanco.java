@@ -99,7 +99,7 @@ public class ConsultasBanco{
                 System.out.println("Banco no encontrado");
               return -1; 
             }else{
-                id = Integer.parseInt(rs.getString(1));
+                id = Integer.parseInt(rs.getString(2));
                 return id;
             }        
         } catch (SQLException e){

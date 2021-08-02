@@ -53,13 +53,14 @@ public class ConsultaVentas {
 
   
     public boolean modificar(Venta vent){
-    
       PreparedStatement ps = null;
+      java.sql.Date fechaentrega;
+      fechaentrega = new java.sql.Date(vent.getFechaEntrega().getTime());
       String sql = "UPDATE Venta SET Estado_de_Orden, fecha_entrega, Bloque_horario, direccion, Nombre_receptor, Contacto_receptor, comuna_id) VALUES(?,?,?,?,?,?,?)";
       try {
           ps =  conn.prepareStatement(sql);
           ps.setString(1, vent.getEstadoDeOrden());
-          ps.setDate(2, (java.sql.Date) vent.getFechaEntrega());
+          ps.setDate(2, fechaentrega);
           ps.setString(3, vent.getBloqueHorario());
           ps.setString(4, vent.getDireccion());
           ps.setString(5, vent.getReceptor());
