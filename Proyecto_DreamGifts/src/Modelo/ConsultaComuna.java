@@ -82,7 +82,7 @@ public class ConsultaComuna{
      public ResultSet llamarActivos(){
          PreparedStatement ps = null;
       ResultSet rs = null;
-      String sql = "SELECT * FROM comunas WHERE estado=true";
+      String sql = "SELECT * FROM comunas WHERE estado=1";
       try {
           ps =  conn.prepareStatement(sql);
           rs = ps.executeQuery();

@@ -1,16 +1,21 @@
 package Controlador;
+import static Controlador.CtrLogin.lgn;
 import DreamsGifts.*;
 import Modelo.Articulo;
+import Modelo.Categoria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
 import Modelo.ConsultaArticulo;
+import Modelo.ConsultaCategoria;
 
 import Modelo.ConsultaPack;
 import Modelo.DetallePack;
 import Modelo.Pack;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 
 public class CtrInventario implements ActionListener{
     private static Inventario inven = new Inventario();
@@ -19,6 +24,7 @@ public class CtrInventario implements ActionListener{
     private static ConsultaPack invenPack = new ConsultaPack();
     //private static ConsultaProveedor invenProvee = new ConsultaProveedor();
     private static ConsultaPack conPack = new ConsultaPack();
+    private static ConsultaCategoria conCat = new ConsultaCategoria();
 
     public void iniciar(){
          if (!inven.isVisible()){
@@ -31,6 +37,14 @@ public class CtrInventario implements ActionListener{
 
 
      }
+     
+     
+    public void borrarTabla(JTable tabla){
+       DefaultTableModel rm = (DefaultTableModel) tabla.getModel();
+       while (rm.getRowCount() > 0){
+           rm.removeRow(0);
+       }
+   }
 //      public void iniciarArticulo(){
 //           inven.ArticuloBtnAdd(this);
 //
@@ -96,7 +110,29 @@ public class CtrInventario implements ActionListener{
    
    public void iniciarPackInicio(){
     inven.packCrearAdd.addActionListener(this);
+    this.actualizarTablaCategoria();
 }
+   
+   public void actualizarTablaCategoria(){
+        this.borrarTabla(inven.categoriaTable);
+        ResultSet rs = conCat.llamarTodos();
+        Object[] row;
+        row = new Object[3];
+        DefaultTableModel rm = (DefaultTableModel) inven.categoriaTable.getModel();
+        try {
+            while (rs.next()){
+                row[0] = rs.getString(3);
+                row[1] = rs.getString(2);
+                row[2] = rs.getBoolean(4);
+
+                rm.addRow(row);  
+            }
+            } catch (SQLException ex) {
+                System.out.println(ex);
+        }
+   }
+   
+   
    public void agregarPack(){
        Pack pack = new Pack();
        pack.setDescripcion(inven.packCrearDesc.getText());
@@ -116,7 +152,23 @@ public class CtrInventario implements ActionListener{
        
    }
    
+   /*         INICIO CRUD PACK          */
+   public void iniciarcategoria(){
+       inven.categoriaSave.addActionListener(this);
+   }
    
+   public void agregarCategoria(){
+       Categoria cat = new Categoria();
+       cat.setCodigo(inven.categoriaCodigo.getText());
+       cat.setDescripcion(inven.categoriaDesc.getText());
+       cat.setNombre(inven.categoriaNombre.getText());
+       cat.setEstado(inven.categoriaActive.isSelected());
+       if (conCat.registrar(cat)) {
+           JOptionPane.showMessageDialog(lgn, "categoria agregada con exito");   
+       } else {
+           JOptionPane.showMessageDialog(lgn, "hubo un error al agregar la categoria");
+       }
+   }
    
    
     @Override
@@ -128,6 +180,10 @@ public class CtrInventario implements ActionListener{
         if (e.getSource() == inven.packCrearAdd) {
             System.out.println("intentando registrar pack");
             this.agregarPack();
+        }
+        if (e.getSource() == inven.categoriaSave) {
+            this.agregarCategoria();
+            this.actualizarTablaCategoria();
         }
     }
    
