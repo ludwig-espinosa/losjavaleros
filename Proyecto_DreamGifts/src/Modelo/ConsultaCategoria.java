@@ -13,9 +13,10 @@ public class ConsultaCategoria {
       String sql = "INSERT INTO Categoria_Articulo (Nombre, cod_categoria,estado, descripcion) VALUES(?,?,?,?)";
       try {
           ps =  conn.prepareStatement(sql);
-          ps.setString(1, cat.getCodigo());
-          ps.setString(2, cat.getNombre());
+          ps.setString(1, cat.getNombre());
+          ps.setString(2, cat.getCodigo());
           ps.setBoolean(3, cat.getEstado());
+          ps.setString(4, cat.getDescripcion());
           ps.execute();
           System.out.println("registrado");
           return true;

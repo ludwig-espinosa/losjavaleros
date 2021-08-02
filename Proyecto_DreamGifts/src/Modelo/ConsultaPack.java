@@ -13,7 +13,6 @@ public class ConsultaPack {
       String sql = "INSERT INTO Pack (nombre, precio, estado) VALUES(?,?,?)";
       try {
           ps =  conn.prepareStatement(sql);;
-          ps.setInt(2, pack.getPrecio());
           ps.setString(1, pack.getNombre());
           ps.setInt(2, pack.getPrecio());
           ps.setBoolean(3, pack.isEstado());

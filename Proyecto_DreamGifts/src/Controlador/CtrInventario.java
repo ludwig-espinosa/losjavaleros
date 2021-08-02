@@ -34,7 +34,7 @@ public class CtrInventario implements ActionListener{
 
      public CtrInventario(){
          this.iniciarPackInicio();
-
+         this.iniciarcategoria();
 
      }
      
