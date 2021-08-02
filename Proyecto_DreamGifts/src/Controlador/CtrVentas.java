@@ -118,7 +118,7 @@ public class CtrVentas implements ActionListener {
        vent.setRrss((int) conrrss.RRSSIdPorNombre((String) CbRrss.getSelectedItem()));
        vent.setIdPack((int) conpack.PackIdPorNombre((String) CbPack.getSelectedItem()));
        vent.setIdBanco((int) conban.BancoIdPorNombre((String) CbBanco.getSelectedItem()));
-       vent.setIdEstadoPago((int) CbEstadoDePago.getSelectedItem());
+       vent.setEstadoPago((String) CbEstadoDePago.getSelectedItem());
        vent.setEstadoDeOrden((String) CbEstadoDeOrden.getSelectedItem());
        vent.setIdcomuna((int) concom.ComunaIdPorNombre((String) CbComuna.getSelectedItem()));
        vent.setMonto(Integer.parseInt(venta.ValorVenta.getText()));
@@ -171,7 +171,7 @@ public class CtrVentas implements ActionListener {
    public void actualizarComboBoxComuna() throws SQLException{
        DefaultComboBoxModel cbModel = (DefaultComboBoxModel) venta.ComunaVent.getModel();
        cbModel.removeAllElements();
-       ResultSet rs = concom.llamarTodos();
+       ResultSet rs = concom.llamarActivos();
        while (rs.next()){
            cbModel.addElement(rs.getString(2));
        }
@@ -181,7 +181,7 @@ public class CtrVentas implements ActionListener {
    public void actualizarComboBoxBanco() throws SQLException{
        DefaultComboBoxModel cbModel = (DefaultComboBoxModel) venta.BancoBox.getModel();
        cbModel.removeAllElements();
-       ResultSet rs = conban.llamarTodos();
+       ResultSet rs = conban.llamarActivos();
        while (rs.next()){
            cbModel.addElement(rs.getString(2));
        }
@@ -191,7 +191,7 @@ public class CtrVentas implements ActionListener {
    public void actualizarComboBoxPack() throws SQLException{
        DefaultComboBoxModel cbModel = (DefaultComboBoxModel) venta.PackVenta.getModel();
        cbModel.removeAllElements();
-       ResultSet rs = conpack.llamarTodos();
+       ResultSet rs = conpack.llamarACtivos();
        while (rs.next()){
            cbModel.addElement(rs.getString(2));
        }
@@ -201,7 +201,7 @@ public class CtrVentas implements ActionListener {
    public void actualizarComboBoxRRSS() throws SQLException{
        DefaultComboBoxModel cbModel = (DefaultComboBoxModel) venta.VRedSocialClient.getModel();
        cbModel.removeAllElements();
-       ResultSet rs = conrrss.llamarTodos();
+       ResultSet rs = conrrss.llamarActivos();
        while (rs.next()){
            cbModel.addElement(rs.getString(2));
        }     

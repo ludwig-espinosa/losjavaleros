@@ -72,6 +72,18 @@ public class ConsultaRedSocial {
       }
      }
      
+     public ResultSet llamarActivos(){
+         PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "SELECT * FROM RRSS WHERE estado=1";
+      try {
+          ps =  conn.prepareStatement(sql);
+          rs = ps.executeQuery();
+          return rs;
+      } catch (SQLException e){
+          return null;
+      }
+     }
       
     public int RRSSIdPorNombre (String namerrss){
         PreparedStatement ps = null;

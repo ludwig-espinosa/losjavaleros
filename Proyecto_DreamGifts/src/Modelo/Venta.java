@@ -10,7 +10,7 @@ public class Venta {
     private int rrss;
     private int idPack;
     private int idBanco;
-    private int idEstadoPago;
+    private String EstadoPago;
     private int monto;
     private int idcomuna;
     private Date FechaCompra;
@@ -63,14 +63,15 @@ public class Venta {
         this.idBanco = idBanco;
     }
 
-    public int getIdEstadoPago() {
-        return idEstadoPago;
+    public String getEstadoPago() {
+        return EstadoPago;
     }
 
-    public void setIdEstadoPago(int idEstadoPago) {
-        this.idEstadoPago = idEstadoPago;
+    public void setEstadoPago(String EstadoPago) {
+        this.EstadoPago = EstadoPago;
     }
 
+   
     public int getMonto() {
         return monto;
     }

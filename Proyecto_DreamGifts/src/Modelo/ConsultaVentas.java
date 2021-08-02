@@ -32,7 +32,7 @@ public class ConsultaVentas {
           ps.setInt(2, vent.getRrss());
           ps.setInt(3, vent.getIdPack());
           ps.setInt(4, vent.getIdBanco());
-          ps.setInt(5, vent.getIdEstadoPago());
+          ps.setString(5, vent.getEstadoPago());
           ps.setInt(6, vent.getIdcomuna());
           ps.setInt(7, vent.getMonto());
           ps.setDate(8, (java.sql.Date) vent.getFechaCompra());

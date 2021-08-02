@@ -72,6 +72,20 @@ public class ConsultasBanco{
           return null;
       }
     }
+     
+     public ResultSet llamarActivos(){
+         PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "SELECT * FROM Bancos WHERE estado=1";
+      try {
+          ps =  conn.prepareStatement(sql);
+          rs = ps.executeQuery();
+          return rs;
+      } catch (SQLException e){
+          return null;
+      }
+     }
+     
 public int BancoIdPorNombre (String banco){
         PreparedStatement ps = null;
         ResultSet rs = null;
