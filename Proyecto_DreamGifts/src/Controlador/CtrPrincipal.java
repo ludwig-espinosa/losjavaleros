@@ -14,12 +14,17 @@ public class CtrPrincipal implements ActionListener{
     private CtrAdministracion ctAd = new CtrAdministracion();
     private CtrReportes ctRep = new CtrReportes();
     private CtrVentas ctVent = new CtrVentas();
+    private CtrInventario ctInv;
     static Login lgn;
+    
+    
     public CtrPrincipal(Login login){
+        this.ctInv = new CtrInventario();
         this.princ.btnAdmin.addActionListener(this);
         this.princ.BotonSalir.addActionListener(this);
         this.princ.btnReportes.addActionListener(this);
         this.princ.princVenta.addActionListener(this);
+        this.princ.inventario.addActionListener(this);
         lgn = login;
         
     }
@@ -44,6 +49,9 @@ public class CtrPrincipal implements ActionListener{
         }
         if (e.getSource() == princ.princVenta) {
             ctVent.iniciar();
+        }
+        if (e.getSource() == princ.inventario) {
+            ctInv.iniciar();
         }
     }
 }
