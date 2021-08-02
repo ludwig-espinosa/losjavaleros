@@ -6,6 +6,7 @@ import Modelo.ConsultaUsuarios;
 import Modelo.Usuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 
@@ -15,7 +16,7 @@ public class CtrLogin implements ActionListener{
     public static ConsultaUsuarios conUser;
     public static CtrPrincipal ctrp;
     
-    public CtrLogin(){
+    public CtrLogin() throws SQLException {
         conn = new Conexion();
         conUser = new ConsultaUsuarios();
         lgn = new Login();

@@ -22,27 +22,7 @@ import java.text.SimpleDateFormat;
 public class ConsultaVentas {
     DateFormat form = new SimpleDateFormat("dd-MM-yyyy");
     ConsultaCliente conCli = new ConsultaCliente();
-   
-  
     
-  public boolean buscar(Cliente client){
-      PreparedStatement ps = null;
-      ResultSet rs = null;
-      String sql = "SELECT * FROM Cliente WHERE RUT=?  ";
-      try {
-          ps =  conn.prepareStatement(sql);
-          ps.setString(1, client.getRut());
-          rs = ps.executeQuery();
-          if (!rs.absolute(1)) {
-              System.out.println("Cliente no encontrado");
-            return false; 
-          }
-          return true;
-      } catch (SQLException e){
-          return false;
-      }
-    }
-  
   public boolean registrar(Venta vent){
       PreparedStatement ps = null;
       String sql = "INSERT INTO Ventas (ID_Cliente, red_social, ID_Pack, banco_id, Estado_de_Pago, comuna_id, Monto, fecha_compra,direccion, Nombre_receptor, Contacto_receptor, Codigo_de_Transaccion, Estado_de_Orden, id_boleta, fecha_entrega, Bloque_horario) VALUES(?,?,?,?,?,?)";

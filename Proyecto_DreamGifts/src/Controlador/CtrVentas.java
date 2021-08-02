@@ -8,7 +8,6 @@ package Controlador;
 import DreamsGifts.Ventas;
 import Modelo.Venta;
 import Modelo.ConsultaVentas;
-import Modelo.Cliente;
 import Modelo.ConsultaCliente;
 import Modelo.ConsultaComuna;
 import Modelo.ConsultaPack;
@@ -54,10 +53,13 @@ public class CtrVentas implements ActionListener {
        this.actualizarTablaVentas();
    }
    
-    public CtrVentas() throws SQLException{
+    public CtrVentas() throws SQLException {
       this.iniciarVentas();
       this.actualizarTablaVentas();
       this.actualizarComboBoxComuna();
+      this.actualizarComboBoxBanco();
+      this.actualizarComboBoxPack();
+      this.actualizarComboBoxRRSS();
       
       
    }
@@ -105,6 +107,7 @@ public class CtrVentas implements ActionListener {
        DefaultComboBoxModel CbPack = (DefaultComboBoxModel) venta.PackVenta.getModel();
        DefaultComboBoxModel CbEstadoDeOrden = (DefaultComboBoxModel) venta.EstadoDeOrden.getModel();
        DefaultComboBoxModel CbComuna = (DefaultComboBoxModel) venta.ComunaVent.getModel();
+       DefaultComboBoxModel CbBanco = (DefaultComboBoxModel) venta.BancoBox.getModel();
        vent.setDireccion(venta.VAddrClient.getText());
        vent.setIdCliente(conCliente.buscarIdPorRut(this.ObtenerRUT()));
        vent.setReceptor(venta.VNameRecp.getText());
@@ -112,6 +115,7 @@ public class CtrVentas implements ActionListener {
        vent.setCodigoTransaccion(venta.codigoTransaccion.getText());
        vent.setRrss((int) conrrss.RRSSIdPorNombre((String) CbRrss.getSelectedItem()));
        vent.setIdPack((int) conpack.PackIdPorNombre((String) CbPack.getSelectedItem()));
+       vent.setIdBanco((int) conban.BancoIdPorNombre((String) CbBanco.getSelectedItem()));
        vent.setIdEstadoPago((int) CbEstadoDePago.getSelectedItem());
        vent.setEstadoDeOrden((String) CbEstadoDeOrden.getSelectedItem());
        vent.setIdcomuna((int) concom.ComunaIdPorNombre((String) CbComuna.getSelectedItem()));
@@ -123,6 +127,7 @@ public class CtrVentas implements ActionListener {
        venta.VNameRecp.setText("");
        venta.VNumberContact.setText("");
        venta.codigoTransaccion.setText("");
+       venta.ValorVenta.setText("");
        venta.ValorVenta.setText("");
 
          if (!conventas.buscar(vent)) {
@@ -140,7 +145,7 @@ public class CtrVentas implements ActionListener {
         this.borrarTabla(venta.TablaVentas);
         ResultSet rs = conventas.llamarTodos();
         Object[] row;
-        row = new Object[6];
+        row = new Object[7];
         DefaultTableModel rm = (DefaultTableModel) venta.TablaVentas.getModel();
         try {
             while (rs.next()){
@@ -165,6 +170,16 @@ public class CtrVentas implements ActionListener {
        DefaultComboBoxModel cbModel = (DefaultComboBoxModel) venta.ComunaVent.getModel();
        cbModel.removeAllElements();
        ResultSet rs = concom.llamarTodos();
+       while (rs.next()){
+           cbModel.addElement(rs.getString(2));
+       }
+          
+   }
+   
+   public void actualizarComboBoxBanco() throws SQLException{
+       DefaultComboBoxModel cbModel = (DefaultComboBoxModel) venta.BancoBox.getModel();
+       cbModel.removeAllElements();
+       ResultSet rs = conban.llamarTodos();
        while (rs.next()){
            cbModel.addElement(rs.getString(2));
        }

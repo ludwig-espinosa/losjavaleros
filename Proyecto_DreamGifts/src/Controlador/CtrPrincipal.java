@@ -7,6 +7,7 @@ import Modelo.Conexion;
 import Modelo.ConsultaReportes;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class CtrPrincipal implements ActionListener{
     private Principal princ = new Principal();
@@ -18,8 +19,9 @@ public class CtrPrincipal implements ActionListener{
     static Login lgn;
     
     
-    public CtrPrincipal(Login login){
+    public CtrPrincipal(Login login) throws SQLException{
         this.ctInv = new CtrInventario();
+        this.ctVent = new CtrVentas();
         this.princ.btnAdmin.addActionListener(this);
         this.princ.BotonSalir.addActionListener(this);
         this.princ.btnReportes.addActionListener(this);

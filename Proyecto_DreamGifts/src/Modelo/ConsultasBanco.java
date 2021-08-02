@@ -76,14 +76,14 @@ public int BancoIdPorNombre (String banco){
         PreparedStatement ps = null;
         ResultSet rs = null;
         int id;
-        String sql = "SELECT * FROM RRSS WHERE Nombre=?  ";
+        String sql = "SELECT * FROM Banco WHERE Nombre=?  ";
         try {
             ps =  conn.prepareStatement(sql);
             ps.setString(1, banco);
             rs = ps.executeQuery();
             rs.next();
             if (!rs.absolute(1)) {
-                System.out.println("Cliente no encontrado");
+                System.out.println("Banco no encontrado");
               return -1; 
             }else{
                 id = Integer.parseInt(rs.getString(1));

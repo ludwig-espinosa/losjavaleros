@@ -104,7 +104,7 @@ public class ConsultaComuna{
             rs = ps.executeQuery();
             rs.next();
             if (!rs.absolute(1)) {
-                System.out.println("Cliente no encontrado");
+                System.out.println("Comuna no encontrado");
               return -1; 
             }else{
                 id = Integer.parseInt(rs.getString(1));
