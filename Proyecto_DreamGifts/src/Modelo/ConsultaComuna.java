@@ -115,4 +115,29 @@ public class ConsultaComuna{
             return -1;
         }
     }
+     
+      public String buscarNamePorId (int id){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String name;
+        String sql = "SELECT * FROM comunas WHERE id_comunas=?  ";
+        try {
+            ps = conn.prepareStatement (sql);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            rs.next();
+            if (!rs.absolute(1)) {
+                System.out.println("Cliente no encontrado");
+              return "Cliente No Encontrado"; 
+            }else{
+                System.out.println("cliente encontrado");
+                name = rs.getString(2);
+                return name;
+            }
+            
+        } catch (SQLException e) {
+           System.out.println(e);
+            return null;
+        }
+    }
 }

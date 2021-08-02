@@ -89,7 +89,7 @@ public class ConsultasBanco{
         PreparedStatement ps = null;
         ResultSet rs = null;
         int id;
-        String sql = "SELECT * FROM Banco WHERE Nombre=?";
+        String sql = "SELECT * FROM Bancos WHERE Nombre=?";
         try {
             ps =  conn.prepareStatement(sql);
             ps.setString(1, namebanco);
@@ -112,7 +112,7 @@ public class ConsultasBanco{
         PreparedStatement ps = null;
         ResultSet rs = null;
         int id;
-        String sql = "SELECT * FROM Banco WHERE Nombre=?";
+        String sql = "SELECT * FROM Bancos WHERE Nombre=?";
         try {
             ps =  conn.prepareStatement(sql);
             ps.setInt(1, idbanco);

@@ -134,7 +134,8 @@ public class CtrVentas implements ActionListener {
        venta.codigoTransaccion.setText("");
        venta.ValorVenta.setText("");
        venta.ValorVenta.setText("");
-
+            System.out.println(vent.getIdBanco());
+            System.out.println(CbBanco.getSelectedItem());
          if (!conventas.buscar(vent)) {
              System.out.println("intentando agregar");
              conventas.registrar(vent);
@@ -152,16 +153,20 @@ public class CtrVentas implements ActionListener {
         Object[] row;
         row = new Object[8];
         DefaultTableModel rm = (DefaultTableModel) venta.TablaVentas.getModel();
+       // String namclient;
+       // String comuna;
         try {
             while (rs.next()){
-                row[0] = rs.getString("Orden de Venta");
-                row[1] = rs.getString("Nombre de Cliente");
-                row[2] = rs.getString("Fecha de Entrega");
-                row[3] = rs.getString("Bloque Horario");
-                row[4] = rs.getString("Comuna");
-                row[5] = rs.getString("Direccion de Entrega");
-                row[6] = rs.getString("Nro de Contacto");
-                row[7] = rs.getBoolean("Estado");
+              //  namclient = conCliente.buscarNamePorId(rs.getInt("ID_Cliente"));
+               // comuna = concom.buscarNamePorId(rs.getInt("comuna_id"));
+                row[0] = rs.getString("ID_Venta");
+                row[1] = rs.getString(namclient);
+                row[2] = rs.getString("fecha_entrega");
+                row[3] = rs.getString("Bloque_horario");
+                row[4] = rs.getString(comuna);
+                row[5] = rs.getString("direccion");
+                row[6] = rs.getString("Contacto_receptor");
+                row[7] = rs.getString("Estado_de_Orden");
 
                 rm.addRow(row);  
             }
