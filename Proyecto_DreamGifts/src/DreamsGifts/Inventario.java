@@ -1520,6 +1520,11 @@ public class Inventario extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        categoriaTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                categoriaTableMouseClicked(evt);
+            }
+        });
         jScrollPane19.setViewportView(categoriaTable);
         if (categoriaTable.getColumnModel().getColumnCount() > 0) {
             categoriaTable.getColumnModel().getColumn(0).setResizable(false);
@@ -1709,6 +1714,19 @@ public class Inventario extends javax.swing.JFrame {
     private void categoriaSave1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoriaSave1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_categoriaSave1ActionPerformed
+
+    private void categoriaTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_categoriaTableMouseClicked
+        DefaultTableModel tm = (DefaultTableModel) this.categoriaTable.getModel();
+        int selectedRowIndex = this.categoriaTable.getSelectedRow();
+        
+        this.categoriaCodigo.setText(tm.getValueAt(selectedRowIndex, 0).toString());
+        this.categoriaNombre.setText(tm.getValueAt(selectedRowIndex, 1).toString());
+        if ((Boolean)tm.getValueAt(selectedRowIndex, 2)) {
+            this.categoriaActive.doClick();
+        } else {
+            this.categoriaDesac.doClick();
+        }
+    }//GEN-LAST:event_categoriaTableMouseClicked
 
     private void filtrar(String texto, JTable tabla){
         DefaultTableModel dm = (DefaultTableModel) tabla.getModel();

@@ -163,10 +163,14 @@ public class CtrInventario implements ActionListener{
        cat.setDescripcion(inven.categoriaDesc.getText());
        cat.setNombre(inven.categoriaNombre.getText());
        cat.setEstado(inven.categoriaActive.isSelected());
-       if (conCat.registrar(cat)) {
-           JOptionPane.showMessageDialog(lgn, "categoria agregada con exito");   
-       } else {
-           JOptionPane.showMessageDialog(lgn, "hubo un error al agregar la categoria");
+       if (!conCat.buscar(cat)) {
+            if (conCat.registrar(cat)) {
+                JOptionPane.showMessageDialog(lgn, "categoria agregada con exito");   
+            } else {
+                JOptionPane.showMessageDialog(lgn, "hubo un error al agregar la categoria");
+            }   
+       } else{
+           conCat.modificar(cat);
        }
    }
    
@@ -182,6 +186,7 @@ public class CtrInventario implements ActionListener{
             this.agregarPack();
         }
         if (e.getSource() == inven.categoriaSave) {
+            System.out.println("intentando agregar");
             this.agregarCategoria();
             this.actualizarTablaCategoria();
         }
