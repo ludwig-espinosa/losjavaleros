@@ -115,10 +115,10 @@ public class ConsultaPack {
             rs = ps.executeQuery();
             rs.next();
             if (!rs.absolute(1)) {
-                System.out.println("Cliente no encontrado");
-              return "Cliente No Encontrado"; 
+                System.out.println("Pack no encontrado");
+              return "Pack No Encontrado"; 
             }else{
-                System.out.println("cliente encontrado");
+                System.out.println("Pack encontrado");
                 pack = rs.getString(2);
                 return pack;
             }
@@ -139,10 +139,10 @@ public class ConsultaPack {
             rs = ps.executeQuery();
             rs.next();
             if (!rs.absolute(1)) {
-                System.out.println("Cliente no encontrado");
+                System.out.println("Pack no encontrado");
               return -1; 
             }else{
-                System.out.println("cliente encontrado");
+                System.out.println("Pack encontrado");
                 precio = rs.getInt(3);
                 return precio;
             }
@@ -163,7 +163,7 @@ public class ConsultaPack {
             rs = ps.executeQuery();
             rs.next();
             if (!rs.absolute(1)) {
-                System.out.println("Cliente no encontrado");
+                System.out.println("Pack no encontrado");
               return -1; 
             }else{
                 id = Integer.parseInt(rs.getString(1));

@@ -24,7 +24,7 @@ public class ConsultaVentas {
       java.sql.Date fechaentrega, fechaactual;
       fechaactual = new java.sql.Date(vent.getFechaCompra().getTime());
       fechaentrega = new java.sql.Date(vent.getFechaEntrega().getTime());
-      String sql = "INSERT INTO Ventas (ID_Cliente, red_social, ID_Pack, banco_id, Estado_de_Pago, comuna_id, Monto, fecha_compra,direccion, Nombre_receptor, Contacto_receptor, Codigo_de_Transaccion, Estado_de_Orden, fecha_entrega, Bloque_horario) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+      String sql = "INSERT INTO Ventas (ID_Cliente, red_social, ID_Pack, IdBanco, Estado_de_Pago, comuna_id, Monto, fecha_compra,direccion, Nombre_receptor, Contacto_receptor, Codigo_de_Transaccion, Estado_de_Orden, fecha_entrega, Bloque_horario) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
       try {
           ps =  conn.prepareStatement(sql);
           ps.setInt(1, vent.getIdCliente());
@@ -75,7 +75,7 @@ public class ConsultaVentas {
     public boolean buscar(Venta vent){
       PreparedStatement ps = null;
       ResultSet rs = null;
-      String sql = "SELECT * FROM Ventas WHERE RUT=?  ";
+      String sql = "SELECT * FROM Ventas WHERE ID_Cliente=?  ";
       try {
           ps =  conn.prepareStatement(sql);
           ps.setInt(1, vent.getIdCliente());

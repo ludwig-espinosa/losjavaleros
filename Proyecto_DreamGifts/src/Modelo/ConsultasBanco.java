@@ -89,7 +89,7 @@ public class ConsultasBanco{
         PreparedStatement ps = null;
         ResultSet rs = null;
         int id;
-        String sql = "SELECT * FROM Banco WHERE Nombre=?  ";
+        String sql = "SELECT * FROM Banco WHERE Nombre=?";
         try {
             ps =  conn.prepareStatement(sql);
             ps.setString(1, namebanco);
@@ -99,8 +99,32 @@ public class ConsultasBanco{
                 System.out.println("Banco no encontrado");
               return -1; 
             }else{
-                id = Integer.parseInt(rs.getString(2));
+                id = Integer.parseInt(rs.getString(1));
+                System.out.println(id);
                 return id;
+            }        
+        } catch (SQLException e){
+            return -1;
+        }
+    }
+    
+    public int BancoNombrePorId (int idbanco){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int id;
+        String sql = "SELECT * FROM Banco WHERE Nombre=?";
+        try {
+            ps =  conn.prepareStatement(sql);
+            ps.setInt(1, idbanco);
+            rs = ps.executeQuery();
+            rs.next();
+            if (!rs.absolute(1)) {
+                System.out.println("Banco no encontrado");
+              return -1; 
+            }else{
+                id = Integer.parseInt(rs.getString(1));
+                 System.out.println(idbanco);
+                return idbanco;
             }        
         } catch (SQLException e){
             return -1;
