@@ -21,7 +21,7 @@ public class Venta {
     private String EstadoDeOrden;
     private int idBoleta;
     private Date FechaEntrega;
-    private Date BloqueHorario;
+    private String BloqueHorario;
 
     public int getId() {
         return id;
@@ -156,11 +156,11 @@ public class Venta {
         this.FechaEntrega = FechaEntrega;
     }
 
-    public Date getBloqueHorario() {
+    public String getBloqueHorario() {
         return BloqueHorario;
     }
 
-    public void setBloqueHorario(Date BloqueHorario) {
+    public void setBloqueHorario(String BloqueHorario) {
         this.BloqueHorario = BloqueHorario;
     }
     

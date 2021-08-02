@@ -18,6 +18,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.HashSet;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
@@ -104,12 +105,14 @@ public class CtrVentas implements ActionListener {
     
    public boolean agregarVentas(){
        Venta vent = new Venta();
+       java.util.Date fecha = new Date();
        DefaultComboBoxModel CbRrss = (DefaultComboBoxModel) venta.VRedSocialClient.getModel();
        DefaultComboBoxModel CbEstadoDePago = (DefaultComboBoxModel) venta.EstadoDePago.getModel();
        DefaultComboBoxModel CbPack = (DefaultComboBoxModel) venta.PackVenta.getModel();
        DefaultComboBoxModel CbEstadoDeOrden = (DefaultComboBoxModel) venta.EstadoDeOrden.getModel();
        DefaultComboBoxModel CbComuna = (DefaultComboBoxModel) venta.ComunaVent.getModel();
        DefaultComboBoxModel CbBanco = (DefaultComboBoxModel) venta.BancoBox.getModel();
+       DefaultComboBoxModel CbBloqHor = (DefaultComboBoxModel) venta.BloqueHorarioVent.getModel();
        vent.setDireccion(venta.VAddrClient.getText());
        vent.setIdCliente(conCliente.buscarIdPorRut(this.ObtenerRUT()));
        vent.setReceptor(venta.VNameRecp.getText());
@@ -122,6 +125,9 @@ public class CtrVentas implements ActionListener {
        vent.setEstadoDeOrden((String) CbEstadoDeOrden.getSelectedItem());
        vent.setIdcomuna((int) concom.ComunaIdPorNombre((String) CbComuna.getSelectedItem()));
        vent.setMonto(Integer.parseInt(venta.ValorVenta.getText()));
+       vent.setFechaCompra((Date) venta.FechaCompraVent.getDate());
+       vent.setFechaEntrega((Date) venta.FechanEntregaVent.getDate());
+       vent.setBloqueHorario((String) CbBloqHor.getSelectedItem().toString());
        venta.rutvent.setText("");
        venta.dvclient.setText("");
        venta.VAddrClient.setText("");

@@ -25,7 +25,10 @@ public class ConsultaVentas {
     
   public boolean registrar(Venta vent){
       PreparedStatement ps = null;
-      String sql = "INSERT INTO Ventas (ID_Cliente, red_social, ID_Pack, banco_id, Estado_de_Pago, comuna_id, Monto, fecha_compra,direccion, Nombre_receptor, Contacto_receptor, Codigo_de_Transaccion, Estado_de_Orden, id_boleta, fecha_entrega, Bloque_horario) VALUES(?,?,?,?,?,?)";
+      java.sql.Date fechaentrega, fechaactual;
+      fechaactual = new java.sql.Date(vent.getFechaCompra().getTime());
+      fechaentrega = new java.sql.Date(vent.getFechaEntrega().getTime());
+      String sql = "INSERT INTO Ventas (ID_Cliente, red_social, ID_Pack, banco_id, Estado_de_Pago, comuna_id, Monto, fecha_compra,direccion, Nombre_receptor, Contacto_receptor, Codigo_de_Transaccion, Estado_de_Orden, fecha_entrega, Bloque_horario) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
       try {
           ps =  conn.prepareStatement(sql);
           ps.setInt(1, vent.getIdCliente());
@@ -35,15 +38,14 @@ public class ConsultaVentas {
           ps.setString(5, vent.getEstadoPago());
           ps.setInt(6, vent.getIdcomuna());
           ps.setInt(7, vent.getMonto());
-          ps.setDate(8, (java.sql.Date) vent.getFechaCompra());
+          ps.setDate(8, fechaactual);
           ps.setString(9, vent.getDireccion());
           ps.setString(10, vent.getReceptor());
           ps.setString(11, vent.getContactoReceptor());
           ps.setString(12, vent.getCodigoTransaccion());
           ps.setString(13, vent.getEstadoDeOrden());
-          ps.setInt(14, vent.getIdBoleta());
-          ps.setDate(15, (java.sql.Date) vent.getFechaEntrega());
-          ps.setDate(16, (java.sql.Date) vent.getBloqueHorario());
+          ps.setDate(14, fechaentrega);
+          ps.setString(15, vent.getBloqueHorario());
           ps.execute();
           System.out.println("registrado");
           return true;
@@ -62,7 +64,7 @@ public class ConsultaVentas {
           ps =  conn.prepareStatement(sql);
           ps.setString(1, vent.getEstadoDeOrden());
           ps.setDate(2, (java.sql.Date) vent.getFechaEntrega());
-          ps.setDate(3, (java.sql.Date) vent.getBloqueHorario());
+          ps.setString(3, vent.getBloqueHorario());
           ps.setString(4, vent.getDireccion());
           ps.setString(5, vent.getReceptor());
           ps.setString(6, vent.getContactoReceptor());      
