@@ -104,7 +104,7 @@ public class CtrInventario implements ActionListener{
        pack.setNombre(inven.packCrearNombre.getText());
        pack.setPrecio(Integer.parseInt(inven.packCrearValor.getText()));
        if (conPack.registrar(pack)){
-           DefaultTableModel table = (DefaultTableModel) inven.pacrCrearTabla.getModel();
+           DefaultTableModel table = (DefaultTableModel) inven.packCrearTabla.getModel();
            DetallePack detPack = new DetallePack();
            detPack.setIdPack(conPack.PackIdPorNombre(pack.getNombre()));
            for (int i = 0; i < table.getRowCount(); i++) {

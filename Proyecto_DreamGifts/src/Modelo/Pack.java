@@ -5,6 +5,7 @@ public class Pack {
     int precio;
     String nombre;
     boolean estado;
+    String descripcion;
 
     public boolean isEstado() {
         return estado;
@@ -37,5 +38,14 @@ public class Pack {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    
     
 }
