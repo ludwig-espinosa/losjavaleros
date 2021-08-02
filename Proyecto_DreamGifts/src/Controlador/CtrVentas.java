@@ -153,17 +153,17 @@ public class CtrVentas implements ActionListener {
         Object[] row;
         row = new Object[8];
         DefaultTableModel rm = (DefaultTableModel) venta.TablaVentas.getModel();
-       // String namclient;
-       // String comuna;
+        String namclient;
+        String comuna;
         try {
             while (rs.next()){
-              //  namclient = conCliente.buscarNamePorId(rs.getInt("ID_Cliente"));
-               // comuna = concom.buscarNamePorId(rs.getInt("comuna_id"));
+                namclient = conCliente.buscarNamePorId(rs.getInt("ID_Cliente"));
+                comuna = concom.buscarNamePorId(rs.getInt("comuna_id"));
                 row[0] = rs.getString("ID_Venta");
-                row[1] = rs.getString(namclient);
+                row[1] = namclient;
                 row[2] = rs.getString("fecha_entrega");
                 row[3] = rs.getString("Bloque_horario");
-                row[4] = rs.getString(comuna);
+                row[4] = comuna;
                 row[5] = rs.getString("direccion");
                 row[6] = rs.getString("Contacto_receptor");
                 row[7] = rs.getString("Estado_de_Orden");

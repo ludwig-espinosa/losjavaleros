@@ -148,21 +148,21 @@ public class Inventario extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        packCrearLista = new javax.swing.JList<>();
+        packLista = new javax.swing.JList<>();
         jScrollPane7 = new javax.swing.JScrollPane();
-        packCrearTabla = new javax.swing.JTable();
-        packCrearNombre = new javax.swing.JTextField();
-        packCrearValor = new javax.swing.JTextField();
+        packTabla = new javax.swing.JTable();
+        packNombre = new javax.swing.JTextField();
+        packValor = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         packCrearSum = new javax.swing.JButton();
         packCrearRem = new javax.swing.JButton();
-        packCrearAdd = new javax.swing.JButton();
+        packSave = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
         jScrollPane15 = new javax.swing.JScrollPane();
-        packCrearDesc = new javax.swing.JTextArea();
+        packDesc = new javax.swing.JTextArea();
         jScrollPane17 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        packCrearAdd1 = new javax.swing.JButton();
+        packListado = new javax.swing.JTable();
+        packCancel = new javax.swing.JButton();
         jPanel26 = new javax.swing.JPanel();
         jLabel41 = new javax.swing.JLabel();
         jTextField23 = new javax.swing.JTextField();
@@ -944,14 +944,14 @@ public class Inventario extends javax.swing.JFrame {
 
         jLabel28.setText("Código Artículos");
 
-        packCrearLista.setModel(new javax.swing.AbstractListModel<String>() {
+        packLista.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane6.setViewportView(packCrearLista);
+        jScrollPane6.setViewportView(packLista);
 
-        packCrearTabla.setModel(new javax.swing.table.DefaultTableModel(
+        packTabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -962,13 +962,13 @@ public class Inventario extends javax.swing.JFrame {
                 "Nombre", "Cantidad"
             }
         ));
-        packCrearTabla.setColumnSelectionAllowed(true);
-        jScrollPane7.setViewportView(packCrearTabla);
-        packCrearTabla.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        packTabla.setColumnSelectionAllowed(true);
+        jScrollPane7.setViewportView(packTabla);
+        packTabla.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
-        packCrearNombre.addActionListener(new java.awt.event.ActionListener() {
+        packNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                packCrearNombreActionPerformed(evt);
+                packNombreActionPerformed(evt);
             }
         });
 
@@ -978,16 +978,16 @@ public class Inventario extends javax.swing.JFrame {
 
         packCrearRem.setText("-");
 
-        packCrearAdd.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        packCrearAdd.setText("Guardar");
+        packSave.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        packSave.setText("Guardar");
 
         jLabel30.setText("Valor");
 
-        packCrearDesc.setColumns(20);
-        packCrearDesc.setRows(5);
-        jScrollPane15.setViewportView(packCrearDesc);
+        packDesc.setColumns(20);
+        packDesc.setRows(5);
+        jScrollPane15.setViewportView(packDesc);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        packListado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -998,10 +998,10 @@ public class Inventario extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane17.setViewportView(jTable2);
+        jScrollPane17.setViewportView(packListado);
 
-        packCrearAdd1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        packCrearAdd1.setText("Cancelar");
+        packCancel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        packCancel.setText("Cancelar");
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -1024,13 +1024,13 @@ public class Inventario extends javax.swing.JFrame {
                                 .addGap(14, 14, 14)
                                 .addComponent(jLabel30)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(packCrearValor, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(packValor, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel23Layout.createSequentialGroup()
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel23Layout.createSequentialGroup()
                                 .addComponent(jLabel26)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(packCrearNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(packNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel28))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1041,9 +1041,9 @@ public class Inventario extends javax.swing.JFrame {
                             .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel23Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addComponent(packCrearAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(packSave, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(packCrearAdd1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(packCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel23Layout.setVerticalGroup(
@@ -1058,8 +1058,8 @@ public class Inventario extends javax.swing.JFrame {
                     .addGroup(jPanel23Layout.createSequentialGroup()
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel26)
-                            .addComponent(packCrearNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(packCrearValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(packNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(packValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel30))
                         .addGap(58, 58, 58)
                         .addComponent(jLabel28)
@@ -1079,8 +1079,8 @@ public class Inventario extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(packCrearAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(packCrearAdd1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(packSave, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(packCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(62, 62, 62))))
         );
 
@@ -1378,9 +1378,9 @@ public class Inventario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void packCrearNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_packCrearNombreActionPerformed
+    private void packNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_packNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_packCrearNombreActionPerformed
+    }//GEN-LAST:event_packNombreActionPerformed
 
     private void proveedoresRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proveedoresRutActionPerformed
         // TODO add your handling code here:
@@ -1576,7 +1576,6 @@ public class Inventario extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane6;
     private javax.swing.JTabbedPane jTabbedPane7;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable7;
     private javax.swing.JTextArea jTextArea2;
@@ -1603,15 +1602,16 @@ public class Inventario extends javax.swing.JFrame {
     private java.awt.Label label5;
     private java.awt.Label label6;
     private java.awt.TextField nomTextArticulo;
-    public javax.swing.JButton packCrearAdd;
-    public javax.swing.JButton packCrearAdd1;
-    public javax.swing.JTextArea packCrearDesc;
-    public javax.swing.JList<String> packCrearLista;
-    public javax.swing.JTextField packCrearNombre;
+    public javax.swing.JButton packCancel;
     public javax.swing.JButton packCrearRem;
     public javax.swing.JButton packCrearSum;
-    public javax.swing.JTable packCrearTabla;
-    public javax.swing.JTextField packCrearValor;
+    public javax.swing.JTextArea packDesc;
+    public javax.swing.JList<String> packLista;
+    private javax.swing.JTable packListado;
+    public javax.swing.JTextField packNombre;
+    public javax.swing.JButton packSave;
+    public javax.swing.JTable packTabla;
+    public javax.swing.JTextField packValor;
     private java.awt.Choice proveedorTextArticulo;
     private javax.swing.JTextField proveedoresCiclo;
     private javax.swing.JTextField proveedoresRut;

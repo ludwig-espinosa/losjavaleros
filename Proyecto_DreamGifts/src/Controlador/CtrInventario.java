@@ -109,7 +109,7 @@ public class CtrInventario implements ActionListener{
 /*         INICIO CRUD PACK          */
    
    public void iniciarPackInicio(){
-    inven.packCrearAdd.addActionListener(this);
+    inven.packSave.addActionListener(this);
     this.actualizarTablaCategoria();
 }
    
@@ -135,12 +135,12 @@ public class CtrInventario implements ActionListener{
    
    public void agregarPack(){
        Pack pack = new Pack();
-       pack.setDescripcion(inven.packCrearDesc.getText());
+       pack.setDescripcion(inven.packDesc.getText());
        pack.setEstado(true);
-       pack.setNombre(inven.packCrearNombre.getText());
-       pack.setPrecio(Integer.parseInt(inven.packCrearValor.getText()));
+       pack.setNombre(inven.packNombre.getText());
+       pack.setPrecio(Integer.parseInt(inven.packValor.getText()));
        if (conPack.registrar(pack)){
-           DefaultTableModel table = (DefaultTableModel) inven.packCrearTabla.getModel();
+           DefaultTableModel table = (DefaultTableModel) inven.packTabla.getModel();
            DetallePack detPack = new DetallePack();
            detPack.setIdPack(conPack.PackIdPorNombre(pack.getNombre()));
            for (int i = 0; i < table.getRowCount(); i++) {
@@ -181,7 +181,7 @@ public class CtrInventario implements ActionListener{
 //            this.agregarArticulo();
 //            this.actualizarArticulos();
 //        }
-        if (e.getSource() == inven.packCrearAdd) {
+        if (e.getSource() == inven.packSave) {
             System.out.println("intentando registrar pack");
             this.agregarPack();
         }
