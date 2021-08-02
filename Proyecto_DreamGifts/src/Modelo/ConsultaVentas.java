@@ -100,7 +100,7 @@ public class ConsultaVentas {
           rs = ps.executeQuery();
           return rs;
       } catch (SQLException e){
-          return null;
+          return rs;
       }
     }
     

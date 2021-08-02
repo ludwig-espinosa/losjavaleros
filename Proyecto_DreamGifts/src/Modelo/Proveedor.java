@@ -2,6 +2,7 @@ package Modelo;
 
 public class Proveedor {
     int id;
+    String nombre;
     String rut;
     String fono;
     String direccion;
@@ -64,6 +65,15 @@ public class Proveedor {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
     
     
 }

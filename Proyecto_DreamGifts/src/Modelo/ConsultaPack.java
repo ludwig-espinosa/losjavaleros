@@ -64,13 +64,26 @@ public class ConsultaPack {
      public ResultSet llamarTodos(){
       PreparedStatement ps = null;
       ResultSet rs = null;
-      String sql = "SELECT * FROM pack";
+      String sql = "SELECT * FROM Pack";
       try {
           ps =  conn.prepareStatement(sql);
           rs = ps.executeQuery();
           return rs;
       } catch (SQLException e){
-          return null;
+          return rs;
+      }
+     }
+     
+     public ResultSet llamarACtivos(){
+      PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "SELECT * FROM Pack WHERE estado=1";
+      try {
+          ps =  conn.prepareStatement(sql);
+          rs = ps.executeQuery();
+          return rs;
+      } catch (SQLException e){
+          return rs;
       }
      }
 
@@ -113,7 +126,7 @@ public class ConsultaPack {
             
         } catch (SQLException e) {
            System.out.println(e);
-            return null;
+            return "";
         }
     }
     public int buscarPrecioPorNombre (String nombre){

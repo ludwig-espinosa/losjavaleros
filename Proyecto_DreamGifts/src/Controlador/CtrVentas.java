@@ -15,6 +15,7 @@ import Modelo.ConsultaRedSocial;
 import Modelo.ConsultasBanco;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashSet;
@@ -28,7 +29,7 @@ import javax.swing.table.DefaultTableModel;
  * @author lespinosa
  */
 public class CtrVentas implements ActionListener {
-    private static Ventas venta = new Ventas();
+    private static Ventas venta;
     private static ConsultaCliente conCliente = new ConsultaCliente();
     private static ConsultaVentas conventas = new ConsultaVentas();
     private static ConsultaRedSocial conrrss = new ConsultaRedSocial();
@@ -49,11 +50,12 @@ public class CtrVentas implements ActionListener {
        venta.CancelVenta.addActionListener(this);
        venta.SearchClient.addActionListener(this);
        venta.SearchClient1.addActionListener(this);
-       venta.PackVenta.addActionListener(this);
+       venta.PackVenta.addItemListener(this::comboBoxitemStateChanged);
        this.actualizarTablaVentas();
    }
    
     public CtrVentas() throws SQLException {
+      venta = new Ventas();
       this.iniciarVentas();
       this.actualizarTablaVentas();
       this.actualizarComboBoxComuna();
@@ -145,7 +147,7 @@ public class CtrVentas implements ActionListener {
         this.borrarTabla(venta.TablaVentas);
         ResultSet rs = conventas.llamarTodos();
         Object[] row;
-        row = new Object[7];
+        row = new Object[8];
         DefaultTableModel rm = (DefaultTableModel) venta.TablaVentas.getModel();
         try {
             while (rs.next()){
@@ -214,6 +216,13 @@ public class CtrVentas implements ActionListener {
    
    /* Fin CRUD Ventas*/   
 
+   public void comboBoxitemStateChanged(ItemEvent e) {
+    if (e.getStateChange() == ItemEvent.SELECTED) {
+        System.out.println("buscando precio");
+        this.actualizarPrecioPack();
+    }
+}
+   
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == venta.SaveVenta){
@@ -232,10 +241,7 @@ public class CtrVentas implements ActionListener {
             System.out.println("buscando rut");
             this.ObtenName2();
         }
-       if (e.getSource() == venta.PackVenta) {
-            System.out.println("buscando precio");
-            this.actualizarPrecioPack();
-        }
+
     }
     
 }
