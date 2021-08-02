@@ -19,9 +19,7 @@ import java.awt.event.ItemEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
-import java.util.HashSet;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -180,8 +178,7 @@ public class CtrVentas implements ActionListener {
        ResultSet rs = concom.llamarActivos();
        while (rs.next()){
            cbModel.addElement(rs.getString(2));
-       }
-          
+       }       
    }
    
    public void actualizarComboBoxBanco() throws SQLException{
@@ -190,8 +187,7 @@ public class CtrVentas implements ActionListener {
        ResultSet rs = conban.llamarActivos();
        while (rs.next()){
            cbModel.addElement(rs.getString(2));
-       }
-          
+       }    
    }
    
    public void actualizarComboBoxPack() throws SQLException{
@@ -200,8 +196,7 @@ public class CtrVentas implements ActionListener {
        ResultSet rs = conpack.llamarACtivos();
        while (rs.next()){
            cbModel.addElement(rs.getString(2));
-       }
-          
+       }  
    }
    
    public void actualizarComboBoxRRSS() throws SQLException{

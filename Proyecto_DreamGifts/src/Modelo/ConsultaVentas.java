@@ -5,14 +5,10 @@
  */
 package Modelo;
 
-import DreamsGifts.Ventas;
-import java.util.Date;
 import static Modelo.Conexion.conn;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import Modelo.Cliente;
-import Modelo.ConsultaCliente;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 /**

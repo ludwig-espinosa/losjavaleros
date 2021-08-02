@@ -1,7 +1,6 @@
 
 package Modelo;
 
-import DreamsGifts.Administracion;
 import static Modelo.Conexion.conn;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -86,14 +85,14 @@ public class ConsultasBanco{
       }
      }
      
-public int BancoIdPorNombre (String banco){
+    public int BancoIdPorNombre (String namebanco){
         PreparedStatement ps = null;
         ResultSet rs = null;
         int id;
         String sql = "SELECT * FROM Banco WHERE Nombre=?  ";
         try {
             ps =  conn.prepareStatement(sql);
-            ps.setString(1, banco);
+            ps.setString(1, namebanco);
             rs = ps.executeQuery();
             rs.next();
             if (!rs.absolute(1)) {
@@ -102,10 +101,9 @@ public int BancoIdPorNombre (String banco){
             }else{
                 id = Integer.parseInt(rs.getString(1));
                 return id;
-            }
-                
+            }        
         } catch (SQLException e){
             return -1;
         }
-}
+    }
 }

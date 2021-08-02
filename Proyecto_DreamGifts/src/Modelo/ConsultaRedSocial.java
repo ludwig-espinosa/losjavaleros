@@ -96,13 +96,12 @@ public class ConsultaRedSocial {
             rs = ps.executeQuery();
             rs.next();
             if (!rs.absolute(1)) {
-                System.out.println("Cliente no encontrado");
+                System.out.println("RRSS no encontrado");
               return -1; 
             }else{
                 id = Integer.parseInt(rs.getString(1));
                 return id;
-            }
-                
+            }         
         } catch (SQLException e){
             return -1;
         }
