@@ -1504,11 +1504,13 @@ public class Inventario extends javax.swing.JFrame {
         int selectedRowIndex = this.proveedoresTable.getSelectedRow();
         String rutComp = tm.getValueAt(selectedRowIndex, 1).toString();
         System.out.println(rutComp);
+        System.out.println(rutComp.length());
+
         
         
         this.proveedoresNombre.setText(tm.getValueAt(selectedRowIndex, 0).toString());
-        this.proveedoresRut.setText(rutComp.substring(0, rutComp.length()-2));
-        this.proveedoresRutDv.setText(rutComp.substring(rutComp.length()-1, rutComp.length()-1));
+        this.proveedoresRut.setText(rutComp.substring(0, rutComp.length()-1));
+        this.proveedoresRutDv.setText(rutComp.substring(rutComp.length()-1, rutComp.length()));
         this.proveedoresCorreo.setText(tm.getValueAt(selectedRowIndex, 2).toString());
         this.proveedoresTel.setText(tm.getValueAt(selectedRowIndex, 3).toString());
         this.proveedoresCiclo.setText(tm.getValueAt(selectedRowIndex, 4).toString());

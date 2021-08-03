@@ -38,6 +38,7 @@ public class CtrInventario implements ActionListener{
      public CtrInventario(){
          this.iniciarPackInicio();
          this.iniciarcategoria();
+         this.iniciarProveedores();
 
      }
      
@@ -181,6 +182,11 @@ public class CtrInventario implements ActionListener{
    
    /*         INICIO CRUD Proveedores         */
    
+   public void iniciarProveedores(){
+       inven.proveedoresSave.addActionListener(this);
+       this.actualizarTablaProveedor();
+   }
+   
    public void actualizarTablaProveedor(){
         this.borrarTabla(inven.proveedoresTable);
         ResultSet rs = conProv.llamarTodos();
@@ -240,6 +246,10 @@ public class CtrInventario implements ActionListener{
             System.out.println("intentando agregar");
             this.agregarCategoria();
             this.actualizarTablaCategoria();
+        }
+        if(e.getSource() == inven.proveedoresSave){
+            this.agregarProveedor();
+            this.actualizarTablaProveedor();
         }
     }
    
