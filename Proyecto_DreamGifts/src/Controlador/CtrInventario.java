@@ -12,8 +12,10 @@ import Modelo.ConsultaArticulo;
 import Modelo.ConsultaCategoria;
 
 import Modelo.ConsultaPack;
+import Modelo.ConsultaProveedor;
 import Modelo.DetallePack;
 import Modelo.Pack;
+import Modelo.Proveedor;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
@@ -25,6 +27,7 @@ public class CtrInventario implements ActionListener{
     //private static ConsultaProveedor invenProvee = new ConsultaProveedor();
     private static ConsultaPack conPack = new ConsultaPack();
     private static ConsultaCategoria conCat = new ConsultaCategoria();
+    private static ConsultaProveedor conProv = new ConsultaProveedor();
 
     public void iniciar(){
          if (!inven.isVisible()){
@@ -155,6 +158,7 @@ public class CtrInventario implements ActionListener{
    /*         INICIO CRUD PACK          */
    public void iniciarcategoria(){
        inven.categoriaSave.addActionListener(this);
+       this.actualizarTablaProveedor();
    }
    
    public void agregarCategoria(){
@@ -173,6 +177,53 @@ public class CtrInventario implements ActionListener{
            conCat.modificar(cat);
        }
    }
+   
+   
+   /*         INICIO CRUD Proveedores         */
+   
+   public void actualizarTablaProveedor(){
+        this.borrarTabla(inven.proveedoresTable);
+        ResultSet rs = conProv.llamarTodos();
+        Object[] row;
+        row = new Object[6];
+        DefaultTableModel rm = (DefaultTableModel) inven.proveedoresTable.getModel();
+        try {
+            while (rs.next()){
+                row[0] = rs.getString("nombre");
+                row[1] = rs.getString("RUT");
+                row[2] = rs.getString("correo");
+                row[3] = rs.getString("fono");
+                row[4] = rs.getString("ciclo");
+                row[5] = rs.getBoolean("estado");
+
+
+                rm.addRow(row);  
+            }
+            } catch (SQLException ex) {
+                System.out.println(ex);
+        }
+   }
+   public void agregarProveedor() {
+    Proveedor prov = new Proveedor();
+    prov.setDireccion(inven.proveedoresDireccion.getText());
+    prov.setCicloFac(inven.proveedoresCiclo.getText());
+    prov.setCorreo(inven.proveedoresCorreo.getText());
+    prov.setEstado(inven.proveedoresActive.isSelected());
+    prov.setFono(inven.proveedoresTel.getText());
+    prov.setNombre(inven.proveedoresNombre.getText());
+    prov.setRut(inven.proveedoresRut.getText() + inven.proveedoresRutDv.getText());
+       if (!conProv.buscar(prov)) {
+           if (conProv.registrar(prov)) {
+            JOptionPane.showMessageDialog(lgn, "Proveedor registrado con exito");
+            }
+            else{
+                 JOptionPane.showMessageDialog(lgn, "Ocurrio un error al intentar registrar al proveedor");
+        }
+       }else {
+           conProv.modificar(prov);
+       }
+        
+    }
    
    
     @Override

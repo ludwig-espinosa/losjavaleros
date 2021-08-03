@@ -264,7 +264,7 @@ public class CtrAdministracion implements ActionListener {
    
    public boolean agregarCliente(){
        Cliente client = new Cliente();
-       client.setRut(admin.rutclient.getText());
+       client.setRut(admin.rutclient.getText() + admin.clientesDv.getText());
        client.setDireccion(admin.addressclient.getText());
        client.setNombre(admin.nameclient.getText());
        client.setCelular(admin.fonoclient.getText());
@@ -275,6 +275,7 @@ public class CtrAdministracion implements ActionListener {
        admin.nameclient.setText("");
        admin.fonoclient.setText("");
        admin.rrssclient.setText("");
+       admin.clientesDv.setText("");
 
          if (!conCliente.buscar(client)) {
              System.out.println("intentando agregar");

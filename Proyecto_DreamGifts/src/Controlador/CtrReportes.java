@@ -57,7 +57,7 @@ public class CtrReportes implements ActionListener{
         System.out.println();
         try {
             while (rs.next()){
-                row[0] = "row 1";
+                row[0] = rs.getInt(1);
                 row[1] = rut;
                 row[2] = "row 2";
                 row[3] = rs.getDate("fecha_compra");
