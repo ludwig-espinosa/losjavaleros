@@ -298,7 +298,7 @@ public class Inventario extends javax.swing.JFrame {
                         .addGap(370, 370, 370))))
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 772, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 862, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
@@ -608,9 +608,7 @@ public class Inventario extends javax.swing.JFrame {
                                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel17)
                                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel19Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel20))))
+                            .addComponent(jLabel20)))
                     .addGroup(jPanel19Layout.createSequentialGroup()
                         .addComponent(choice4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -631,7 +629,7 @@ public class Inventario extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("Salida De Stock", jPanel19);
@@ -1422,9 +1420,9 @@ public class Inventario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button ArticuloBtnAdd;
+    public java.awt.Button ArticuloBtnAdd;
     private javax.swing.ButtonGroup buttonGroup1;
-    private java.awt.TextField cantIntArticulo;
+    public java.awt.TextField cantIntArticulo;
     public javax.swing.JRadioButton categoriaActive;
     public javax.swing.JTextField categoriaCodigo;
     public javax.swing.JRadioButton categoriaDesac;
@@ -1434,18 +1432,18 @@ public class Inventario extends javax.swing.JFrame {
     public javax.swing.JButton categoriaSave1;
     public javax.swing.JTextField categoriaSearch;
     public javax.swing.JTable categoriaTable;
-    private java.awt.Choice choice3;
-    private java.awt.Choice choice4;
-    private java.awt.TextField codIntArticulo;
-    private java.awt.TextField costoIntArticulo;
-    private javax.swing.JTextArea descTextArticulo;
-    private java.awt.TextField fechaDArticulo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    public java.awt.Choice choice3;
+    public java.awt.Choice choice4;
+    public java.awt.TextField codIntArticulo;
+    public java.awt.TextField costoIntArticulo;
+    public javax.swing.JTextArea descTextArticulo;
+    public java.awt.TextField fechaDArticulo;
+    public javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton2;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    public javax.swing.JButton jButton3;
+    public javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1494,7 +1492,7 @@ public class Inventario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
+    public javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel26;
@@ -1523,20 +1521,20 @@ public class Inventario extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable5;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea4;
+    public javax.swing.JTextArea jTextArea2;
+    public javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField2;
+    public javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
     private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
-    private java.awt.TextField nomTextArticulo;
+    public javax.swing.JTextField jTextField3;
+    public javax.swing.JTextField jTextField5;
+    public javax.swing.JTextField jTextField6;
+    public javax.swing.JTextField jTextField7;
+    public javax.swing.JTextField jTextField8;
+    public javax.swing.JTextField jTextField9;
+    public java.awt.TextField nomTextArticulo;
     public javax.swing.JButton packCancel;
     public javax.swing.JButton packCrearRem;
     public javax.swing.JButton packCrearSum;
@@ -1547,7 +1545,7 @@ public class Inventario extends javax.swing.JFrame {
     public javax.swing.JButton packSave;
     public javax.swing.JTable packTabla;
     public javax.swing.JTextField packValor;
-    private java.awt.Choice proveedorTextArticulo;
+    public java.awt.Choice proveedorTextArticulo;
     public javax.swing.JRadioButton proveedoresActive;
     public javax.swing.JTextField proveedoresCiclo;
     public javax.swing.JTextField proveedoresCorreo;
