@@ -22,9 +22,7 @@ import javax.swing.JTable;
 public class CtrInventario implements ActionListener{
     private static Inventario inven = new Inventario();
     private static ConsultaArticulo invenArt = new ConsultaArticulo();
-    //private static ConsultaCategoria invenCat= new ConsultaCategoria();
     private static ConsultaPack invenPack = new ConsultaPack();
-    //private static ConsultaProveedor invenProvee = new ConsultaProveedor();
     private static ConsultaPack conPack = new ConsultaPack();
     private static ConsultaCategoria conCat = new ConsultaCategoria();
     private static ConsultaProveedor conProv = new ConsultaProveedor();
