@@ -226,7 +226,7 @@ public class CtrVentas implements ActionListener {
 
    public void comboBoxitemStateChanged(ItemEvent e) {
     if (e.getStateChange() == ItemEvent.SELECTED) {
-        System.out.println("buscando precio");
+        System.out.println("buscando precio (comboBoxitemStateChanged)");
         this.actualizarPrecioPack();
     }
 }
