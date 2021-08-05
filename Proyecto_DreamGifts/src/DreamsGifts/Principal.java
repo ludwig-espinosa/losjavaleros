@@ -30,7 +30,6 @@ public class Principal extends javax.swing.JFrame {
 
         inventario = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         btnReportes = new javax.swing.JButton();
         princVenta = new javax.swing.JButton();
         btnAdmin = new javax.swing.JButton();
@@ -50,13 +49,6 @@ public class Principal extends javax.swing.JFrame {
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("Clientes");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
             }
         });
 
@@ -89,7 +81,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("Menu");
+        jLabel1.setText("Menú DreamsGifts");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,14 +92,13 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
                         .addComponent(BotonSalir)
                         .addGap(54, 54, 54))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(inventario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(princVenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE))
@@ -124,18 +115,16 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addComponent(BotonSalir)))
                 .addGap(18, 18, 18)
+                .addComponent(btnAdmin)
+                .addGap(18, 18, 18)
+                .addComponent(princVenta)
+                .addGap(18, 18, 18)
                 .addComponent(inventario)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addGap(18, 18, 18)
                 .addComponent(btnReportes)
-                .addGap(18, 18, 18)
-                .addComponent(princVenta)
-                .addGap(18, 18, 18)
-                .addComponent(btnAdmin)
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addContainerGap(192, Short.MAX_VALUE))
         );
 
         pack();
@@ -148,10 +137,6 @@ public class Principal extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportesActionPerformed
     }//GEN-LAST:event_btnReportesActionPerformed
@@ -210,7 +195,6 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JButton btnReportes;
     public javax.swing.JButton inventario;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JButton princVenta;
     // End of variables declaration//GEN-END:variables

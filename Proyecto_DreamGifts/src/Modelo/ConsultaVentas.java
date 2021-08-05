@@ -56,7 +56,7 @@ public class ConsultaVentas {
       PreparedStatement ps = null;
       java.sql.Date fechaentrega;
       fechaentrega = new java.sql.Date(vent.getFechaEntrega().getTime());
-      String sql = "UPDATE Venta SET Estado_de_Orden, fecha_entrega, Bloque_horario, direccion, Nombre_receptor, Contacto_receptor, comuna_id) VALUES(?,?,?,?,?,?,?)";
+      String sql = "UPDATE Venta SET Estado_de_Orden, fecha_entrega, Bloque_horario, direccion, Nombre_receptor, Contacto_receptor, comuna_id, IdBanco, Codigo_de_Transaccion) VALUES(?,?,?,?,?,?,?,?,?)";
       try {
           ps =  conn.prepareStatement(sql);
           ps.setString(1, vent.getEstadoDeOrden());
@@ -66,6 +66,8 @@ public class ConsultaVentas {
           ps.setString(5, vent.getReceptor());
           ps.setString(6, vent.getContactoReceptor());      
           ps.setInt(7, vent.getIdcomuna()); 
+          ps.setInt(8, vent.getIdBanco());
+          ps.setString(9, vent.getCodigoTransaccion());
           ps.execute();
           return true;
       } catch (SQLException e){
@@ -102,6 +104,20 @@ public class ConsultaVentas {
           return rs;
       }
     }
+     
+    public ResultSet llamarActualizacionTabla(){
+      PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "SELECT Ventas.ID_Venta AS \"Orden de Venta\", Cliente.Nombre AS \"Nombre de Cliente\", Ventas.fecha_entrega AS \"Fecha de Entrega\", Ventas.Bloque_horario AS \"Bloque Horario\", comunas.nombre AS \"Comuna\", Ventas.direccion AS \"Direccion de Entrega\", Ventas.Contacto_receptor AS \"Nro de Contacto\", Bancos.Nombre AS \"Banco\", Ventas.Codigo_de_Transaccion AS \"Codigo_TRX\", Ventas.Estado_de_Orden AS \"Estado\" from  Ventas LEFT JOIN Bancos ON Ventas.IdBanco=Bancos.banco_id LEFT JOIN comunas ON  Ventas.comuna_id=comunas.id_comunas LEFT JOIN Cliente ON Ventas.ID_Cliente=Cliente.ID_Clientes";
+      try {
+          ps =  conn.prepareStatement(sql);
+          rs = ps.executeQuery();
+          System.out.println("Consulta En Progreso llamarActualizacionTabla");
+          return rs;
+      } catch (SQLException e){
+          return rs;
+      }
+    } 
     
     
 }

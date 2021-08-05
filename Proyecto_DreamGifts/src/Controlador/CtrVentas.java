@@ -56,7 +56,6 @@ public class CtrVentas implements ActionListener {
     public CtrVentas() throws SQLException {
       venta = new Ventas();
       this.iniciarVentas();
-      this.actualizarTablaVentas();
       this.actualizarComboBoxComuna();
       this.actualizarComboBoxBanco();
       this.actualizarComboBoxPack();
@@ -149,24 +148,28 @@ public class CtrVentas implements ActionListener {
    
    public void actualizarTablaVentas(){
         this.borrarTabla(venta.TablaVentas);
-        ResultSet rs = conventas.llamarTodos();
+        ResultSet rs = conventas.llamarActualizacionTabla();
         Object[] row;
-        row = new Object[8];
+        row = new Object[10];
         DefaultTableModel rm = (DefaultTableModel) venta.TablaVentas.getModel();
-        String namclient;
-        String comuna;
+        //String namclient;
+        //String comuna;
+       // String banco;
+        //String codtrx;
         try {
             while (rs.next()){
-                namclient = conCliente.buscarNamePorId(rs.getInt("ID_Cliente"));
-                comuna = concom.buscarNamePorId(rs.getInt("comuna_id"));
-                row[0] = rs.getString("ID_Venta");
-                row[1] = namclient;
-                row[2] = rs.getString("fecha_entrega");
-                row[3] = rs.getString("Bloque_horario");
-                row[4] = comuna;
-                row[5] = rs.getString("direccion");
-                row[6] = rs.getString("Contacto_receptor");
-                row[7] = rs.getString("Estado_de_Orden");
+                //namclient = conCliente.buscarNamePorId(rs.getInt("ID_Cliente"));
+                //comuna = concom.buscarNamePorId(rs.getInt("comuna_id"));
+                row[0] = rs.getString("Orden de Venta");
+                row[1] = rs.getString("Nombre de Cliente");//namclient;
+                row[2] = rs.getString("Fecha de Entrega");
+                row[3] = rs.getString("Bloque Horario");
+                row[4] = rs.getString("Comuna");//comuna;
+                row[5] = rs.getString("Direccion de Entrega");
+                row[6] = rs.getString("Nro de Contacto");
+                row[7] = rs.getString("Banco");//banco;
+                row[8] = rs.getString("Codigo_TRX");//codtrx;
+                row[9] = rs.getString("Estado");
 
                 rm.addRow(row);  
             }
@@ -223,7 +226,7 @@ public class CtrVentas implements ActionListener {
 
    public void comboBoxitemStateChanged(ItemEvent e) {
     if (e.getStateChange() == ItemEvent.SELECTED) {
-        System.out.println("buscando precio");
+        System.out.println("buscando precio (comboBoxitemStateChanged)");
         this.actualizarPrecioPack();
     }
 }
