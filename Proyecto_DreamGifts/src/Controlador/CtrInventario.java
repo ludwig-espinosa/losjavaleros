@@ -133,7 +133,7 @@ public class CtrInventario implements ActionListener{
         }
    }
    
-   
+   //
    public void agregarPack(){
        Pack pack = new Pack();
        pack.setDescripcion(inven.packDesc.getText());
