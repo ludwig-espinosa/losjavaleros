@@ -181,19 +181,25 @@ public class CtrVentas implements ActionListener {
    
    public void actualizarComboBoxComuna() throws SQLException{
        DefaultComboBoxModel cbModel = (DefaultComboBoxModel) venta.ComunaVent.getModel();
+      // DefaultComboBoxModel cbModel2 = (DefaultComboBoxModel) venta.ComunaVentHist.getModel();
        cbModel.removeAllElements();
+       //cbModel2.removeAllElements();
        ResultSet rs = concom.llamarActivos();
        while (rs.next()){
            cbModel.addElement(rs.getString(2));
+           //cbModel2.addElement(rs.getString(2));
        }       
    }
    
    public void actualizarComboBoxBanco() throws SQLException{
        DefaultComboBoxModel cbModel = (DefaultComboBoxModel) venta.BancoBox.getModel();
+      // DefaultComboBoxModel cbModel2 = (DefaultComboBoxModel) venta.BancoBoxHist.getModel();
        cbModel.removeAllElements();
+       //cbModel2.removeAllElements();
        ResultSet rs = conban.llamarActivos();
        while (rs.next()){
            cbModel.addElement(rs.getString(2));
+          // cbModel2.addElement(rs.getString(2));
        }    
    }
    

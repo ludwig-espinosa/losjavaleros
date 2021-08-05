@@ -29,7 +29,7 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         inventario = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        MenuCompras = new javax.swing.JButton();
         btnReportes = new javax.swing.JButton();
         princVenta = new javax.swing.JButton();
         btnAdmin = new javax.swing.JButton();
@@ -45,10 +45,10 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Despacho");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        MenuCompras.setText("Compras");
+        MenuCompras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                MenuComprasActionPerformed(evt);
             }
         });
 
@@ -98,7 +98,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(inventario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(MenuCompras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(princVenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE))
@@ -121,7 +121,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(inventario)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(MenuCompras)
                 .addGap(18, 18, 18)
                 .addComponent(btnReportes)
                 .addContainerGap(192, Short.MAX_VALUE))
@@ -134,9 +134,9 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_inventarioActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void MenuComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuComprasActionPerformed
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_MenuComprasActionPerformed
 
     private void btnReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportesActionPerformed
     }//GEN-LAST:event_btnReportesActionPerformed
@@ -191,10 +191,10 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BotonSalir;
+    private javax.swing.JButton MenuCompras;
     public javax.swing.JButton btnAdmin;
     public javax.swing.JButton btnReportes;
     public javax.swing.JButton inventario;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JButton princVenta;
     // End of variables declaration//GEN-END:variables
