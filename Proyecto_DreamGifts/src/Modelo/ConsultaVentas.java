@@ -108,7 +108,7 @@ public class ConsultaVentas {
     public ResultSet llamarActualizacionTabla(){
       PreparedStatement ps = null;
       ResultSet rs = null;
-      String sql = "SELECT Ventas.ID_Venta AS \"Orden de Venta\", Cliente.ID_Clientes=Cliente.Nombre AS \"Nombre de Cliente\", Ventas.fecha_entrega AS \"Fecha de Entrega\", Ventas.Bloque_horario AS \"Bloque Horario\", comunas.nombre AS \"Comuna\", Ventas.direccion AS \"Direccion de Entrega\", Ventas.Contacto_receptor AS \"Nro de Contacto\", Bancos.Nombre AS \"Banco\", Ventas.Codigo_de_Transaccion AS \"Codigo_TRX\", Ventas.Estado_de_Orden AS \"Estado\" from  Ventas LEFT JOIN Bancos ON Ventas.IdBanco=Bancos.banco_id LEFT JOIN comunas ON  Ventas.comuna_id=comunas.id_comunas LEFT JOIN Cliente ON Ventas.ID_Cliente=Cliente.RUT ;";
+      String sql = "SELECT Ventas.ID_Venta AS \"Orden de Venta\", Cliente.Nombre AS \"Nombre de Cliente\", Ventas.fecha_entrega AS \"Fecha de Entrega\", Ventas.Bloque_horario AS \"Bloque Horario\", comunas.nombre AS \"Comuna\", Ventas.direccion AS \"Direccion de Entrega\", Ventas.Contacto_receptor AS \"Nro de Contacto\", Bancos.Nombre AS \"Banco\", Ventas.Codigo_de_Transaccion AS \"Codigo_TRX\", Ventas.Estado_de_Orden AS \"Estado\" from  Ventas LEFT JOIN Bancos ON Ventas.IdBanco=Bancos.banco_id LEFT JOIN comunas ON Ventas.comuna_id=comunas.id_comunas LEFT JOIN Cliente ON Cliente.ID_Clientes; ;";
       try {
           ps =  conn.prepareStatement(sql);
           rs = ps.executeQuery();
