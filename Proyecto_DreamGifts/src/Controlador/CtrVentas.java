@@ -56,7 +56,6 @@ public class CtrVentas implements ActionListener {
     public CtrVentas() throws SQLException {
       venta = new Ventas();
       this.iniciarVentas();
-      this.actualizarTablaVentas();
       this.actualizarComboBoxComuna();
       this.actualizarComboBoxBanco();
       this.actualizarComboBoxPack();
@@ -151,7 +150,7 @@ public class CtrVentas implements ActionListener {
         this.borrarTabla(venta.TablaVentas);
         ResultSet rs = conventas.llamarActualizacionTabla();
         Object[] row;
-        row = new Object[8];
+        row = new Object[10];
         DefaultTableModel rm = (DefaultTableModel) venta.TablaVentas.getModel();
         //String namclient;
         //String comuna;
