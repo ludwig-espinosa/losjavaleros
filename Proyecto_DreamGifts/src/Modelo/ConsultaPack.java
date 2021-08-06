@@ -197,5 +197,6 @@ public class ConsultaPack {
       }
      }
      
-     public void borrarDetalle(String )
+     
+//     public void borrarDetalle(String ){
 }
