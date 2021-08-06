@@ -176,5 +176,24 @@ public class ConsultaPack {
         }
      }
      
-     
+     public ResultSet listadoPack(String nombre) {
+      PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "SELECT ar.ID_Articulo, ar.nombre, dp.cantidad, ar.precio, p.descripcion FROM detalle_pack as dp "
+              + "INNER JOIN Articulos as ar "
+              + "ON dp.ID_Articulo = ar.ID_Articulo "
+              + "INNER JOIN Pack as p "
+              + "ON dp.ID_Pack = p.ID_Pack "
+              + "WHERE p.nombre=?";
+      try {
+          ps =  conn.prepareStatement(sql);
+
+          ps.setString(1, nombre);
+          System.out.println(sql);          
+          rs = ps.executeQuery();
+          return rs;
+      } catch (SQLException e){
+          return rs;
+      }
+     }
 }

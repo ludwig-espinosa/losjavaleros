@@ -130,6 +130,7 @@ public class CtrInventario implements ActionListener{
     inven.packSave.addActionListener(this);
     inven.packCrearSum.addActionListener(this);
     inven.packCrearRem.addActionListener(this);
+    inven.packBuscar.addActionListener(this);
     this.packListarArticulos();
     this.actualizarTablaPack();
     
@@ -213,20 +214,50 @@ public class CtrInventario implements ActionListener{
        pack.setEstado(inven.packEstadoActive.isSelected());
        pack.setNombre(inven.packNombre.getText());
        pack.setPrecio(Integer.parseInt(inven.packValor.getText()));
-       if (conPack.registrar(pack)){
-           DefaultTableModel table = (DefaultTableModel) inven.packListado.getModel();
-           DetallePack detPack = new DetallePack();
-           pack.setId(conPack.PackIdPorNombre(pack.getNombre()));
-           System.out.println(detPack);
-           for (int i = 0; i < table.getRowCount(); i++) {
-               detPack.setIdArticulo((int) table.getValueAt(i, 0));
-               detPack.setCantidad((int) table.getValueAt(i, 2));
-               conPack.agregarArticulo(detPack, pack);
+       if (!conPack.buscar(pack)) {
+           if (conPack.registrar(pack)){
+                DefaultTableModel table = (DefaultTableModel) inven.packListado.getModel();
+                DetallePack detPack = new DetallePack();
+                pack.setId(conPack.PackIdPorNombre(pack.getNombre()));
+                System.out.println(detPack);
+                for (int i = 0; i < table.getRowCount(); i++) {
+                    detPack.setIdArticulo((int) table.getValueAt(i, 0));
+                    detPack.setCantidad((int) table.getValueAt(i, 2));
+                    conPack.agregarArticulo(detPack, pack);
+                }
            }
+       } else {
        }
        
    }
-   
+   public void packBuscar(){
+       DefaultTableModel rm = (DefaultTableModel) inven.packTabla.getModel();
+       int rowIn = inven.packTabla.getSelectedRow();
+       ResultSet rs;
+       inven.packNombre.setText(rm.getValueAt(rowIn, 0).toString());
+       inven.packValor.setText(rm.getValueAt(rowIn, 1).toString());
+       if ((Boolean) rm.getValueAt(rowIn,2)) {
+           inven.packEstadoActive.doClick();
+       } else {
+           inven.packEstadoDesactive.doClick();
+       }
+       try {
+           rs = conPack.listadoPack(rm.getValueAt(rowIn, 0).toString());
+           DefaultTableModel tablaAr = (DefaultTableModel) inven.packListado.getModel();
+           Object[] row = new Object[4];
+           this.borrarTabla(inven.packListado);
+           while (rs.next()) {
+               row[0] = rs.getInt(1);
+               row[1] = rs.getString(2);
+               row[2] = rs.getInt(3);
+               row[3] = rs.getInt(4);
+               tablaAr.addRow(row);
+               inven.packDesc.setText(rs.getString(5));
+           } 
+       } catch(SQLException e) {
+           System.out.println("error " + e);
+       }
+   }
    
    
    
@@ -353,6 +384,9 @@ public class CtrInventario implements ActionListener{
         }
         if (e.getSource() == inven.packCrearRem) {
             this.packQuitarArticulo();
+        }
+        if (e.getSource() == inven.packBuscar) {
+            this.packBuscar();
         }
     }
    
