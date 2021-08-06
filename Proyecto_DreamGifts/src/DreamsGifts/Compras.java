@@ -223,65 +223,72 @@ public class Compras extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(OrderComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel12)
-                                .addGap(18, 18, 18)
-                                .addComponent(FechaComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(StateOrderComp, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(SavePedid)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(CancelPedid))
-                                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(26, 26, 26)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(105, 105, 105)
-                                        .addComponent(RemovPedid))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(46, 46, 46)
-                                        .addComponent(jLabel2)
-                                        .addGap(10, 10, 10)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(AddPedid)
-                                            .addComponent(CantArtic, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(94, 94, 94)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
+                                        .addComponent(jLabel1)
                                         .addGap(18, 18, 18)
-                                        .addComponent(MontPedid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(OrderComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel12)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(FechaComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel4)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(StateOrderComp, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel10)
+                                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(105, 105, 105)
+                                                .addComponent(RemovPedid))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(46, 46, 46)
+                                                .addComponent(jLabel2)
+                                                .addGap(10, 10, 10)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(AddPedid)
+                                                    .addComponent(CantArtic, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGap(94, 94, 94)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel5)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(MontPedid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel3)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(31, 31, 31)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(SavePedid)
+                                                    .addComponent(CancelPedid)))))
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(665, 665, 665)
+                                        .addComponent(SaveOC))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(OrdenVent)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(OrderVentBox, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel34)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(VentSearchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(11, 11, 11))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(OrdenVent)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(OrderVentBox, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(389, 389, 389)
-                                .addComponent(jLabel34)
-                                .addGap(18, 18, 18)
-                                .addComponent(VentSearchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(SaveOC)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 762, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(96, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1))
+                    .addComponent(jSeparator1))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,12 +307,6 @@ public class Compras extends javax.swing.JFrame {
                         .addComponent(FechaComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                     .addComponent(jLabel3)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(AddPedid)
@@ -314,25 +315,32 @@ public class Compras extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(CantArtic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(RemovPedid)))
+                        .addComponent(RemovPedid))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(SavePedid)
+                                .addGap(42, 42, 42)
+                                .addComponent(CancelPedid))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(SavePedid)
-                        .addComponent(CancelPedid))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel5)
-                        .addComponent(MontPedid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(MontPedid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VentSearchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel34)
                     .addComponent(OrdenVent)
                     .addComponent(OrderVentBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(SaveOC)
                 .addGap(27, 27, 27))
@@ -771,17 +779,17 @@ public class Compras extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SavePedidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SavePedidActionPerformed
+    private void VentSearchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VentSearchTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SavePedidActionPerformed
+    }//GEN-LAST:event_VentSearchTextFieldActionPerformed
 
     private void OrderVentBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderVentBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_OrderVentBoxActionPerformed
 
-    private void VentSearchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VentSearchTextFieldActionPerformed
+    private void SavePedidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SavePedidActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_VentSearchTextFieldActionPerformed
+    }//GEN-LAST:event_SavePedidActionPerformed
 
     /**
      * @param args the command line arguments
@@ -822,9 +830,9 @@ public class Compras extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton AddPedid;
+    private javax.swing.JButton AddPedid;
     public javax.swing.JButton CancelDetailComp;
-    public javax.swing.JButton CancelPedid;
+    private javax.swing.JButton CancelPedid;
     private javax.swing.JButton CancelRegComp;
     public javax.swing.JButton CancelRevFact;
     private javax.swing.JTextField CantArtic;
@@ -833,35 +841,35 @@ public class Compras extends javax.swing.JFrame {
     public javax.swing.JTextField CodeArticComp;
     public javax.swing.JTextField DVProveComp;
     public javax.swing.JTextField DVProveComp1;
-    public javax.swing.JList<String> DetailArtic;
-    public javax.swing.JList<String> DetailArtic1;
+    private javax.swing.JList<String> DetailArtic;
+    private javax.swing.JList<String> DetailArtic1;
     public javax.swing.JButton EditRevFact;
-    public com.toedter.calendar.JDateChooser FechaComp;
+    private com.toedter.calendar.JDateChooser FechaComp;
     public com.toedter.calendar.JDateChooser FechaRecepComp;
     public com.toedter.calendar.JDateChooser FechaVenc;
-    public javax.swing.JTextField MontPedid;
+    private javax.swing.JTextField MontPedid;
     public javax.swing.JTextField NroFact;
     public javax.swing.JTextField NroFacturaRev;
     private javax.swing.JLabel OrdenVent;
     private javax.swing.JTextField OrderComp;
-    public javax.swing.JComboBox<String> OrderVentBox;
+    private javax.swing.JComboBox<String> OrderVentBox;
     public javax.swing.JComboBox<String> ProveedorComp;
-    public javax.swing.JButton RemovPedid;
+    private javax.swing.JButton RemovPedid;
     public javax.swing.JTextField RutProveeComp;
     public javax.swing.JTextField RutProveeComp1;
     public javax.swing.JComboBox<String> RutProveeRevComp;
     public javax.swing.JButton SaveDeailtComp;
-    public javax.swing.JButton SaveOC;
-    public javax.swing.JButton SavePedid;
+    private javax.swing.JButton SaveOC;
+    private javax.swing.JButton SavePedid;
     private javax.swing.JButton SaveRegComp;
     public javax.swing.JButton SaveRevFact;
-    public javax.swing.JComboBox<String> StateOrderComp;
+    private javax.swing.JComboBox<String> StateOrderComp;
     public javax.swing.JTable TablaDetailFact;
     public javax.swing.JTable TablaFactRev;
-    public javax.swing.JTable TablaPedidosComp;
+    private javax.swing.JTable TablaPedidosComp;
     public javax.swing.JTable TablaRevFact;
     public javax.swing.JTextField ValorArticComp;
-    public javax.swing.JTextField VentSearchTextField;
+    private javax.swing.JTextField VentSearchTextField;
     public javax.swing.JButton ViewRevFact;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton3;
