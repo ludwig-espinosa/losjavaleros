@@ -19,7 +19,7 @@ public class ConsultaArticulo {
         try{
             ps=conn.prepareStatement(sql);
             ps.setString(1,art.getNombre());
-            ps.setInt(2,art.getCodigo());
+            ps.setString(2,art.getCodigo());
             ps.setInt(3,art.getCantidad());
             ps.setInt(4,art.getCosto());
             ps.setString(5,art.getProveedor());
@@ -41,7 +41,7 @@ public class ConsultaArticulo {
         try{
             ps=conn.prepareStatement(sql);
             ps.setString(1,art.getNombre());
-            ps.setInt(2,art.getCodigo());
+            ps.setString(2,art.getCodigo());
             ps.setInt(3,art.getCantidad());
             ps.setInt(4,art.getCosto());
             ps.setString(5,art.getProveedor());
@@ -61,7 +61,7 @@ public class ConsultaArticulo {
       String sql = "SELECT * FROM Articulos WHERE codigo=?  ";
       try {
           ps =  conn.prepareStatement(sql);
-          ps.setInt(1, art.getCodigo());
+          ps.setString(1, art.getCodigo());
           rs = ps.executeQuery();
           if (!rs.absolute(1)) {
               System.out.println("Codigo no encontrado");
@@ -85,6 +85,21 @@ public class ConsultaArticulo {
           return null;
       }
     }
+    
+     public ResultSet llamarTodos() {
+         PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "SELECT * FROM Articulos";
+      try {
+          ps =  conn.prepareStatement(sql);
+          rs = ps.executeQuery();
+          return rs;
+      } catch (SQLException e){
+          return null;
+      }
+    }
+    
+    
     
     public int buscarPrecio(String valor) {
       PreparedStatement ps = null;

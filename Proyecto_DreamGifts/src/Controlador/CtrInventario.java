@@ -65,7 +65,7 @@ public class CtrInventario implements ActionListener{
     
 //    
       public void iniciarArticulo(){
-          inven.ArticuloBtnAdd(this);
+          inven.ArticuloBtnAdd.addActionListener(this);
 
        }
 //        /*       inicio CRUD Usuarios        */
@@ -75,19 +75,18 @@ public class CtrInventario implements ActionListener{
        Articulo art = new Articulo();
        art.setNombre(inven.nomTextArticulo.getText());
        art.setCodigo(inven.codIntArticulo.getText());
-       art.setProveedor(inven.proveedorTextArticulo.isSelected());
-       art.setCantidad(inven.cantIntArticulo.getText());
-       art.setCosto(inven.costoIntArticulo.getText());
+       art.setProveedor(inven.proveedorTextArticulo.getSelectedItem());
+       art.setCantidad(Integer.parseInt(inven.cantIntArticulo.getText()));
+       art.setCosto(Integer.parseInt(inven.costoIntArticulo.getText()));
        art.setDescripcion(inven.descTextArticulo.getText());
-       art.setFecha(inven.fechaDArticulo.getText());
+       art.setFecha(inven.txtfecha.getDate());
        
        inven.nomTextArticulo.setText("");
        inven.codIntArticulo.setText("");
        inven.descTextArticulo.setText("");       
        inven.cantIntArticulo.setText("");
        inven.costoIntArticulo.setText("");
-       inven.proveedorTextArticulo.setText("");
-       inven.fechaDarticulo.setTexT("");
+       
        
        
          if (!invenArt.buscar(art)) {
@@ -227,7 +226,7 @@ public class CtrInventario implements ActionListener{
                 }
            }
        } else {
-           int id = conPack.PackIdPorNombre(pack.getNombre())
+           int id = conPack.PackIdPorNombre(pack.getNombre());
        }
        
    }

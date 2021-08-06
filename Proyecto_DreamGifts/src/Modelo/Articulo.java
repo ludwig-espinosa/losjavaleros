@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Articulo {
     private String nombre;
-    private int codigo;
+    private String codigo;
     private int cantidad;
     private int costo;
     private String proveedor;
@@ -28,14 +28,14 @@ public class Articulo {
     /**
      * @return the codigo
      */
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
     /**
      * @param codigo the codigo to set
      */
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
