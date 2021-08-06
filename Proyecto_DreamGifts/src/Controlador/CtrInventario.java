@@ -64,66 +64,66 @@ public class CtrInventario implements ActionListener{
    } 
     
 //    
-//      public void iniciarArticulo(){
-//          inven.ArticuloBtnAdd(this);
-//
-//       }
+      public void iniciarArticulo(){
+          inven.ArticuloBtnAdd(this);
+
+       }
 //        /*       inicio CRUD Usuarios        */
 //
 //
-//   public boolean agregarArticulo(){
-//       Articulo art = new Articulo();
-//       art.setNombre(inven.nomTextArticulo.getText());
-//       art.setCodigo(inven.codIntArticulo.getText());
-//       art.setProveedor(inven.proveedorTextArticulo.isSelected());
-//       art.setCantidad(inven.cantIntArticulo.getText());
-//       art.setCosto(inven.costoIntArticulo.getText());
-//       art.setDescripcion(inven.descTextArticulo.getText());
-//       art.setFecha(inven.fechaDArticulo.getText());
-//       
-//       inven.nomTextArticulo.setText("");
-//       inven.codIntArticulo.setText("");
-//       inven.descTextArticulo.setText("");       
-//       inven.cantIntArticulo.setText("");
-//       inven.costoIntArticulo.setText("");
-//       inven.proveedorTextArticulo.setText("");
-//       inven.fechaDarticulo.setTexT("");
-//       
-//       
-//         if (!invenArt.buscar(art)) {
-//             System.out.println("intentando agregar");
-//             invenArt.registrar(art);
-//            return true;
-//           } else{
-//            System.out.println("a modificar");
-//             return invenArt.modificar(art);
-//         }
-//        
-//   }
-//   
-//   public void actualizarArticulos(){
-//        this.borrarTabla(inven.articulosTable);
-//        ResultSet rs = invenArt.llamarTodos();
-//        Object[] row;
-//        row = new Object[7];
-//        DefaultTableModel rm = (DefaultTableModel) inven.articulosTable.getModel();
-//        try {
-//            while (rs.next()){
-//                row[0] = rs.getString("Nombre");
-//                row[1] = rs.getString("Codigo");
-//                row[2] = rs.getString("Cantidad");
-//                row[3] = rs.getString("Fecha");
-//                row[4] = rs.getBoolean("Costo");
-//                row[5] = rs.getBoolean("Proveedor");
-//                row[6] = rs.getBoolean("Descripcion");
-//
-//                rm.addRow(row);  
-//            }
-//            } catch (SQLException ex) {
-//                System.out.println(ex);
-//        }
-//    }
-//   
+   public boolean agregarArticulo(){
+       Articulo art = new Articulo();
+       art.setNombre(inven.nomTextArticulo.getText());
+       art.setCodigo(inven.codIntArticulo.getText());
+       art.setProveedor(inven.proveedorTextArticulo.isSelected());
+       art.setCantidad(inven.cantIntArticulo.getText());
+       art.setCosto(inven.costoIntArticulo.getText());
+       art.setDescripcion(inven.descTextArticulo.getText());
+       art.setFecha(inven.fechaDArticulo.getText());
+       
+       inven.nomTextArticulo.setText("");
+       inven.codIntArticulo.setText("");
+       inven.descTextArticulo.setText("");       
+       inven.cantIntArticulo.setText("");
+       inven.costoIntArticulo.setText("");
+       inven.proveedorTextArticulo.setText("");
+       inven.fechaDarticulo.setTexT("");
+       
+       
+         if (!invenArt.buscar(art)) {
+             System.out.println("intentando agregar");
+             invenArt.registrar(art);
+            return true;
+           } else{
+            System.out.println("a modificar");
+             return invenArt.modificar(art);
+         }
+        
+   }
+   
+   public void actualizarArticulos(){
+        this.borrarTabla(inven.articulosTable);
+        ResultSet rs = invenArt.llamarTodos();
+        Object[] row;
+        row = new Object[7];
+        DefaultTableModel rm = (DefaultTableModel) inven.articulosTable.getModel();
+        try {
+            while (rs.next()){
+                row[0] = rs.getString("Nombre");
+                row[1] = rs.getString("Codigo");
+                row[2] = rs.getString("Cantidad");
+                row[3] = rs.getString("Fecha");
+                row[4] = rs.getBoolean("Costo");
+                row[5] = rs.getBoolean("Proveedor");
+                row[6] = rs.getBoolean("Descripcion");
+
+                rm.addRow(row);  
+            }
+            } catch (SQLException ex) {
+                System.out.println(ex);
+        }
+    }
+   
 /*         INICIO CRUD PACK          */
    
    public void iniciarPack(){
@@ -227,6 +227,7 @@ public class CtrInventario implements ActionListener{
                 }
            }
        } else {
+           int id = conPack.PackIdPorNombre(pack.getNombre())
        }
        
    }

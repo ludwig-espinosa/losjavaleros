@@ -196,4 +196,6 @@ public class ConsultaPack {
           return rs;
       }
      }
+     
+     public void borrarDetalle(String )
 }
