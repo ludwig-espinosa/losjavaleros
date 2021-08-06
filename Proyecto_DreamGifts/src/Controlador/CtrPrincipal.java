@@ -14,7 +14,7 @@ public class CtrPrincipal implements ActionListener{
 //    Creacion de controladores secundarios o hijos
     private CtrAdministracion ctAd = new CtrAdministracion();
     private CtrReportes ctRep = new CtrReportes();
-    private CtrVentas ctVent = new CtrVentas();
+    private CtrVentas ctVent;
     private CtrInventario ctInv;
     static Login lgn;
     

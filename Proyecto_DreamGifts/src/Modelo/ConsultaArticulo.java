@@ -71,14 +71,56 @@ public class ConsultaArticulo {
       } catch (SQLException e){
           return false;
       }
-        
-        
     }
    
+    public ResultSet llamarActivos() {
+         PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "SELECT * FROM Articulos WHERE estado=1";
+      try {
+          ps =  conn.prepareStatement(sql);
+          rs = ps.executeQuery();
+          return rs;
+      } catch (SQLException e){
+          return null;
+      }
+    }
     
+    public int buscarPrecio(String valor) {
+      PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "SELECT * FROM Articulos WHERE nombre=?";
+      try {
+          ps =  conn.prepareStatement(sql);
+          ps.setString(1, valor);
+          rs = ps.executeQuery();
+          rs.next();
+          return rs.getInt("precio");
+      } catch (SQLException e){
+          return -1;
+      }
+    }
     
-    
-    
-    
-    
+    public int buscarIdPorNombre(String nombre) {
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int id;
+        String sql = "SELECT * FROM Articulos WHERE nombre=?";
+        try {
+            ps =  conn.prepareStatement(sql);
+            ps.setString(1, nombre);
+            rs = ps.executeQuery();
+            rs.next();
+            if (!rs.absolute(1)) {
+                System.out.println("articulo id no encontrado");
+              return -1; 
+            }else{
+                id = Integer.parseInt(rs.getString(1));
+                System.out.println(id);
+                return id;
+            }        
+        } catch (SQLException e){
+            return -1;
+        }
+    }
 }

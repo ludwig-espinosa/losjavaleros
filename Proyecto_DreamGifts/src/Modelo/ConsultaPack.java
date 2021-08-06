@@ -10,12 +10,13 @@ public class ConsultaPack {
     public boolean registrar(Pack pack){
     
       PreparedStatement ps = null;
-      String sql = "INSERT INTO Pack (nombre, precio, estado) VALUES(?,?,?)";
+      String sql = "INSERT INTO Pack (nombre, precio, estado, descripcion) VALUES(?,?,?,?)";
       try {
           ps =  conn.prepareStatement(sql);;
           ps.setString(1, pack.getNombre());
           ps.setInt(2, pack.getPrecio());
           ps.setBoolean(3, pack.isEstado());
+          ps.setString(4, pack.getDescripcion());
           ps.execute();
           System.out.println("registrado");
           return true;
