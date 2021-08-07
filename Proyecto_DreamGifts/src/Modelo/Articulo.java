@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class Articulo {
     private String nombre;
-    private String codigo;
     private int cantidad;
     private int costo;
     private String proveedor;
@@ -23,20 +22,6 @@ public class Articulo {
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    /**
-     * @return the codigo
-     */
-    public String getCodigo() {
-        return codigo;
-    }
-
-    /**
-     * @param codigo the codigo to set
-     */
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
     }
 
     /**

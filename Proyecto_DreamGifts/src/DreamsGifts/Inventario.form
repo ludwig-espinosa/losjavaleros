@@ -38,7 +38,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jTabbedPane1" min="-2" pref="566" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -156,53 +156,52 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane1" min="-2" pref="345" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="codIntArticulo" min="-2" pref="229" max="-2" attributes="0"/>
-                                          <Component id="nomTextArticulo" min="-2" pref="325" max="-2" attributes="0"/>
-                                          <Component id="cantIntArticulo" min="-2" pref="119" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                      <EmptySpace min="37" pref="37" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="nomTextArticulo" min="-2" pref="325" max="-2" attributes="0"/>
+                                                  <Component id="cantIntArticulo" min="-2" pref="119" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace pref="59" max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jScrollPane1" min="-2" pref="345" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="costoIntArticulo" min="-2" pref="106" max="-2" attributes="0"/>
-                                          <Component id="txtfecha" alignment="0" min="-2" pref="131" max="-2" attributes="0"/>
-                                          <Component id="proveedorTextArticulo" min="-2" pref="106" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="txtfecha" alignment="0" pref="131" max="32767" attributes="0"/>
+                                          <Component id="costoIntArticulo" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="proveedorTextArticulo" max="32767" attributes="0"/>
+                                          <Component id="articuloCategoria" alignment="0" max="32767" attributes="0"/>
                                       </Group>
+                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                      <Component id="ArticuloBtnAdd" min="-2" pref="99" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                      <Component id="ArticuloBtnAdd" min="-2" pref="106" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jScrollPane9" min="-2" pref="896" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="jScrollPane9" min="-2" pref="862" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -210,59 +209,61 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="nomTextArticulo" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cantIntArticulo" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="28" pref="28" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="nomTextArticulo" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="costoIntArticulo" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                                      <Component id="txtfecha" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="codIntArticulo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="cantIntArticulo" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
                                                   </Group>
                                               </Group>
                                           </Group>
+                                          <Component id="ArticuloBtnAdd" alignment="0" min="-2" pref="43" max="-2" attributes="0"/>
                                       </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                      <Component id="costoIntArticulo" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="proveedorTextArticulo" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="txtfecha" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                          </Group>
+                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="proveedorTextArticulo" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="ArticuloBtnAdd" min="-2" pref="96" max="-2" attributes="0"/>
                                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                   <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="articuloCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                              <Component id="jScrollPane9" min="-2" pref="131" max="-2" attributes="0"/>
-                              <EmptySpace pref="100" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Component id="jScrollPane9" min="-2" pref="228" max="-2" attributes="0"/>
+                              <EmptySpace pref="91" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -271,11 +272,6 @@
                     <Component class="javax.swing.JLabel" name="jLabel2">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Nombre "/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel3">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="C&#xf3;digo"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel4">
@@ -308,17 +304,7 @@
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                       </AuxValues>
                     </Component>
-                    <Component class="java.awt.TextField" name="codIntArticulo">
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                      </AuxValues>
-                    </Component>
                     <Component class="java.awt.TextField" name="cantIntArticulo">
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="java.awt.Choice" name="proveedorTextArticulo">
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                       </AuxValues>
@@ -367,49 +353,43 @@
                         <Component class="javax.swing.JTable" name="articulosTable">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="7" rowCount="4">
-                                <Column editable="true" title="Nombre" type="java.lang.Object"/>
-                                <Column editable="true" title="C&#xf3;digo" type="java.lang.Object"/>
-                                <Column editable="true" title="Cantidad" type="java.lang.Object"/>
-                                <Column editable="true" title="Costo" type="java.lang.Object"/>
-                                <Column editable="true" title="Fecha De Vencimiento" type="java.lang.Object"/>
-                                <Column editable="true" title="Proveedor" type="java.lang.Object"/>
-                                <Column editable="true" title="Descripci&#xf3;n" type="java.lang.Object"/>
+                              <Table columnCount="6" rowCount="4">
+                                <Column editable="false" title="Nombre" type="java.lang.Object"/>
+                                <Column editable="false" title="Cantidad" type="java.lang.Object"/>
+                                <Column editable="false" title="Costo" type="java.lang.Object"/>
+                                <Column editable="false" title="Fecha De Vencimiento" type="java.lang.Object"/>
+                                <Column editable="false" title="Proveedor" type="java.lang.Object"/>
+                                <Column editable="false" title="estado" type="java.lang.Boolean"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                               <TableColumnModel selectionModel="0">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -417,7 +397,7 @@
                               </TableColumnModel>
                             </Property>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                              <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
                             </Property>
                           </Properties>
                           <AuxValues>
@@ -431,6 +411,43 @@
                         <Property name="toolTipText" type="java.lang.String" value="d/M/YY"/>
                       </Properties>
                       <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel23">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Categoria"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="proveedorTextArticulo">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="4">
+                            <StringItem index="0" value="Item 1"/>
+                            <StringItem index="1" value="Item 2"/>
+                            <StringItem index="2" value="Item 3"/>
+                            <StringItem index="3" value="Item 4"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="articuloCategoria">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="4">
+                            <StringItem index="0" value="Item 1"/>
+                            <StringItem index="1" value="Item 2"/>
+                            <StringItem index="2" value="Item 3"/>
+                            <StringItem index="3" value="Item 4"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                       </AuxValues>
                     </Component>
@@ -1199,17 +1216,23 @@
                 <Component class="javax.swing.JTable" name="proveedoresTable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="6" rowCount="0">
+                      <Table columnCount="7" rowCount="0">
                         <Column editable="false" title="Nombre" type="java.lang.String"/>
                         <Column editable="false" title="Rut" type="java.lang.String"/>
                         <Column editable="false" title="Correo" type="java.lang.String"/>
                         <Column editable="false" title="Telefono" type="java.lang.String"/>
+                        <Column editable="false" title="Direccion" type="java.lang.Object"/>
                         <Column editable="false" title="Ciclo de Facturacion]" type="java.lang.String"/>
                         <Column editable="false" title="Estado" type="java.lang.Boolean"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                           <Title/>
                           <Editor/>

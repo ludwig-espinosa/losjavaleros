@@ -15,16 +15,15 @@ public class ConsultaArticulo {
     public boolean registrar(Articulo art){
         
         PreparedStatement ps=null;
-        String sql="INSERT INTO Articulos (nombre,codigo,cantidad,costo,proveedor,fecha,descripcion) VALUES(?,?,?,?,?,?,?)";
+        String sql="INSERT INTO Articulos (nombre,cantidad,costo,proveedor,fecha) VALUES(?,?,?,?,?)";
         try{
+            java.sql.Date date = new java.sql.Date(art.getFecha().getTime());
             ps=conn.prepareStatement(sql);
             ps.setString(1,art.getNombre());
-            ps.setString(2,art.getCodigo());
-            ps.setInt(3,art.getCantidad());
-            ps.setInt(4,art.getCosto());
-            ps.setString(5,art.getProveedor());
-            ps.setDate(6, (Date) art.getFecha());
-            ps.setString(7,art.getDescripcion());
+            ps.setInt(2,art.getCantidad());
+            ps.setInt(3,art.getCosto());
+            ps.setString(4,art.getProveedor());
+            ps.setDate(5, date);
             ps.execute();
             System.out.println("registrado");
             return true;
@@ -37,16 +36,15 @@ public class ConsultaArticulo {
      public boolean modificar(Articulo art){
         
         PreparedStatement ps=null;
-        String sql="UPDATE Articulos SET nombre=?,cantidad=?,costo=?,proveedor=?,fecha=?,decripcion=? where codigo=?";
+        java.sql.Date date = new java.sql.Date(art.getFecha().getTime());
+        String sql="UPDATE Articulos SET cantidad=?,costo=?,proveedor=?,fecha=? where nombre=?";
         try{
             ps=conn.prepareStatement(sql);
-            ps.setString(1,art.getNombre());
-            ps.setString(2,art.getCodigo());
-            ps.setInt(3,art.getCantidad());
-            ps.setInt(4,art.getCosto());
-            ps.setString(5,art.getProveedor());
-            ps.setDate(6, (Date) art.getFecha());
-            ps.setString(7,art.getDescripcion());
+            ps.setInt(1,art.getCantidad());
+            ps.setInt(2,art.getCosto());
+            ps.setString(3,art.getProveedor());
+            ps.setDate(4, date);
+            ps.setString(5,art.getNombre());
             ps.execute();
             System.out.println("registrado");
             return true;
@@ -58,10 +56,10 @@ public class ConsultaArticulo {
       public boolean buscar(Articulo art){
       PreparedStatement ps = null;
       ResultSet rs = null;
-      String sql = "SELECT * FROM Articulos WHERE codigo=?  ";
+      String sql = "SELECT * FROM Articulos WHERE nombre=?  ";
       try {
           ps =  conn.prepareStatement(sql);
-          ps.setString(1, art.getCodigo());
+          ps.setString(1, art.getNombre());
           rs = ps.executeQuery();
           if (!rs.absolute(1)) {
               System.out.println("Codigo no encontrado");

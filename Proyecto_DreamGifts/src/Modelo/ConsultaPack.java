@@ -29,12 +29,15 @@ public class ConsultaPack {
     public boolean modificar(Pack pack){
     
       PreparedStatement ps = null;
-      String sql = "UPDATE Pack SET nombre=?, estado=? WHERE id=?";
+      String sql = "UPDATE Pack SET nombre=?, estado=?, precio=?, descripcion=? WHERE ID_Pack=?";
       try {
           ps =  conn.prepareStatement(sql);
           ps.setString(1, pack.getNombre());
           ps.setBoolean(2, pack.isEstado());
-          ps.setInt(3, pack.getId());
+          ps.setInt(3, pack.getPrecio());
+          ps.setString(4, pack.getDescripcion());
+          ps.setInt(5, pack.getId());
+          System.out.println(ps);
           ps.execute();
           return true;
       } catch (SQLException e){
@@ -197,5 +200,16 @@ public class ConsultaPack {
       }
      }
      
-     public void borrarDetalle(String )
+     public void borrarDetalle(int idPack) {
+      PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "DELETE FROM detalle_pack WHERE ID_Pack = ?";
+      try {
+          ps =  conn.prepareStatement(sql);
+          ps.setInt(1, idPack);
+          ps.execute();
+      } catch (SQLException e){
+          System.out.println(e);
+      }
+     }
 }

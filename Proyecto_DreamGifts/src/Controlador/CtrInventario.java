@@ -18,6 +18,7 @@ import Modelo.Pack;
 import Modelo.Proveedor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -41,6 +42,7 @@ public class CtrInventario implements ActionListener{
          this.iniciarPack();
          this.iniciarcategoria();
          this.iniciarProveedores();
+         this.iniciarArticulo();
      }
      
      
@@ -66,23 +68,24 @@ public class CtrInventario implements ActionListener{
 //    
       public void iniciarArticulo(){
           inven.ArticuloBtnAdd.addActionListener(this);
+          this.actualizarArticulos();
+          this.articuloActualizarComboBoxProveedor();
+          this.articuloActualizarComboBoxCategoria();
 
        }
-//        /*       inicio CRUD Usuarios        */
+//        /*       inicio CRUD ARTICULOS       */
 //
 //
    public boolean agregarArticulo(){
        Articulo art = new Articulo();
        art.setNombre(inven.nomTextArticulo.getText());
-       art.setCodigo(inven.codIntArticulo.getText());
-       art.setProveedor(inven.proveedorTextArticulo.getSelectedItem());
+       art.setProveedor(inven.proveedorTextArticulo.getModel().getSelectedItem().toString());
        art.setCantidad(Integer.parseInt(inven.cantIntArticulo.getText()));
        art.setCosto(Integer.parseInt(inven.costoIntArticulo.getText()));
        art.setDescripcion(inven.descTextArticulo.getText());
        art.setFecha(inven.txtfecha.getDate());
        
        inven.nomTextArticulo.setText("");
-       inven.codIntArticulo.setText("");
        inven.descTextArticulo.setText("");       
        inven.cantIntArticulo.setText("");
        inven.costoIntArticulo.setText("");
@@ -100,22 +103,51 @@ public class CtrInventario implements ActionListener{
         
    }
    
+   public void articuloActualizarComboBoxProveedor() {
+       DefaultComboBoxModel cbModel = (DefaultComboBoxModel) inven.proveedorTextArticulo.getModel();
+      // DefaultComboBoxModel cbModel2 = (DefaultComboBoxModel) venta.BancoBoxHist.getModel();
+       cbModel.removeAllElements();
+       //cbModel2.removeAllElements();
+        try {
+            ResultSet rs = conProv.llamarActivos();
+            while (rs.next()){
+                cbModel.addElement(rs.getString(2));
+               // cbModel2.addElement(rs.getString(2));
+            }
+        } catch(SQLException e) {
+            System.out.println(e);
+        }
+   }
+   public void articuloActualizarComboBoxCategoria() {
+       DefaultComboBoxModel cbModel = (DefaultComboBoxModel) inven.articuloCategoria.getModel();
+      // DefaultComboBoxModel cbModel2 = (DefaultComboBoxModel) venta.BancoBoxHist.getModel();
+       cbModel.removeAllElements();
+       //cbModel2.removeAllElements();
+        try {
+            ResultSet rs = conCat.llamarActivos();
+            while (rs.next()){
+                cbModel.addElement(rs.getString(2));
+               // cbModel2.addElement(rs.getString(2));
+            }
+        } catch(SQLException e) {
+            System.out.println(e);
+        }
+   }
+   
    public void actualizarArticulos(){
         this.borrarTabla(inven.articulosTable);
         ResultSet rs = invenArt.llamarTodos();
         Object[] row;
-        row = new Object[7];
+        row = new Object[6];
         DefaultTableModel rm = (DefaultTableModel) inven.articulosTable.getModel();
         try {
             while (rs.next()){
-                row[0] = rs.getString("Nombre");
-                row[1] = rs.getString("Codigo");
-                row[2] = rs.getString("Cantidad");
-                row[3] = rs.getString("Fecha");
-                row[4] = rs.getBoolean("Costo");
-                row[5] = rs.getBoolean("Proveedor");
-                row[6] = rs.getBoolean("Descripcion");
-
+                row[0] = rs.getString("nombre");
+                row[1] = rs.getString("cantidad");
+                row[2] = rs.getString("fecha_vencimiento");
+                row[3] = rs.getString("precio");
+                row[4] = rs.getString("ID_Proveedores");
+                row[5] = rs.getBoolean("estado");
                 rm.addRow(row);  
             }
             } catch (SQLException ex) {
@@ -213,22 +245,23 @@ public class CtrInventario implements ActionListener{
        pack.setEstado(inven.packEstadoActive.isSelected());
        pack.setNombre(inven.packNombre.getText());
        pack.setPrecio(Integer.parseInt(inven.packValor.getText()));
+       DefaultTableModel table = (DefaultTableModel) inven.packListado.getModel();
+       DetallePack detPack = new DetallePack();
        if (!conPack.buscar(pack)) {
            if (conPack.registrar(pack)){
-                DefaultTableModel table = (DefaultTableModel) inven.packListado.getModel();
-                DetallePack detPack = new DetallePack();
                 pack.setId(conPack.PackIdPorNombre(pack.getNombre()));
                 System.out.println(detPack);
-                for (int i = 0; i < table.getRowCount(); i++) {
-                    detPack.setIdArticulo((int) table.getValueAt(i, 0));
-                    detPack.setCantidad((int) table.getValueAt(i, 2));
-                    conPack.agregarArticulo(detPack, pack);
-                }
            }
        } else {
-           int id = conPack.PackIdPorNombre(pack.getNombre());
+           pack.setId(conPack.PackIdPorNombre(pack.getNombre()));
+           conPack.modificar(pack);
+           conPack.borrarDetalle(pack.getId());
        }
-       
+       for (int i = 0; i < table.getRowCount(); i++) {
+            detPack.setIdArticulo((int) table.getValueAt(i, 0));
+            detPack.setCantidad((int) table.getValueAt(i, 2));
+            conPack.agregarArticulo(detPack, pack);
+        }
    }
    public void packBuscar(){
        DefaultTableModel rm = (DefaultTableModel) inven.packTabla.getModel();
@@ -252,6 +285,7 @@ public class CtrInventario implements ActionListener{
                row[2] = rs.getInt(3);
                row[3] = rs.getInt(4);
                tablaAr.addRow(row);
+               System.out.println(rs.getString(5));
                inven.packDesc.setText(rs.getString(5));
            } 
        } catch(SQLException e) {
@@ -318,7 +352,7 @@ public class CtrInventario implements ActionListener{
         this.borrarTabla(inven.proveedoresTable);
         ResultSet rs = conProv.llamarTodos();
         Object[] row;
-        row = new Object[6];
+        row = new Object[7];
         DefaultTableModel rm = (DefaultTableModel) inven.proveedoresTable.getModel();
         try {
             while (rs.next()){
@@ -326,8 +360,9 @@ public class CtrInventario implements ActionListener{
                 row[1] = rs.getString("RUT");
                 row[2] = rs.getString("correo");
                 row[3] = rs.getString("fono");
-                row[4] = rs.getString("ciclo");
-                row[5] = rs.getBoolean("estado");
+                row[4] = rs.getString("direccion");
+                row[5] = rs.getString("ciclo");
+                row[6] = rs.getBoolean("estado");
 
 
                 rm.addRow(row);  

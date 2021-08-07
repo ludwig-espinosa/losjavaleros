@@ -76,5 +76,16 @@ public class ConsultaProveedor {
           return null;
       }
     }
-
+     public ResultSet llamarActivos(){
+      PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "SELECT * FROM Proveedores WHERE estado=1";
+      try {
+          ps =  conn.prepareStatement(sql);
+          rs = ps.executeQuery();
+          return rs;
+      } catch (SQLException e){
+          return null;
+      }
+    }
 }
