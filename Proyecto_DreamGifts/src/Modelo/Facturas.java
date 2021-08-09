@@ -14,7 +14,7 @@ import java.util.Date;
 public class Facturas {
     int id_factura;
     int ID_Proveedor;
-    int numero_factura;
+    int monto_factura;
     Date fecha_factura;
 
     public int getId_factura() {
@@ -33,13 +33,15 @@ public class Facturas {
         this.ID_Proveedor = ID_Proveedor;
     }
 
-    public int getNumero_factura() {
-        return numero_factura;
+    public int getMonto_factura() {
+        return monto_factura;
     }
 
-    public void setNumero_factura(int numero_factura) {
-        this.numero_factura = numero_factura;
+    public void setMonto_factura(int monto_factura) {
+        this.monto_factura = monto_factura;
     }
+
+   
 
     public Date getFecha_factura() {
         return fecha_factura;
