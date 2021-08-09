@@ -5,6 +5,11 @@
  */
 package DreamsGifts;
 
+import javax.swing.JTable;
+import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author Usuario
@@ -851,6 +856,13 @@ public class Compras extends javax.swing.JFrame {
                 new Compras().setVisible(true);
             }
         });
+    }
+    
+    private void filtrar(String texto, JTable tabla){
+        DefaultTableModel dm = (DefaultTableModel) tabla.getModel();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(dm);
+        tabla.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(texto));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
