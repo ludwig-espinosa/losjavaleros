@@ -17,6 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 /**
@@ -61,7 +62,7 @@ public class CtrCompras implements ActionListener {
       public CtrCompras() throws SQLException {
       compra = new Compras();
       this.iniciarCompras();
-      //this.actualizarComboBoxProveedor();    
+      this.actualizarComboBoxProveedor();    
       
    }
        public String ObtenerRUT () {
@@ -79,17 +80,6 @@ public class CtrCompras implements ActionListener {
       return rutprov2;
   }
        
-    public void ObtenName (){
-        String NameClient;
-        NameClient = conprov.buscarNamePorRut(this.ObtenerRUT());
-        compra.ProveedorComp.setText(NameClient);            
-    }
-    
-    public void ObtenName2 (){
-        String NameClient2;
-        NameClient2 = conprov.buscarNamePorRut(this.ObtenerRUTRev());
-        compra.RutProveeRevComp.setText(NameClient2);            
-    }
     
     public void borrarTabla(JTable tabla){
        DefaultTableModel rm = (DefaultTableModel) tabla.getModel();
@@ -100,28 +90,8 @@ public class CtrCompras implements ActionListener {
     
    public boolean agregarCompras(){
        Compras compra = new Compras();
-       DefaultComboBoxModel CbRrss = (DefaultComboBoxModel) venta.VRedSocialClient.getModel();
-       DefaultComboBoxModel CbEstadoDePago = (DefaultComboBoxModel) venta.EstadoDePago.getModel();
-       DefaultComboBoxModel CbPack = (DefaultComboBoxModel) venta.PackVenta.getModel();
-       DefaultComboBoxModel CbEstadoDeOrden = (DefaultComboBoxModel) venta.EstadoDeOrden.getModel();
-       DefaultComboBoxModel CbComuna = (DefaultComboBoxModel) venta.ComunaVent.getModel();
-       DefaultComboBoxModel CbBanco = (DefaultComboBoxModel) venta.BancoBox.getModel();
-       DefaultComboBoxModel CbBloqHor = (DefaultComboBoxModel) venta.BloqueHorarioVent.getModel();
-       compra.setDireccion(venta.VAddrClient.getText());
-       compra.setIdCliente(conCliente.buscarIdPorRut(this.ObtenerRUT()));
-       compra.setReceptor(venta.VNameRecp.getText());
-       compra.setContactoReceptor(venta.VNumberContact.getText());
-       compra.setCodigoTransaccion(venta.codigoTransaccion.getText());
-       compra.setRrss((int) conrrss.RRSSIdPorNombre((String) CbRrss.getSelectedItem()));
-       compra.setIdPack((int) conpack.PackIdPorNombre((String) CbPack.getSelectedItem()));
-       compra.setIdBanco((int) conban.BancoIdPorNombre((String) CbBanco.getSelectedItem()));
-       compra.setEstadoPago((String) CbEstadoDePago.getSelectedItem());
-       compra.setEstadoDeOrden((String) CbEstadoDeOrden.getSelectedItem());
-       compra.setIdcomuna((int) concom.ComunaIdPorNombre((String) CbComuna.getSelectedItem()));
-       compra.setMonto(Integer.parseInt(venta.ValorVenta.getText()));
-       compra.setFechaCompra((Date) venta.FechaCompraVent.getDate());
-       compra.setFechaEntrega((Date) venta.FechanEntregaVent.getDate());
-       compra.setBloqueHorario((String) CbBloqHor.getSelectedItem().toString());
+       DefaultComboBoxModel CbProveedor = (DefaultComboBoxModel) compra.VendorSoliComp.getModel();
+       compra.setID_Proveedor((int) conprov.buscarIdPorName((int) CbProveedor.getSelectedItem()));
        compra.rutvent.setText("");
        compra.dvclient.setText("");
        compra.VAddrClient.setText("");
@@ -131,45 +101,39 @@ public class CtrCompras implements ActionListener {
        compra.codigoTransaccion.setText("");
        compra.ValorVenta.setText("");
        compra.ValorVenta.setText("");
-            System.out.println(compra.getIdBanco());
-            System.out.println(CbBanco.getSelectedItem());
-         if (!conventas.buscar(compra)) {
+            System.out.println(confact.getID_Proveedor());
+            System.out.println(CbProveedor.getSelectedItem());
+         if (!condetf.buscar(compra)) {
              System.out.println("intentando agregar");
-             conventas.registrar(vent);
+             condetf.registrar(compra);
             return true;
         } else{
              System.out.println("a modificar");
-             return conventas.modificar(vent);
+             return confact.modificar(compras);
          }
         
    }
    
-   public void actualizarTablaCompras(){
+   
+   
+   public void actualizarTablaPedidosComp(){
         this.borrarTabla(compra.TablaPedidosComp);
-        this.borrarTabla(compra.TablaDetailFact);
-        this.borrarTabla(compra.TablaFactRev);
-        this.borrarTabla(compra.TablaRevFact);
-        ResultSet rs = condetf.llamarActualizacionTabla();
+        ResultSet rs = condetf.listadoFact();
         Object[] row;
         row = new Object[10];
-        DefaultTableModel rm = (DefaultTableModel) venta.TablaVentas.getModel();
-        //String namclient;
-        //String comuna;
-       // String banco;
-        //String codtrx;
+        DefaultTableModel rm = (DefaultTableModel) compra.TablaPedidosComp.getModel();
         try {
             while (rs.next()){
-                //namclient = conCliente.buscarNamePorId(rs.getInt("ID_Cliente"));
-                //comuna = concom.buscarNamePorId(rs.getInt("comuna_id"));
+                
                 row[0] = rs.getString("Orden de Venta");
-                row[1] = rs.getString("Nombre de Cliente");//namclient;
+                row[1] = rs.getString("Nombre de Cliente");
                 row[2] = rs.getString("Fecha de Entrega");
                 row[3] = rs.getString("Bloque Horario");
-                row[4] = rs.getString("Comuna");//comuna;
+                row[4] = rs.getString("Comuna");
                 row[5] = rs.getString("Direccion de Entrega");
                 row[6] = rs.getString("Nro de Contacto");
-                row[7] = rs.getString("Banco");//banco;
-                row[8] = rs.getString("Codigo_TRX");//codtrx;
+                row[7] = rs.getString("Banco");
+                row[8] = rs.getString("Codigo_TRX");
                 row[9] = rs.getString("Estado");
 
                 rm.addRow(row);  
@@ -178,10 +142,163 @@ public class CtrCompras implements ActionListener {
                 System.out.println(ex);
         }
     }
+   
+      public void actualizarTablaDetailFact(){
+        this.borrarTabla(compra.TablaDetailFact);
+        ResultSet rs = condetf.listadoFact();
+        Object[] row;
+        row = new Object[10];
+        DefaultTableModel rm = (DefaultTableModel) compra.TablaDetailFact.getModel();
+        try {
+            while (rs.next()){
+                
+                row[0] = rs.getString("Orden de Venta");
+                row[1] = rs.getString("Nombre de Cliente");
+                row[2] = rs.getString("Fecha de Entrega");
+                row[3] = rs.getString("Bloque Horario");
+                row[4] = rs.getString("Comuna");
+                row[5] = rs.getString("Direccion de Entrega");
+                row[6] = rs.getString("Nro de Contacto");
+                row[7] = rs.getString("Banco");
+                row[8] = rs.getString("Codigo_TRX");
+                row[9] = rs.getString("Estado");
+
+                rm.addRow(row);  
+            }
+            } catch (SQLException ex) {
+                System.out.println(ex);
+        }
+    }
+      
+       public void actualizarTablaFactRev(){
+        this.borrarTabla(compra.TablaFactRev);
+        ResultSet rs = condetf.listadoFact();
+        Object[] row;
+        row = new Object[10];
+        DefaultTableModel rm = (DefaultTableModel) compra.TablaFactRev.getModel();
+        try {
+            while (rs.next()){
+                
+                row[0] = rs.getString("Orden de Venta");
+                row[1] = rs.getString("Nombre de Cliente");
+                row[2] = rs.getString("Fecha de Entrega");
+                row[3] = rs.getString("Bloque Horario");
+                row[4] = rs.getString("Comuna");
+                row[5] = rs.getString("Direccion de Entrega");
+                row[6] = rs.getString("Nro de Contacto");
+                row[7] = rs.getString("Banco");
+                row[8] = rs.getString("Codigo_TRX");
+                row[9] = rs.getString("Estado");
+
+                rm.addRow(row);  
+            }
+            } catch (SQLException ex) {
+                System.out.println(ex);
+        }
+    }
+       public void actualizarTablaRevFact(){
+        this.borrarTabla(compra.TablaRevFact);
+        ResultSet rs = condetf.listadoFact();
+        Object[] row;
+        row = new Object[10];
+        DefaultTableModel rm = (DefaultTableModel) compra.TablaRevFact.getModel();
+        try {
+            while (rs.next()){
+                
+                row[0] = rs.getString("Orden de Venta");
+                row[1] = rs.getString("Nombre de Cliente");
+                row[2] = rs.getString("Fecha de Entrega");
+                row[3] = rs.getString("Bloque Horario");
+                row[4] = rs.getString("Comuna");
+                row[5] = rs.getString("Direccion de Entrega");
+                row[6] = rs.getString("Nro de Contacto");
+                row[7] = rs.getString("Banco");
+                row[8] = rs.getString("Codigo_TRX");
+                row[9] = rs.getString("Estado");
+
+                rm.addRow(row);  
+            }
+            } catch (SQLException ex) {
+                System.out.println(ex);
+        }
+    }
+   
+   public void actualizarComboBoxProveedor() throws SQLException{
+       DefaultComboBoxModel cbModel = (DefaultComboBoxModel) compra.VendorSoliComp.getModel();
+       cbModel.removeAllElements();
+       ResultSet rs = conprov.llamarActivos();
+       while (rs.next()){
+           cbModel.addElement(rs.getString(2));
+       }       
+   }
+   
+      
+   public void ListarArticulos() {
+        DefaultListModel li = new DefaultListModel();
+        ResultSet rs = conart.llamarActivos();
+        try {
+            while(rs.next()) {
+                li.addElement(rs.getString("nombre"));
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        compra.DetailArtic1.setModel(li);
+        
+   }
+   
+   public int existeTabla(JTable tabla,Object valor , int columna){
+       DefaultTableModel tb = (DefaultTableModel) tabla.getModel();
+       if (valor != null) {
+            for(int i=0; i < tb.getRowCount(); i++) {
+                 if (valor.equals(tb.getValueAt(i, columna).toString())) {
+                     return i;
+                }
+            }
+       }    
+       return -1;
+   } 
+   
+   public void packQuitarArticulo() {
+       DefaultTableModel tb = (DefaultTableModel) compra.DetailArtic1.getModel();
+       String nombreAr = compra.DetailArtic1.getSelectedValue();
+       int cantidad = Integer.parseInt(compra.CantArtic.getText());
+       int pos = this.existeTabla(compra.TablaArticPed, nombreAr, 1);
+       if (pos != -1) {
+            int cantidadAct = (int) tb.getValueAt(pos, 2);
+            if (cantidadAct - cantidad > 0) {
+                tb.setValueAt(cantidadAct - cantidad, pos, 2);
+           } else {
+                tb.removeRow(pos);
+            }
+       }
+   }
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (e.getSource() == compra.SavePedid) {
+            System.out.println("intentando registrar Solicitud de Compra");
+            this.agregarCompras();
+            this.actualizarTablaPedidosComp();
+        }
+        if (e.getSource() == inven.categoriaSave) {
+            System.out.println("intentando agregar");
+            this.agregarCategoria();
+            this.actualizarTablaCategoria();
+        }
+        if(e.getSource() == inven.proveedoresSave){
+            this.agregarProveedor();
+            this.actualizarTablaProveedor();
+        }
+        if(e.getSource() == compra.AddPedid) {
+            this.agregarCompras();
+        }
+        if (e.getSource() == compra.RemovPedid) {
+            this.packQuitarArticulo();
+        }
+        if (e.getSource() == compra.SearchRegFact) {
+            this.packBuscar();
+        }
     }
     
 }

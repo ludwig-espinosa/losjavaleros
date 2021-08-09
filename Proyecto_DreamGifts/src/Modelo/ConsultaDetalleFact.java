@@ -5,6 +5,7 @@
  */
 package Modelo;
 
+import DreamsGifts.Compras;
 import static Modelo.Conexion.conn;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -178,4 +179,12 @@ public class ConsultaDetalleFact {
           System.out.println(e);
       }
      }
+
+    public void registrar(Compras compra) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean buscar(Compras compra) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

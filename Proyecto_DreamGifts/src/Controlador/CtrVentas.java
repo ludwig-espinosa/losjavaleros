@@ -152,23 +152,19 @@ public class CtrVentas implements ActionListener {
         Object[] row;
         row = new Object[10];
         DefaultTableModel rm = (DefaultTableModel) venta.TablaVentas.getModel();
-        //String namclient;
-        //String comuna;
-       // String banco;
-        //String codtrx;
+        
         try {
             while (rs.next()){
-                //namclient = conCliente.buscarNamePorId(rs.getInt("ID_Cliente"));
-                //comuna = concom.buscarNamePorId(rs.getInt("comuna_id"));
+                
                 row[0] = rs.getString("Orden de Venta");
-                row[1] = rs.getString("Nombre de Cliente");//namclient;
+                row[1] = rs.getString("Nombre de Cliente");
                 row[2] = rs.getString("Fecha de Entrega");
                 row[3] = rs.getString("Bloque Horario");
-                row[4] = rs.getString("Comuna");//comuna;
+                row[4] = rs.getString("Comuna");
                 row[5] = rs.getString("Direccion de Entrega");
                 row[6] = rs.getString("Nro de Contacto");
-                row[7] = rs.getString("Banco");//banco;
-                row[8] = rs.getString("Codigo_TRX");//codtrx;
+                row[7] = rs.getString("Banco");
+                row[8] = rs.getString("Codigo_TRX");
                 row[9] = rs.getString("Estado");
 
                 rm.addRow(row);  

@@ -158,4 +158,29 @@ public class ConsultaProveedor {
             return null;
         }
     }
+    
+     public String buscarIdPorName (int id){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String name;
+        String sql = "SELECT ID_Proveedor, Nombre FROM Proveedores where ID_Proveedor=?  ";
+        try {
+            ps = conn.prepareStatement (sql);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            rs.next();
+            if (!rs.absolute(1)) {
+                System.out.println("Proveedores no encontrado");
+              return "Proveedores No Encontrado"; 
+            }else{
+                System.out.println("Proveedores encontrado");
+                name = rs.getString(2);
+                return name;
+            }
+            
+        } catch (SQLException e) {
+           System.out.println(e);
+            return null;
+        }
+    }
 }

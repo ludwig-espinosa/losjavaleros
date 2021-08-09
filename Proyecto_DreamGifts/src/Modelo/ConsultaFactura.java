@@ -17,11 +17,11 @@ import java.sql.SQLException;
 public class ConsultaFactura {
     public boolean registrar(Facturas fact){
       PreparedStatement ps = null;
-      String sql = "INSERT INTO facturas (ID_Proveedor, numero_factura, fecha_factura) VALUES(?,?,?)";
+      String sql = "INSERT INTO facturas (ID_Proveedor, monto_factura, fecha_factura) VALUES(?,?,?)";
       try {
           ps =  conn.prepareStatement(sql);
           ps.setInt(1, fact.getID_Proveedor());
-          ps.setInt(2, fact.getNumero_factura());
+          ps.setInt(2, fact.getMonto_factura());
           ps.setDate(3, (Date) fact.getFecha_factura());
           ps.execute();
           System.out.println("registrado");
@@ -33,11 +33,11 @@ public class ConsultaFactura {
     }
     public boolean modificar(Facturas fact){
       PreparedStatement ps = null;
-      String sql = "UPDATE facturas SET ID_Proveedor=?, numero_factura=?, fecha_factura=? WHERE id_factura=?";
+      String sql = "UPDATE facturas SET ID_Proveedor=?, monto_factura=?, fecha_factura=? WHERE id_factura=?";
       try {
           ps =  conn.prepareStatement(sql);
           ps.setInt(1, fact.getID_Proveedor());
-          ps.setInt(2, fact.getNumero_factura());
+          ps.setInt(2, fact.getMonto_factura());
           ps.setDate(3, (Date) fact.getFecha_factura());
           ps.execute();
           return true;
@@ -73,5 +73,9 @@ public class ConsultaFactura {
       } catch (SQLException e){
           return null;
       }
+    }
+
+    public boolean getID_Proveedor() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
