@@ -12,11 +12,11 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/repos/losjavaleros/Proyecto_DreamGifts/src/Modelo/ConsultaArticulo.java</file>
-            <file>file:/D:/repos/losjavaleros/Proyecto_DreamGifts/src/Modelo/Articulo.java</file>
-            <file>file:/D:/repos/losjavaleros/Proyecto_DreamGifts/src/DreamsGifts/Inventario.java</file>
-            <file>file:/D:/repos/losjavaleros/Proyecto_DreamGifts/src/Modelo/ConsultaProveedor.java</file>
-            <file>file:/D:/repos/losjavaleros/Proyecto_DreamGifts/src/Controlador/CtrInventario.java</file>
+            <file>file:/home/ludwig/Documentos/GitHub/losjavaleros/Proyecto_DreamGifts/src/DreamsGifts/Compras.java</file>
+            <file>file:/home/ludwig/Documentos/GitHub/losjavaleros/Proyecto_DreamGifts/src/Controlador/CtrCompras.java</file>
+            <file>file:/home/ludwig/Documentos/GitHub/losjavaleros/Proyecto_DreamGifts/src/Modelo/ConsultaProveedor.java</file>
+            <file>file:/home/ludwig/Documentos/GitHub/losjavaleros/Proyecto_DreamGifts/src/Controlador/CtrVentas.java</file>
+            <file>file:/home/ludwig/Documentos/GitHub/losjavaleros/Proyecto_DreamGifts/src/Modelo/ConsultaDetalleFact.java</file>
         </group>
     </open-files>
 </project-private>

@@ -28,7 +28,6 @@ public class ConsultaProveedor {
     }
 
     public boolean modificar(Proveedor prov){
-    
       PreparedStatement ps = null;
       String sql = "UPDATE Proveedores SET nombre=?, Estado=?, fono=?, direccion=?, correo=?, ciclo=? WHERE RUT=?";
       try {
@@ -87,5 +86,76 @@ public class ConsultaProveedor {
       } catch (SQLException e){
           return null;
       }
+    }
+     public int buscarIdPorRut(String rut) {
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int id;
+        String sql = "SELECT * FROM Proveedores WHERE RUT=?  ";
+        try {
+            ps =  conn.prepareStatement(sql);
+            ps.setString(1, rut);
+            rs = ps.executeQuery();
+            rs.next();
+            if (!rs.absolute(1)) {
+                System.out.println("Proveedores no encontrado");
+              return -1; 
+            }else{
+                id = Integer.parseInt(rs.getString(1));
+                return id;
+            }
+                
+        } catch (SQLException e){
+            return -1;
+        }
+    }
+    
+    public String buscarNamePorRut (String rut){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sql = "SELECT ID_Proveedor, Nombre FROM Proveedores where rut=?  ";
+        try {
+            ps = conn.prepareStatement (sql);
+            ps.setString(1, rut);
+            rs = ps.executeQuery();
+            rs.next();
+            if (!rs.absolute(1)) {
+                System.out.println("Proveedores no encontrado");
+              return "Proveedores No Encontrado"; 
+            }else{
+                System.out.println("Proveedores encontrado");
+                rut = rs.getString(2);
+                return rut;
+            }
+            
+        } catch (SQLException e) {
+           System.out.println(e);
+            return null;
+        }
+    }
+
+    public String buscarNamePorId (int id){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String name;
+        String sql = "SELECT ID_Proveedor, Nombre FROM Proveedores where ID_Proveedor=?  ";
+        try {
+            ps = conn.prepareStatement (sql);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            rs.next();
+            if (!rs.absolute(1)) {
+                System.out.println("Proveedores no encontrado");
+              return "Proveedores No Encontrado"; 
+            }else{
+                System.out.println("Proveedores encontrado");
+                name = rs.getString(2);
+                return name;
+            }
+            
+        } catch (SQLException e) {
+           System.out.println(e);
+            return null;
+        }
     }
 }
