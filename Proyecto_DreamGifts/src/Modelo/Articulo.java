@@ -9,6 +9,8 @@ public class Articulo {
     private String proveedor;
     private String descripcion;
     private Date fecha;
+    boolean estado;
+    
 
     /**
      * @return the nombre
@@ -92,6 +94,14 @@ public class Articulo {
      */
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
     
     

@@ -82,11 +82,10 @@ public class CtrInventario implements ActionListener{
        art.setProveedor(inven.proveedorTextArticulo.getModel().getSelectedItem().toString());
        art.setCantidad(Integer.parseInt(inven.cantIntArticulo.getText()));
        art.setCosto(Integer.parseInt(inven.costoIntArticulo.getText()));
-       art.setDescripcion(inven.descTextArticulo.getText());
+       art.setEstado(inven.articuloActive.isSelected());
        art.setFecha(inven.txtfecha.getDate());
        
-       inven.nomTextArticulo.setText("");
-       inven.descTextArticulo.setText("");       
+       inven.nomTextArticulo.setText("");       
        inven.cantIntArticulo.setText("");
        inven.costoIntArticulo.setText("");
        
@@ -138,16 +137,17 @@ public class CtrInventario implements ActionListener{
         this.borrarTabla(inven.articulosTable);
         ResultSet rs = invenArt.llamarTodos();
         Object[] row;
-        row = new Object[6];
+        row = new Object[7];
         DefaultTableModel rm = (DefaultTableModel) inven.articulosTable.getModel();
         try {
             while (rs.next()){
                 row[0] = rs.getString("nombre");
                 row[1] = rs.getString("cantidad");
-                row[2] = rs.getString("fecha_vencimiento");
-                row[3] = rs.getString("precio");
-                row[4] = rs.getString("ID_Proveedores");
-                row[5] = rs.getBoolean("estado");
+                row[3] = rs.getString("fecha_vencimiento");
+                row[2] = rs.getString("precio");
+                row[4] = rs.getString("pNombre");
+                row[5] = rs.getString("cNombre");
+                row[6] = rs.getBoolean("estado");
                 rm.addRow(row);  
             }
             } catch (SQLException ex) {
@@ -396,10 +396,10 @@ public class CtrInventario implements ActionListener{
    
     @Override
      public void actionPerformed(ActionEvent e) {
-//        if (e.getSource() == inven.ArticuloBtnAdd) {
-//            this.agregarArticulo();
-//            this.actualizarArticulos();
-//        }
+        if (e.getSource() == inven.ArticuloBtnAdd) {
+            this.agregarArticulo();
+            this.actualizarArticulos();
+        }
         if (e.getSource() == inven.packSave) {
             System.out.println("intentando registrar pack");
             this.agregarPack();
