@@ -53,10 +53,10 @@ public class CtrCompras implements ActionListener {
        compra.SaveRevFact.addActionListener(this);
        compra.EditRevFact.addActionListener(this);
        compra.SaveOC.addActionListener(this);
-       //compra.VendorSoliComp.addItemListener(this::comboBoxitemStateChanged);
-       //compra.ProveedorComp.addItemListener(this::comboBoxitemStateChanged);
-       //compra.RutProveeRevComp.addItemListener(this::comboBoxitemStateChanged);
-       this.actualizarTablaCompras();
+       this.actualizarTablaPedidosComp();
+       this.actualizarTablaDetailFact();
+       this.actualizarTablaFactRev();
+       this.actualizarTablaRevFact();
    }
      
       public CtrCompras() throws SQLException {
@@ -118,23 +118,17 @@ public class CtrCompras implements ActionListener {
    
    public void actualizarTablaPedidosComp(){
         this.borrarTabla(compra.TablaPedidosComp);
-        ResultSet rs = condetf.listadoFact();
+        ResultSet rs = condetf.PedidosComp();
         Object[] row;
         row = new Object[10];
         DefaultTableModel rm = (DefaultTableModel) compra.TablaPedidosComp.getModel();
         try {
             while (rs.next()){
                 
-                row[0] = rs.getString("Orden de Venta");
-                row[1] = rs.getString("Nombre de Cliente");
-                row[2] = rs.getString("Fecha de Entrega");
-                row[3] = rs.getString("Bloque Horario");
-                row[4] = rs.getString("Comuna");
-                row[5] = rs.getString("Direccion de Entrega");
-                row[6] = rs.getString("Nro de Contacto");
-                row[7] = rs.getString("Banco");
-                row[8] = rs.getString("Codigo_TRX");
-                row[9] = rs.getString("Estado");
+                row[0] = rs.getString("Nro de Pedido");
+                row[1] = rs.getString("Fecha de Pedido");
+                row[2] = rs.getString("Cantidad de Articulo");
+                row[3] = rs.getString("Monto Pedido");
 
                 rm.addRow(row);  
             }
@@ -145,7 +139,7 @@ public class CtrCompras implements ActionListener {
    
       public void actualizarTablaDetailFact(){
         this.borrarTabla(compra.TablaDetailFact);
-        ResultSet rs = condetf.listadoFact();
+        ResultSet rs = condetf.DetailFact();
         Object[] row;
         row = new Object[10];
         DefaultTableModel rm = (DefaultTableModel) compra.TablaDetailFact.getModel();

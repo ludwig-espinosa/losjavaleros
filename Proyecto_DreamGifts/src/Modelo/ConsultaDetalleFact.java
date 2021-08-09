@@ -146,15 +146,26 @@ public class ConsultaDetalleFact {
         }
      }
      
-     public ResultSet listadoFact(String FactAll) {
+     public ResultSet DetailFact(String FactAll) {
       PreparedStatement ps = null;
       ResultSet rs = null;
-      String sql = "SELECT ar.ID_Articulo, ar.nombre, dp.cantidad, ar.precio, p.descripcion FROM detalle_pack as dp "
-              + "INNER JOIN Articulos as ar "
-              + "ON dp.ID_Articulo = ar.ID_Articulo "
-              + "INNER JOIN Pack as p "
-              + "ON dp.ID_Pack = p.ID_Pack "
-              + "WHERE p.nombre=?";
+      String sql = "SELECT factura_detalle.id_factura_detalle AS \"Nro de Pedido\", facturas.fecha_factura AS \"Fecha_Pedido\", factura_detalle.cantidad AS \"Cantidad de Articulos\", factura_detalle.valor AS \"Monto Pedido\" FROM factura_detalle LEFT JOIN facturas ON factura_detalle.id_factura=facturas.id_factura;";
+      try {
+          ps =  conn.prepareStatement(sql);
+
+          ps.setString(1, FactAll);
+          System.out.println(sql);          
+          rs = ps.executeQuery();
+          return rs;
+      } catch (SQLException e){
+          return rs;
+      }
+     }
+     
+     public ResultSet PedidosComp(String FactAll) {
+      PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "SELECT factura_detalle.id_factura_detalle AS \"Nro de Pedido\", facturas.fecha_factura AS \"Fecha_Pedido\", factura_detalle.cantidad AS \"Cantidad de Articulos\", factura_detalle.valor AS \"Monto Pedido\" FROM factura_detalle LEFT JOIN facturas ON factura_detalle.id_factura=facturas.id_factura;";
       try {
           ps =  conn.prepareStatement(sql);
 
@@ -179,12 +190,7 @@ public class ConsultaDetalleFact {
           System.out.println(e);
       }
      }
-
-    public void registrar(Compras compra) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public boolean buscar(Compras compra) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
+
+
+   
