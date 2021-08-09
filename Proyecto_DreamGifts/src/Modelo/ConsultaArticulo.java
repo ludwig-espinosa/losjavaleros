@@ -15,7 +15,7 @@ public class ConsultaArticulo {
     public boolean registrar(Articulo art){
         
         PreparedStatement ps=null;
-        String sql="INSERT INTO Articulos (nombre,cantidad,costo,proveedor,fecha) VALUES(?,?,?,?,?)";
+        String sql="INSERT INTO Articulos (nombre,cantidad,precio,proveedor,fecha) VALUES(?,?,?,?,?)";
         try{
             java.sql.Date date = new java.sql.Date(art.getFecha().getTime());
             ps=conn.prepareStatement(sql);
@@ -37,7 +37,7 @@ public class ConsultaArticulo {
         
         PreparedStatement ps=null;
         java.sql.Date date = new java.sql.Date(art.getFecha().getTime());
-        String sql="UPDATE Articulos SET cantidad=?,costo=?,proveedor=?,fecha=? where nombre=?";
+        String sql="UPDATE Articulos SET cantidad=?,precio=?,proveedor=?,fecha=? where nombre=?";
         try{
             ps=conn.prepareStatement(sql);
             ps.setInt(1,art.getCantidad());
@@ -87,13 +87,18 @@ public class ConsultaArticulo {
      public ResultSet llamarTodos() {
          PreparedStatement ps = null;
       ResultSet rs = null;
-      String sql = "SELECT * FROM Articulos";
+      String sql = "SELECT ar.ID_Articulo, p.nombre AS 'pNombre', c.Nombre as 'cNombre', ar.nombre, ar.precio, ar.fecha_vencimiento,ar.estado, ar.cantidad FROM Articulos AS ar "
+              + "INNER JOIN Categoria_Articulo AS c On ar.categoria_id = c.category_id "
+              + "INNER JOIN Proveedores AS p ON ar.ID_Proveedores = p.ID_Proveedor";
       try {
           ps =  conn.prepareStatement(sql);
           rs = ps.executeQuery();
+          System.out.println(sql);
+          System.out.println(rs);
           return rs;
       } catch (SQLException e){
-          return null;
+          System.out.println(e);
+          return rs;
       }
     }
     
