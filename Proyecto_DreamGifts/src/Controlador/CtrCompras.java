@@ -59,27 +59,7 @@ public class CtrCompras implements ActionListener {
        this.actualizarTablaRevFact();
    }
      
-      public CtrCompras() throws SQLException {
-      compra = new Compras();
-      this.iniciarCompras();
-      this.actualizarComboBoxProveedor();    
-      
-   }
-       public String ObtenerRUT () {
-      String rutobtn;
-        rutobtn = (compra.RutProveeComp.getText()+compra.DVProveComp.getText());
-      String rutprov = rutobtn;
-      System.out.println(rutprov);
-      return rutprov;
-  }
-       public String ObtenerRUTRev () {
-      String rutobtn;
-        rutobtn = (compra.RutProveeComp1.getText()+compra.DVProveComp1.getText());
-      String rutprov2 = rutobtn;
-      System.out.println(rutprov2);
-      return rutprov2;
-  }
-       
+           
     
     public void borrarTabla(JTable tabla){
        DefaultTableModel rm = (DefaultTableModel) tabla.getModel();
@@ -89,27 +69,19 @@ public class CtrCompras implements ActionListener {
    }
     
    public boolean agregarCompras(){
-       Compras compra = new Compras();
+       Compras compr = new Compras();
        DefaultComboBoxModel CbProveedor = (DefaultComboBoxModel) compra.VendorSoliComp.getModel();
-       compra.setID_Proveedor((int) conprov.buscarIdPorName((int) CbProveedor.getSelectedItem()));
-       compra.rutvent.setText("");
-       compra.dvclient.setText("");
-       compra.VAddrClient.setText("");
-       compra.VNameClient.setText("");
-       compra.VNameRecp.setText("");
-       compra.VNumberContact.setText("");
-       compra.codigoTransaccion.setText("");
-       compra.ValorVenta.setText("");
-       compra.ValorVenta.setText("");
+       compra.setID_Proveedor((int) conprov.buscarIdPorName((String) CbProveedor.getSelectedItem()));
+       
             System.out.println(confact.getID_Proveedor());
             System.out.println(CbProveedor.getSelectedItem());
-         if (!condetf.buscar(compra)) {
+         if (!condetf.buscar(compr)) {
              System.out.println("intentando agregar");
-             condetf.registrar(compra);
+             condetf.registrar(compr);
             return true;
         } else{
              System.out.println("a modificar");
-             return confact.modificar(compras);
+             return confact.modificar(compr);
          }
         
    }

@@ -12,10 +12,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 /**
  *
- * @author ludwig
+ * @author lespinosa
  */
-public class ConsultaFactura {
-    public boolean registrar(Facturas fact){
+public class ConsultaDetalleOrdenCompra {
+    public boolean registrar(DetalleOrdenCompra DetailOrdComp){
       PreparedStatement ps = null;
       String sql = "INSERT INTO facturas (ID_Proveedor, monto_factura, fecha_factura) VALUES(?,?,?)";
       try {
@@ -31,7 +31,7 @@ public class ConsultaFactura {
           return false;
       }
     }
-    public boolean modificar(Facturas fact){
+    public boolean modificar(DetalleOrdenCompra DetailOrdComp){
       PreparedStatement ps = null;
       String sql = "UPDATE facturas SET ID_Proveedor=?, monto_factura=?, fecha_factura=? WHERE id_factura=?";
       try {
@@ -45,13 +45,13 @@ public class ConsultaFactura {
           return false;
       }
     }
-    public boolean buscar(Facturas fact){
+    public boolean buscar(DetalleOrdenCompra DetailOrdComp){
       PreparedStatement ps = null;
       ResultSet rs = null;
       String sql = "SELECT * FROM facturas WHERE id_factura=?  ";
       try {
           ps =  conn.prepareStatement(sql);
-          ps.setInt(1, fact.getId_factura());
+          ps.setInt(1,getId_factura());
           rs = ps.executeQuery();
           if (!rs.absolute(1)) {
               System.out.println("facturas no encontrado");
@@ -75,5 +75,4 @@ public class ConsultaFactura {
       }
     }
 
-
-}
+    }
