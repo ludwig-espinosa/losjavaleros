@@ -100,6 +100,8 @@ public class Administracion extends javax.swing.JFrame {
         usuariosEstadoDes = new javax.swing.JRadioButton();
         jLabel39 = new javax.swing.JLabel();
         usuariosTextRut = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        usuariosDv = new javax.swing.JTextField();
         PanelEstados = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         statusventatable = new javax.swing.JTable();
@@ -166,12 +168,12 @@ public class Administracion extends javax.swing.JFrame {
 
         PanelAdministracion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PanelAdministracion.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 PanelAdministracionAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -325,7 +327,7 @@ public class Administracion extends javax.swing.JFrame {
                         .addComponent(jLabel26)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(bancosComboOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 353, Short.MAX_VALUE)
                         .addComponent(jLabel25)
                         .addGap(18, 18, 18)
                         .addComponent(bancosTextSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -578,7 +580,7 @@ public class Administracion extends javax.swing.JFrame {
                                         .addComponent(RrssEstadoAct)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(RrssEstadoDes)))
-                                .addGap(0, 105, Short.MAX_VALUE))))
+                                .addGap(0, 159, Short.MAX_VALUE))))
                     .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -770,6 +772,10 @@ public class Administracion extends javax.swing.JFrame {
             }
         });
 
+        jLabel42.setText("-");
+
+        usuariosDv.setText("DV");
+
         javax.swing.GroupLayout PanelUsuariosLayout = new javax.swing.GroupLayout(PanelUsuarios);
         PanelUsuarios.setLayout(PanelUsuariosLayout);
         PanelUsuariosLayout.setHorizontalGroup(
@@ -811,7 +817,11 @@ public class Administracion extends javax.swing.JFrame {
                     .addGroup(PanelUsuariosLayout.createSequentialGroup()
                         .addComponent(jLabel39)
                         .addGap(18, 18, 18)
-                        .addComponent(usuariosTextRut, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(usuariosTextRut, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel42)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(usuariosDv, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(PanelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelUsuariosLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
@@ -820,9 +830,9 @@ public class Administracion extends javax.swing.JFrame {
                         .addComponent(usuariosEstadoAct)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(usuariosEstadoDes)
-                        .addGap(0, 102, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(PanelUsuariosLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                         .addComponent(usuariosBtnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
                         .addComponent(usuariosBtnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -849,14 +859,18 @@ public class Administracion extends javax.swing.JFrame {
                         .addComponent(jLabel4)
                         .addComponent(usuariosTextUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(PanelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(usuariosTextPassw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(usuariosBtnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(usuariosBtnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PanelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel39)
-                        .addComponent(usuariosTextRut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(usuariosTextRut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5)
+                        .addComponent(usuariosTextPassw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(usuariosBtnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(usuariosBtnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel42)
+                        .addComponent(usuariosDv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -1005,7 +1019,7 @@ public class Administracion extends javax.swing.JFrame {
                                 .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEstadosLayout.createSequentialGroup()
-                                .addGap(34, 92, Short.MAX_VALUE)
+                                .addGap(34, 140, Short.MAX_VALUE)
                                 .addGroup(PanelEstadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEstadosLayout.createSequentialGroup()
                                         .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1213,13 +1227,13 @@ public class Administracion extends javax.swing.JFrame {
                                 .addComponent(jLabel35)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 315, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 363, Short.MAX_VALUE)
                                 .addComponent(jLabel29)
                                 .addGap(18, 18, 18)
                                 .addComponent(buscarcomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelComunasLayout.createSequentialGroup()
-                                .addGap(0, 406, Short.MAX_VALUE)
+                                .addGap(0, 460, Short.MAX_VALUE)
                                 .addComponent(savecomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(cancelcomuna, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1505,12 +1519,12 @@ public class Administracion extends javax.swing.JFrame {
                                 .addComponent(saveclient, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(cancelclient, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 92, Short.MAX_VALUE)))
+                        .addGap(0, 119, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(PanelClientesLayout.createSequentialGroup()
                 .addGap(212, 212, 212)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addComponent(jLabel40)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(clientestadoactiv1)
@@ -1574,7 +1588,7 @@ public class Administracion extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(PanelAdministracion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
@@ -1799,9 +1813,11 @@ public class Administracion extends javax.swing.JFrame {
     private void usuariosTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usuariosTableMouseClicked
         DefaultTableModel tm = (DefaultTableModel) this.usuariosTable.getModel();
         int selectedRowIndex = this.usuariosTable.getSelectedRow();
+        String rutComp = tm.getValueAt(selectedRowIndex, 0).toString();
         
+        this.usuariosTextRut.setText(rutComp.substring(0, rutComp.length()-1));
+        this.usuariosDv.setText(rutComp.substring(rutComp.length()-1, rutComp.length()));
         this.usuariosTextUser.setText(tm.getValueAt(selectedRowIndex, 1).toString());
-        this.usuariosTextRut.setText(tm.getValueAt(selectedRowIndex, 0).toString());
         this.usuariosTextName.setText(tm.getValueAt(selectedRowIndex, 2).toString());
         this.usuariosTextPassw.setText(tm.getValueAt(selectedRowIndex, 3).toString());
         if ((Boolean)tm.getValueAt(selectedRowIndex, 4)) {
@@ -1814,10 +1830,6 @@ public class Administracion extends javax.swing.JFrame {
     private void usuariosEstadoActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuariosEstadoActActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usuariosEstadoActActionPerformed
-
-    private void usuariosTextRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuariosTextRutActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usuariosTextRutActionPerformed
 
     private void usuariosSearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usuariosSearchKeyPressed
         this.filtrar(this.usuariosSearch.getText(), this.usuariosTable);
@@ -1847,8 +1859,10 @@ public class Administracion extends javax.swing.JFrame {
     private void clienttableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clienttableMouseClicked
         DefaultTableModel tm = (DefaultTableModel) this.clienttable.getModel();
         int selectedRowIndex = this.clienttable.getSelectedRow();
+        String rutComp = tm.getValueAt(selectedRowIndex, 0).toString();
         
-        this.rutclient.setText(tm.getValueAt(selectedRowIndex, 0).toString());
+        this.rutclient.setText(rutComp.substring(0, rutComp.length()-1));
+        this.clientesDv.setText(rutComp.substring(rutComp.length()-1, rutComp.length()));
         this.nameclient.setText(tm.getValueAt(selectedRowIndex, 1).toString());
         this.rrssclient.setText(tm.getValueAt(selectedRowIndex, 2).toString());
         this.addressclient.setText(tm.getValueAt(selectedRowIndex, 3).toString());
@@ -1870,6 +1884,7 @@ public class Administracion extends javax.swing.JFrame {
 
     private void cancelclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelclientActionPerformed
         this.rutclient.setText("");
+        this.clientesDv.setText("");
         this.nameclient.setText("");
         this.fonoclient.setText("");
         this.addressclient.setText("");
@@ -1879,6 +1894,10 @@ public class Administracion extends javax.swing.JFrame {
     private void cancelclientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelclientMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_cancelclientMouseClicked
+
+    private void usuariosTextRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuariosTextRutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usuariosTextRutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2000,6 +2019,7 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -2027,6 +2047,7 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JTable statusventatable;
     public javax.swing.JButton usuariosBtnAdd;
     public javax.swing.JButton usuariosBtnCancel;
+    public javax.swing.JTextField usuariosDv;
     public javax.swing.JRadioButton usuariosEstadoAct;
     public javax.swing.JRadioButton usuariosEstadoDes;
     public javax.swing.JComboBox<String> usuariosOrderBox;
