@@ -79,13 +79,14 @@ public class CtrCompras implements ActionListener {
    // Inicio CRUD Solicitud Orden de Compra 
     
     public void iniciarOrdenCompra() throws SQLException{
+       this.iniciarCompras();
        compra.SavePedid.addActionListener(this);
        compra.CancelPedid.addActionListener(this);
        compra.SaveOrde.addActionListener(this);
        compra.AddPedid.addActionListener(this);
        compra.RemovPedid.addActionListener(this);
-       this.actualizarTablaPedidosComp();
        this.actualizarComboBoxProveedor();
+       this.actualizarTablaPedidosComp();
        this.ListarArticulos();
             
    }
