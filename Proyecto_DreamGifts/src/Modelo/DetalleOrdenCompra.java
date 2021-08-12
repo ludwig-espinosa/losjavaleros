@@ -55,6 +55,10 @@ public class DetalleOrdenCompra {
     public void setIdOrdenCompra(int idOrdenCompra) {
         this.idOrdenCompra = idOrdenCompra;
     }
+
+    public void borrarDetalle(int NumberOrder) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

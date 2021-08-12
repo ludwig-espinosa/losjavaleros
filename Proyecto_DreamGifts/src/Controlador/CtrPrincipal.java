@@ -1,6 +1,7 @@
 
 package Controlador;
 
+
 import DreamsGifts.Login;
 import DreamsGifts.Principal;
 import Modelo.Conexion;
@@ -16,17 +17,20 @@ public class CtrPrincipal implements ActionListener{
     private CtrReportes ctRep = new CtrReportes();
     private CtrVentas ctVent;
     private CtrInventario ctInv;
+    private CtrCompras ctComp = new CtrCompras();
     static Login lgn;
     
     
     public CtrPrincipal(Login login) throws SQLException{
         this.ctInv = new CtrInventario();
         this.ctVent = new CtrVentas();
+        this.ctComp = new CtrCompras();
         this.princ.btnAdmin.addActionListener(this);
         this.princ.BotonSalir.addActionListener(this);
         this.princ.btnReportes.addActionListener(this);
         this.princ.princVenta.addActionListener(this);
         this.princ.inventario.addActionListener(this);
+        this.princ.MenuCompras.addActionListener(this);
         lgn = login;
         
     }
@@ -54,6 +58,9 @@ public class CtrPrincipal implements ActionListener{
         }
         if (e.getSource() == princ.inventario) {
             ctInv.iniciar();
+        }
+         if (e.getSource() == princ.MenuCompras) {
+            ctComp.iniciar();
         }
     }
 }

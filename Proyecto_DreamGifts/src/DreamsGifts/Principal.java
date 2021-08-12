@@ -191,7 +191,7 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BotonSalir;
-    private javax.swing.JButton MenuCompras;
+    public javax.swing.JButton MenuCompras;
     public javax.swing.JButton btnAdmin;
     public javax.swing.JButton btnReportes;
     public javax.swing.JButton inventario;

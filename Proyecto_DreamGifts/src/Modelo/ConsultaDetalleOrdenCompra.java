@@ -5,6 +5,7 @@
  */
 package Modelo;
 
+import DreamsGifts.Compras;
 import static Modelo.Conexion.conn;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -75,5 +76,35 @@ public class ConsultaDetalleOrdenCompra {
           return null;
       }
     }
+    
+    public ResultSet TablaDetalleOrdenCompra(){
+       PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "SELECT Orden_Compra.idOrden_Compra AS \"Nro Factura\", Articulos.nombre AS \"Articulo\", Detalle_Orden_Compra.OC_cantidad AS \"Cantidad\", Detalle_Orden_Compra.OC_Valor AS \"Valor\" FROM Orden_Compra INNER JOIN Articulos INNER JOIN Detalle_Orden_Compra";
+      try {
+          ps =  conn.prepareStatement(sql);
+          rs = ps.executeQuery();
+          return rs;
+      } catch (SQLException e){
+          return null;
+      } 
+    }
+    
+    public void borrarDetalle(int idOC) {
+      PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "DELETE FROM Orden_Compra WHERE idOrden_Compra = ?";
+      try {
+          ps =  conn.prepareStatement(sql);
+          ps.setInt(1, idOC);
+          ps.execute();
+      } catch (SQLException e){
+          System.out.println(e);
+      }
+     }
+
+//    public void registrar(Compras compras) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
     }
