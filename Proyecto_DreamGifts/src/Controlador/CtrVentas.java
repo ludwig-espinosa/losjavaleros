@@ -60,6 +60,8 @@ public class CtrVentas implements ActionListener {
       this.actualizarComboBoxBanco();
       this.actualizarComboBoxPack();
       this.actualizarComboBoxRRSS();
+      this.actualizarComboBoxComunaHist();
+      this.actualizarComboBoxBancoHist();
       
       
    }

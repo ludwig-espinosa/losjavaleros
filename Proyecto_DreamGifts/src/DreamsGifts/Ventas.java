@@ -216,6 +216,12 @@ public class Ventas extends javax.swing.JFrame {
 
         jLabel34.setText("Banco: ");
 
+        BancoBoxHist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BancoBoxHistActionPerformed(evt);
+            }
+        });
+
         jLabel35.setText("Codigo de Transaccion");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -292,7 +298,7 @@ public class Ventas extends javax.swing.JFrame {
                                         .addComponent(SaveVentHist, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(CancelHistVent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE))
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -306,7 +312,7 @@ public class Ventas extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(VentSearchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(7, 7, 7))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 936, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 968, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jSeparator4)))
@@ -431,6 +437,11 @@ public class Ventas extends javax.swing.JFrame {
         jLabel10.setText("Seleccione Pack");
 
         PackVenta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pack 1", "Pack 2", "Pack 3", "Pack 4" }));
+        PackVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PackVentaActionPerformed(evt);
+            }
+        });
 
         jLabel13.setText("Bloque Horario");
 
@@ -577,7 +588,7 @@ public class Ventas extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(jLabel9)))
-                .addGap(0, 218, Short.MAX_VALUE))
+                .addGap(0, 250, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator1)
@@ -680,7 +691,7 @@ public class Ventas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTabbedPane3)
+                        .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 980, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -726,6 +737,14 @@ public class Ventas extends javax.swing.JFrame {
     private void VentSearchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VentSearchTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_VentSearchTextFieldActionPerformed
+
+    private void BancoBoxHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BancoBoxHistActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BancoBoxHistActionPerformed
+
+    private void PackVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PackVentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PackVentaActionPerformed
 
     /**
      * @param args the command line arguments

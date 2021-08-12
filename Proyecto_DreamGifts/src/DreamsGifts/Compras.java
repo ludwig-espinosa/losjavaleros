@@ -202,6 +202,8 @@ public class Compras extends javax.swing.JFrame {
         jLabel24.setText("Proveedor Razon Social: ");
 
         VendorSoliComp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        VendorSoliComp.setSelectedIndex(-1);
+        VendorSoliComp.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         TablaArticPed.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
