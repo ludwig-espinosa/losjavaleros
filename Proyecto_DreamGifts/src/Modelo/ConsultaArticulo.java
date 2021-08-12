@@ -87,6 +87,19 @@ public class ConsultaArticulo {
       }
     }
     
+    public ResultSet llamarActivosXProveedor() {
+         PreparedStatement ps = null;
+      ResultSet rs = null;
+      String sql = "SELECT * FROM Articulos WHERE estado=1 and ID_Proveedores=?";
+      try {
+          ps =  conn.prepareStatement(sql);
+          rs = ps.executeQuery();
+          return rs;
+      } catch (SQLException e){
+          return null;
+      }
+    }
+    
      public ResultSet llamarTodos() {
          PreparedStatement ps = null;
       ResultSet rs = null;
