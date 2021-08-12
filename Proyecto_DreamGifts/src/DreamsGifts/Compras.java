@@ -5,6 +5,7 @@
  */
 package DreamsGifts;
 
+import java.util.Date;
 import javax.swing.JTable;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -880,6 +881,14 @@ public class Compras extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void setID_Proveedor(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setFecha_orden(Date date) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setFechaPed(Date date) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

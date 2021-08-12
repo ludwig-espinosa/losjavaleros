@@ -17,12 +17,13 @@ import java.sql.SQLException;
 public class ConsultaDetalleOrdenCompra {
     public boolean registrar(DetalleOrdenCompra DetailOrdComp){
       PreparedStatement ps = null;
-      String sql = "INSERT INTO facturas (ID_Proveedor, monto_factura, fecha_factura) VALUES(?,?,?)";
+      String sql = "INSERT INTO Detalle_Orden_Compra (IDArticulo, OC_cantidad, OC_Valor, IdOrdenCompra) VALUES(?,?,?,?)";
       try {
           ps =  conn.prepareStatement(sql);
-          ps.setInt(1, fact.getID_Proveedor());
-          ps.setInt(2, fact.getMonto_factura());
-          ps.setDate(3, (Date) fact.getFecha_factura());
+          ps.setInt(1,DetailOrdComp.getIDArticutlo());
+          ps.setInt(2, DetailOrdComp.getOC_cantidad());
+          ps.setInt(3, DetailOrdComp.getOC_Valor());
+          ps.setInt(4, DetailOrdComp.getIdOrdenCompra());
           ps.execute();
           System.out.println("registrado");
           return true;
@@ -33,12 +34,12 @@ public class ConsultaDetalleOrdenCompra {
     }
     public boolean modificar(DetalleOrdenCompra DetailOrdComp){
       PreparedStatement ps = null;
-      String sql = "UPDATE facturas SET ID_Proveedor=?, monto_factura=?, fecha_factura=? WHERE id_factura=?";
+      String sql = "UPDATE Detalle_Orden_Compra SET IDArticulo=?, OC_cantidad=?, OC_Valor=? WHERE idOrdenCompra=?";
       try {
           ps =  conn.prepareStatement(sql);
-          ps.setInt(1, fact.getID_Proveedor());
-          ps.setInt(2, fact.getMonto_factura());
-          ps.setDate(3, (Date) fact.getFecha_factura());
+          ps.setInt(1, DetailOrdComp.getIDArticutlo());
+          ps.setInt(2, DetailOrdComp.getOC_cantidad());
+          ps.setInt(3, DetailOrdComp.getOC_Valor());
           ps.execute();
           return true;
       } catch (SQLException e){
@@ -48,10 +49,10 @@ public class ConsultaDetalleOrdenCompra {
     public boolean buscar(DetalleOrdenCompra DetailOrdComp){
       PreparedStatement ps = null;
       ResultSet rs = null;
-      String sql = "SELECT * FROM facturas WHERE id_factura=?  ";
+      String sql = "SELECT * FROM Detalle_Orden_Compra WHERE idDetalle_Orden_Compra=?  ";
       try {
           ps =  conn.prepareStatement(sql);
-          ps.setInt(1,getId_factura());
+          ps.setInt(1,DetailOrdComp.getIdDetalle_Orden_Compra());
           rs = ps.executeQuery();
           if (!rs.absolute(1)) {
               System.out.println("facturas no encontrado");
@@ -65,7 +66,7 @@ public class ConsultaDetalleOrdenCompra {
     public ResultSet llamarTodos(){
       PreparedStatement ps = null;
       ResultSet rs = null;
-      String sql = "SELECT * FROM facturas";
+      String sql = "SELECT * FROM Detalle_Orden_Compra";
       try {
           ps =  conn.prepareStatement(sql);
           rs = ps.executeQuery();

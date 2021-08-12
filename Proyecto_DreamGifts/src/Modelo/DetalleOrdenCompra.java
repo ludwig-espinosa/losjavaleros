@@ -14,6 +14,7 @@ public class DetalleOrdenCompra {
     private int IDArticutlo;
     private int OC_cantidad;
     private int OC_Valor;
+    private int idOrdenCompra;
 
     public int getIdDetalle_Orden_Compra() {
         return idDetalle_Orden_Compra;
@@ -45,6 +46,14 @@ public class DetalleOrdenCompra {
 
     public void setOC_Valor(int OC_Valor) {
         this.OC_Valor = OC_Valor;
+    }
+
+    public int getIdOrdenCompra() {
+        return idOrdenCompra;
+    }
+
+    public void setIdOrdenCompra(int idOrdenCompra) {
+        this.idOrdenCompra = idOrdenCompra;
     }
     
     
