@@ -79,7 +79,8 @@ public class CtrInventario implements ActionListener{
    public boolean agregarArticulo(){
        Articulo art = new Articulo();
        art.setNombre(inven.nomTextArticulo.getText());
-       art.setProveedor(inven.proveedorTextArticulo.getModel().getSelectedItem().toString());
+       art.setProveedor(conProv.buscarIdPorName(inven.proveedorTextArticulo.getModel().getSelectedItem().toString()));
+       art.setCategoria(conCat.buscarIdPornombre(inven.articuloCategoria.getModel().getSelectedItem().toString()));
        art.setCantidad(Integer.parseInt(inven.cantIntArticulo.getText()));
        art.setCosto(Integer.parseInt(inven.costoIntArticulo.getText()));
        art.setEstado(inven.articuloActive.isSelected());

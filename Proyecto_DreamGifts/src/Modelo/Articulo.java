@@ -6,7 +6,8 @@ public class Articulo {
     private String nombre;
     private int cantidad;
     private int costo;
-    private String proveedor;
+    private int proveedor;
+    private int categoria;
     private String descripcion;
     private Date fecha;
     boolean estado;
@@ -57,14 +58,14 @@ public class Articulo {
     /**
      * @return the proveedor
      */
-    public String getProveedor() {
+    public int getProveedor() {
         return proveedor;
     }
 
     /**
      * @param proveedor the proveedor to set
      */
-    public void setProveedor(String proveedor) {
+    public void setProveedor(int proveedor) {
         this.proveedor = proveedor;
     }
 
@@ -102,6 +103,20 @@ public class Articulo {
 
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    /**
+     * @return the categoria
+     */
+    public int getCategoria() {
+        return categoria;
+    }
+
+    /**
+     * @param categoria the categoria to set
+     */
+    public void setCategoria(int categoria) {
+        this.categoria = categoria;
     }
     
     

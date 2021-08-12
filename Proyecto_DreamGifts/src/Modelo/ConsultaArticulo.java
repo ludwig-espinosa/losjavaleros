@@ -15,15 +15,17 @@ public class ConsultaArticulo {
     public boolean registrar(Articulo art){
         
         PreparedStatement ps=null;
-        String sql="INSERT INTO Articulos (nombre,cantidad,precio,proveedor,fecha) VALUES(?,?,?,?,?)";
+        String sql="INSERT INTO Articulos (nombre,cantidad,precio,ID_proveedores,categoria_id,fecha_vencimiento,estado) VALUES(?,?,?,?,?,?,?)";
         try{
             java.sql.Date date = new java.sql.Date(art.getFecha().getTime());
             ps=conn.prepareStatement(sql);
             ps.setString(1,art.getNombre());
             ps.setInt(2,art.getCantidad());
             ps.setInt(3,art.getCosto());
-            ps.setString(4,art.getProveedor());
-            ps.setDate(5, date);
+            ps.setInt(4,art.getProveedor());
+            ps.setInt(5,art.getCategoria());
+            ps.setDate(6, date);
+            ps.setBoolean(7,art.getEstado());
             ps.execute();
             System.out.println("registrado");
             return true;
@@ -37,14 +39,15 @@ public class ConsultaArticulo {
         
         PreparedStatement ps=null;
         java.sql.Date date = new java.sql.Date(art.getFecha().getTime());
-        String sql="UPDATE Articulos SET cantidad=?,precio=?,proveedor=?,fecha=? where nombre=?";
+        String sql="UPDATE Articulos SET cantidad_id=?,precio=?,ID_proveedores=?,fecha_vencimiento=?,categoria_id=? where nombre=?";
         try{
             ps=conn.prepareStatement(sql);
             ps.setInt(1,art.getCantidad());
             ps.setInt(2,art.getCosto());
-            ps.setString(3,art.getProveedor());
+            ps.setInt(3,art.getProveedor());
             ps.setDate(4, date);
-            ps.setString(5,art.getNombre());
+            ps.setInt(5,art.getCategoria());
+            ps.setString(6,art.getNombre());
             ps.execute();
             System.out.println("registrado");
             return true;
@@ -75,19 +78,6 @@ public class ConsultaArticulo {
          PreparedStatement ps = null;
       ResultSet rs = null;
       String sql = "SELECT * FROM Articulos WHERE estado=1";
-      try {
-          ps =  conn.prepareStatement(sql);
-          rs = ps.executeQuery();
-          return rs;
-      } catch (SQLException e){
-          return null;
-      }
-    }
-    
-    public ResultSet llamarActivosXProveedor() {
-         PreparedStatement ps = null;
-      ResultSet rs = null;
-      String sql = "SELECT * FROM Articulos WHERE estado=1 and ID_Proveedores=?";
       try {
           ps =  conn.prepareStatement(sql);
           rs = ps.executeQuery();
