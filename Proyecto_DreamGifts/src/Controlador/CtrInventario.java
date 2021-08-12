@@ -80,7 +80,7 @@ public class CtrInventario implements ActionListener{
        Articulo art = new Articulo();
        art.setNombre(inven.nomTextArticulo.getText());
        art.setProveedor(conProv.buscarIdPorName(inven.proveedorTextArticulo.getModel().getSelectedItem().toString()));
-       art.setCategoria(conCat.buscarIdPornombre(inven.articuloCategoria.getModel().getSelectedItem().toString()));
+       art.setCategoria(conCat.buscarIdPorNombre(inven.articuloCategoria.getModel().getSelectedItem().toString()));
        art.setCantidad(Integer.parseInt(inven.cantIntArticulo.getText()));
        art.setCosto(Integer.parseInt(inven.costoIntArticulo.getText()));
        art.setEstado(inven.articuloActive.isSelected());
