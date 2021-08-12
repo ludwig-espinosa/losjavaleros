@@ -109,4 +109,30 @@ public class ConsultaCategoria {
         }
     
 }
+     
+     public int buscarIdPorNombre(String nombre) {
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int id;
+        String sql = "SELECT * FROM Articulos WHERE nombre=?";
+        try {
+            ps =  conn.prepareStatement(sql);
+            ps.setString(1, nombre);
+            rs = ps.executeQuery();
+            rs.next();
+            if (!rs.absolute(1)) {
+                System.out.println("articulo id no encontrado");
+              return -1; 
+            }else{
+                id = Integer.parseInt(rs.getString(1));
+                System.out.println(id);
+                return id;
+            }        
+        } catch (SQLException e){
+            return -1;
+        }
+    }
+     
+     
+     
 }
