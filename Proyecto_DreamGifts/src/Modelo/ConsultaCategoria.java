@@ -88,7 +88,7 @@ public class ConsultaCategoria {
         PreparedStatement ps = null;
         ResultSet rs = null;
         String name;
-        String sql = "SELECT FROM Categoria_Articulo where category_id=?  ";
+        String sql = "SELECT * FROM Categoria_Articulo where category_id=?  ";
         try {
             ps = conn.prepareStatement (sql);
             ps.setInt(1, id);
@@ -114,7 +114,7 @@ public class ConsultaCategoria {
         PreparedStatement ps = null;
         ResultSet rs = null;
         int id;
-        String sql = "SELECT * FROM Articulos WHERE nombre=?";
+        String sql = "SELECT * FROM Categoria_Articulo WHERE nombre=?";
         try {
             ps =  conn.prepareStatement(sql);
             ps.setString(1, nombre);

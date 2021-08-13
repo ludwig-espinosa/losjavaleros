@@ -15,15 +15,15 @@ public class ConsultaArticulo {
     public boolean registrar(Articulo art){
         
         PreparedStatement ps=null;
-        String sql="INSERT INTO Articulos (nombre,cantidad,precio,ID_proveedores,categoria_id,fecha_vencimiento,estado) VALUES(?,?,?,?,?,?,?)";
+        String sql="INSERT INTO Articulos (ID_Proveedores,categoria_id,nombre,precio,cantidad,fecha_vencimiento,estado) VALUES(?,?,?,?,?,?,?)";
         try{
             java.sql.Date date = new java.sql.Date(art.getFecha().getTime());
             ps=conn.prepareStatement(sql);
-            ps.setString(1,art.getNombre());
-            ps.setInt(2,art.getCantidad());
-            ps.setInt(3,art.getCosto());
-            ps.setInt(4,art.getProveedor());
-            ps.setInt(5,art.getCategoria());
+            ps.setInt(1,art.getProveedor());
+            ps.setInt(2,art.getCategoria());
+            ps.setString(3,art.getNombre());
+            ps.setInt(4,art.getCosto());
+            ps.setInt(5,art.getCantidad());
             ps.setDate(6, date);
             ps.setBoolean(7,art.getEstado());
             ps.execute();
