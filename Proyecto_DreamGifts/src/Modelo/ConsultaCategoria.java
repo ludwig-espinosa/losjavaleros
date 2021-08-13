@@ -121,7 +121,7 @@ public class ConsultaCategoria {
             rs = ps.executeQuery();
             rs.next();
             if (!rs.absolute(1)) {
-                System.out.println("articulo id no encontrado");
+                System.out.println("IdD de artículo no encontrado");
               return -1; 
             }else{
                 id = Integer.parseInt(rs.getString(1));
