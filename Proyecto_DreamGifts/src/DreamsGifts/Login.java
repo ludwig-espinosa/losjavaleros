@@ -45,7 +45,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel3.setText("Contraseña");
 
-        btnLogin.setText("iniciar Sesion");
+        btnLogin.setText("Iniciar Sesion");
 
         btnCancel.setText("Cancelar");
 

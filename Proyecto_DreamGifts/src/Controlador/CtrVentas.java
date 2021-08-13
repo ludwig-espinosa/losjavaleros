@@ -60,6 +60,8 @@ public class CtrVentas implements ActionListener {
       this.actualizarComboBoxBanco();
       this.actualizarComboBoxPack();
       this.actualizarComboBoxRRSS();
+      this.actualizarComboBoxComunaHist();
+      this.actualizarComboBoxBancoHist();
       
       
    }
@@ -187,8 +189,32 @@ public class CtrVentas implements ActionListener {
        }       
    }
    
+   public void actualizarComboBoxComunaHist() throws SQLException{
+       DefaultComboBoxModel cbModel = (DefaultComboBoxModel) venta.ComunaVentHist.getModel();
+      // DefaultComboBoxModel cbModel2 = (DefaultComboBoxModel) venta.ComunaVentHist.getModel();
+       cbModel.removeAllElements();
+       //cbModel2.removeAllElements();
+       ResultSet rs = concom.llamarActivos();
+       while (rs.next()){
+           cbModel.addElement(rs.getString(2));
+           //cbModel2.addElement(rs.getString(2));
+       }       
+   }
+   
    public void actualizarComboBoxBanco() throws SQLException{
        DefaultComboBoxModel cbModel = (DefaultComboBoxModel) venta.BancoBox.getModel();
+      // DefaultComboBoxModel cbModel2 = (DefaultComboBoxModel) venta.BancoBoxHist.getModel();
+       cbModel.removeAllElements();
+       //cbModel2.removeAllElements();
+       ResultSet rs = conban.llamarActivos();
+       while (rs.next()){
+           cbModel.addElement(rs.getString(2));
+          // cbModel2.addElement(rs.getString(2));
+       }    
+   }
+   
+    public void actualizarComboBoxBancoHist() throws SQLException{
+       DefaultComboBoxModel cbModel = (DefaultComboBoxModel) venta.BancoBoxHist.getModel();
       // DefaultComboBoxModel cbModel2 = (DefaultComboBoxModel) venta.BancoBoxHist.getModel();
        cbModel.removeAllElements();
        //cbModel2.removeAllElements();

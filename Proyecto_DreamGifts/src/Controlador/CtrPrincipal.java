@@ -24,7 +24,7 @@ public class CtrPrincipal implements ActionListener{
     public CtrPrincipal(Login login) throws SQLException{
         this.ctInv = new CtrInventario();
         this.ctVent = new CtrVentas();
-        this.ctComp = new CtrCompras();
+//        this.ctComp = new CtrCompras();
         this.princ.btnAdmin.addActionListener(this);
         this.princ.BotonSalir.addActionListener(this);
         this.princ.btnReportes.addActionListener(this);

@@ -47,11 +47,10 @@ public class CtrCompras implements ActionListener {
     }
     
      public void iniciarCompras() throws SQLException{
-         this.iniciarOrdenCompra();
-//       compra.SavePedid.addActionListener(this);
-//       compra.CancelPedid.addActionListener(this);
-//       compra.AddPedid.addActionListener(this);
-//       compra.RemovPedid.addActionListener(this);
+        compra.SavePedid.addActionListener(this);
+        compra.CancelPedid.addActionListener(this);
+        compra.AddPedid.addActionListener(this);
+        compra.RemovPedid.addActionListener(this);
 //       compra.SearchRegFact.addActionListener(this);
 //       compra.CancelRegComp.addActionListener(this);
 //       compra.SaveRegComp.addActionListener(this);
@@ -62,12 +61,21 @@ public class CtrCompras implements ActionListener {
 //       compra.SaveRevFact.addActionListener(this);
 //       compra.EditRevFact.addActionListener(this);
 //       compra.SaveOC.addActionListener(this);
-//       this.actualizarTablaPedidosComp();
+        this.actualizarTablaPedidosComp();
 //       this.actualizarTablaDetailFact();
 //       this.actualizarTablaFactRev();
 //       this.actualizarTablaRevFact();
    }
-     
+    
+      public CtrCompras() throws SQLException {
+      compra = new Compras();
+      this.iniciarCompras();
+      this.actualizarComboBoxProveedor();
+//      this.ListarArticulos();
+//      this.actualizarTablaPedidosComp();
+      
+      
+   }
            
     
     public void borrarTabla(JTable tabla){
@@ -78,17 +86,18 @@ public class CtrCompras implements ActionListener {
    }
    // Inicio CRUD Solicitud Orden de Compra 
     
-    public void iniciarOrdenCompra() throws SQLException{
-       compra.SavePedid.addActionListener(this);
-       compra.CancelPedid.addActionListener(this);
-       compra.SaveOrde.addActionListener(this);
-       compra.AddPedid.addActionListener(this);
-       compra.RemovPedid.addActionListener(this);
-       this.actualizarTablaPedidosComp();
-       this.actualizarComboBoxProveedor();
-       this.ListarArticulos();
-            
-   }
+//    public void iniciarOrdenCompra() throws SQLException{
+//       this.iniciarCompras();
+//       compra.SavePedid.addActionListener(this);
+//       compra.CancelPedid.addActionListener(this);
+//       compra.SaveOrde.addActionListener(this);
+//       compra.AddPedid.addActionListener(this);
+//       compra.RemovPedid.addActionListener(this);
+//       
+//       this.actualizarTablaPedidosComp();
+//       this.ListarArticulos();
+//            
+//   }
    public void agregarOrdenCompras(){
        OrdenCompra compras = new OrdenCompra();
        DetalleOrdenCompra detordcomp = new DetalleOrdenCompra();
