@@ -46,28 +46,7 @@ public class CtrCompras implements ActionListener {
         }
     }
     
-     public void iniciarCompras() throws SQLException{
-        compra.SavePedid.addActionListener(this);
-        compra.CancelPedid.addActionListener(this);
-        compra.AddPedid.addActionListener(this);
-        compra.RemovPedid.addActionListener(this);
-//       compra.SearchRegFact.addActionListener(this);
-//       compra.CancelRegComp.addActionListener(this);
-//       compra.SaveRegComp.addActionListener(this);
-//       compra.CancelDetailComp.addActionListener(this);
-//       compra.SaveDeailtComp.addActionListener(this);
-//       compra.SearchRevFact.addActionListener(this);
-//       compra.CancelRevFact.addActionListener(this);
-//       compra.SaveRevFact.addActionListener(this);
-//       compra.EditRevFact.addActionListener(this);
-//       compra.SaveOC.addActionListener(this);
-        this.actualizarTablaPedidosComp();
-//       this.actualizarTablaDetailFact();
-//       this.actualizarTablaFactRev();
-//       this.actualizarTablaRevFact();
-   }
-    
-      public CtrCompras() throws SQLException {
+    public CtrCompras() throws SQLException {
       compra = new Compras();
       this.iniciarCompras();
       this.actualizarComboBoxProveedor();
@@ -76,7 +55,29 @@ public class CtrCompras implements ActionListener {
       
       
    }
-           
+      
+     public void iniciarCompras() throws SQLException{
+        compra.SaveOrde.addActionListener(this);
+        compra.SavePedid.addActionListener(this);
+        compra.CancelPedid.addActionListener(this);
+        compra.AddPedid.addActionListener(this);
+        compra.RemovPedid.addActionListener(this);
+        compra.SearchRegFact.addActionListener(this);
+        compra.CancelRegComp.addActionListener(this);
+        compra.SaveRegComp.addActionListener(this);
+        compra.CancelDetailComp.addActionListener(this);
+        compra.SaveDeailtComp.addActionListener(this);
+        compra.SearchRevFact.addActionListener(this);
+        compra.CancelRevFact.addActionListener(this);
+        compra.SaveRevFact.addActionListener(this);
+        compra.EditRevFact.addActionListener(this);
+        this.actualizarTablaPedidosComp();
+//        this.ListarArticulos();
+//       this.actualizarTablaDetailFact();
+//       this.actualizarTablaFactRev();
+//       this.actualizarTablaRevFact();
+   }
+    
     
     public void borrarTabla(JTable tabla){
        DefaultTableModel rm = (DefaultTableModel) tabla.getModel();
@@ -108,6 +109,7 @@ public class CtrCompras implements ActionListener {
        System.out.println(CbProveedor.getSelectedItem());
         NumberOrder = conordcomp.registrar(compras);
         compra.NumberOrder.setText(Integer.toString(NumberOrder));
+        conordcomp.registrar(compras);
         
 
     }
@@ -137,16 +139,16 @@ public class CtrCompras implements ActionListener {
    }
    
    public void ListarArticulos() {
-        DefaultListModel li = new DefaultListModel();
+        DefaultListModel DetailArtic1 = new DefaultListModel();
         ResultSet rs = conart.llamarActivosXProveedor();
         try {
             while(rs.next()) {
-                li.addElement(rs.getString("nombre"));
+                DetailArtic1.addElement(rs.getString("nombre"));
             }
         } catch (SQLException ex) {
             System.out.println(ex);
         }
-        compra.DetailArtic1.setModel(li);
+        compra.DetailArtic1.setModel(DetailArtic1);
         
    }
    
