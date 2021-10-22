@@ -55,30 +55,27 @@ public class CtrCompras implements ActionListener {
       
       
    }
-      
-     public void iniciarCompras() throws SQLException{
-        compra.SaveOrde.addActionListener(this);
-        compra.SavePedid.addActionListener(this);
-        compra.CancelPedid.addActionListener(this);
-        compra.AddPedid.addActionListener(this);
-        compra.RemovPedid.addActionListener(this);
-        compra.SearchRegFact.addActionListener(this);
-        compra.CancelRegComp.addActionListener(this);
-        compra.SaveRegComp.addActionListener(this);
-        compra.CancelDetailComp.addActionListener(this);
-        compra.SaveDeailtComp.addActionListener(this);
-        compra.SearchRevFact.addActionListener(this);
-        compra.CancelRevFact.addActionListener(this);
-        compra.SaveRevFact.addActionListener(this);
-        compra.EditRevFact.addActionListener(this);
-        this.actualizarTablaPedidosComp();
-//        this.ListarArticulos();
+     public void iniciarCompras(){
+       compra.SavePedid.addActionListener(this);
+       compra.CancelPedid.addActionListener(this);
+       compra.AddPedid.addActionListener(this);
+       compra.RemovPedid.addActionListener(this);
+       compra.SearchRegFact.addActionListener(this);
+       compra.CancelRegComp.addActionListener(this);
+       compra.SaveRegComp.addActionListener(this);
+       compra.CancelDetailComp.addActionListener(this);
+       compra.SaveDeailtComp.addActionListener(this);
+       compra.SearchRevFact.addActionListener(this);
+       compra.CancelRevFact.addActionListener(this);
+       compra.SaveRevFact.addActionListener(this);
+       compra.EditRevFact.addActionListener(this);
+//       compra.SaveOC.addActionListener(this);
+//       this.actualizarTablaPedidosComp();
 //       this.actualizarTablaDetailFact();
 //       this.actualizarTablaFactRev();
 //       this.actualizarTablaRevFact();
    }
-    
-    
+     
     public void borrarTabla(JTable tabla){
        DefaultTableModel rm = (DefaultTableModel) tabla.getModel();
        while (rm.getRowCount() > 0){

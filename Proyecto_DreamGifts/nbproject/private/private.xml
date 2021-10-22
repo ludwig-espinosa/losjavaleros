@@ -12,10 +12,11 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/lespinosa/Documents/GitHub/losjavaleros/Proyecto_DreamGifts/src/DreamsGifts/Compras.java</file>
-            <file>file:/C:/Users/lespinosa/Documents/GitHub/losjavaleros/Proyecto_DreamGifts/src/Controlador/CtrInventario.java</file>
-            <file>file:/C:/Users/lespinosa/Documents/GitHub/losjavaleros/Proyecto_DreamGifts/src/Modelo/ConsultaArticulo.java</file>
-            <file>file:/C:/Users/lespinosa/Documents/GitHub/losjavaleros/Proyecto_DreamGifts/src/Controlador/CtrCompras.java</file>
+            <file>file:/D:/repos/losjavaleros/Proyecto_DreamGifts/src/Controlador/CtrPrincipal.java</file>
+            <file>file:/D:/repos/losjavaleros/Proyecto_DreamGifts/src/DreamsGifts/Clientes.java</file>
+            <file>file:/D:/repos/losjavaleros/Proyecto_DreamGifts/src/DreamsGifts/Inventario.java</file>
+            <file>file:/D:/repos/losjavaleros/Proyecto_DreamGifts/src/Controlador/CtrCompras.java</file>
+            <file>file:/D:/repos/losjavaleros/Proyecto_DreamGifts/src/DreamsGifts/Reportes.java</file>
         </group>
     </open-files>
 </project-private>

@@ -58,12 +58,12 @@ public class CtrReportes implements ActionListener{
         try {
             while (rs.next()){
                 row[0] = rs.getInt(1);
-                row[1] = rut;
-                row[2] = "row 2";
+                row[1] = rs.getString("RUT");
+                row[2] = rs.getString("CNombre");
                 row[3] = rs.getDate("fecha_compra");
-                row[4] = rs.getDate("fecha_compra");
-                row[5] = "Pack";
-                row[6] = "Monto";
+                row[4] = rs.getDate("fecha_entrega");
+                row[5] = rs.getString("PNombre");
+                row[6] = rs.getInt("precio");
                 rm.addRow(row);  
             }
             } catch (SQLException ex) {
@@ -71,6 +71,11 @@ public class CtrReportes implements ActionListener{
     }
     
     
+    /*  Seccion Informe de Inventario*/
+    
+    
+    
+
 //  Adicion de eventos a los objetos añadidos
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -59,7 +59,7 @@ public class CtrPrincipal implements ActionListener{
         if (e.getSource() == princ.inventario) {
             ctInv.iniciar();
         }
-         if (e.getSource() == princ.MenuCompras) {
+        if (e.getSource() == princ.MenuCompras) {
             ctComp.iniciar();
         }
     }

@@ -102,22 +102,6 @@ public class Administracion extends javax.swing.JFrame {
         usuariosTextRut = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
         usuariosDv = new javax.swing.JTextField();
-        PanelEstados = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        statusventatable = new javax.swing.JTable();
-        jLabel27 = new javax.swing.JLabel();
-        buscarstatusventa = new javax.swing.JTextField();
-        jButton23 = new javax.swing.JButton();
-        jSeparator5 = new javax.swing.JSeparator();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        savestatusventa = new javax.swing.JButton();
-        cancelstatusventa = new javax.swing.JButton();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        codestatusventa = new javax.swing.JTextField();
-        estadopago = new javax.swing.JComboBox<>();
         PanelComunas = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         comunatable = new javax.swing.JTable();
@@ -168,12 +152,12 @@ public class Administracion extends javax.swing.JFrame {
 
         PanelAdministracion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PanelAdministracion.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 PanelAdministracionAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -886,199 +870,6 @@ public class Administracion extends javax.swing.JFrame {
 
         PanelAdministracion.addTab("Usuarios", PanelUsuarios);
 
-        PanelEstados.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        statusventatable.setBackground(new java.awt.Color(250, 250, 250));
-        statusventatable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Codigo Venta", "Estado"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        statusventatable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane5.setViewportView(statusventatable);
-        if (statusventatable.getColumnModel().getColumnCount() > 0) {
-            statusventatable.getColumnModel().getColumn(0).setResizable(false);
-            statusventatable.getColumnModel().getColumn(1).setResizable(false);
-        }
-
-        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel27.setText("Buscar:");
-
-        buscarstatusventa.setForeground(new java.awt.Color(200, 200, 200));
-        buscarstatusventa.setText("Codigo De  Venta....");
-        buscarstatusventa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarstatusventaActionPerformed(evt);
-            }
-        });
-
-        jButton23.setText("Guardar");
-        jButton23.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton23ActionPerformed(evt);
-            }
-        });
-
-        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel28.setText("Gestión de Estados de Venta");
-
-        jLabel30.setText("Ordenar por:");
-
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Codigo Venta", "Estado" }));
-        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox5ActionPerformed(evt);
-            }
-        });
-
-        savestatusventa.setText("Guardar");
-        savestatusventa.setToolTipText("");
-        savestatusventa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        savestatusventa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                savestatusventaActionPerformed(evt);
-            }
-        });
-
-        cancelstatusventa.setText("Cancelar");
-        cancelstatusventa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        cancelstatusventa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelstatusventaActionPerformed(evt);
-            }
-        });
-
-        jLabel31.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel31.setText("Estado:");
-
-        jLabel32.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel32.setText("Codigo Venta:");
-
-        codestatusventa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codestatusventaActionPerformed(evt);
-            }
-        });
-
-        estadopago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pago Pendiente", "Confirmando Pago", "Pago listo", "Espera Despacho", "En Camino", "Completada" }));
-        estadopago.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout PanelEstadosLayout = new javax.swing.GroupLayout(PanelEstados);
-        PanelEstados.setLayout(PanelEstadosLayout);
-        PanelEstadosLayout.setHorizontalGroup(
-            PanelEstadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelEstadosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelEstadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelEstadosLayout.createSequentialGroup()
-                        .addGroup(PanelEstadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(PanelEstadosLayout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addComponent(jLabel27)
-                                .addGap(18, 18, 18)
-                                .addComponent(buscarstatusventa, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel30)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEstadosLayout.createSequentialGroup()
-                                .addGap(34, 140, Short.MAX_VALUE)
-                                .addGroup(PanelEstadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEstadosLayout.createSequentialGroup()
-                                        .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(12, 12, 12))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEstadosLayout.createSequentialGroup()
-                                        .addComponent(savestatusventa, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(cancelstatusventa, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(60, 60, 60))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEstadosLayout.createSequentialGroup()
-                                        .addComponent(jLabel32)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(codestatusventa, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(43, 43, 43)
-                                        .addComponent(jLabel31)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(estadopago, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(151, 151, 151)))))
-                        .addGap(16, 16, 16))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEstadosLayout.createSequentialGroup()
-                        .addComponent(jSeparator5)
-                        .addContainerGap())
-                    .addGroup(PanelEstadosLayout.createSequentialGroup()
-                        .addGap(202, 202, 202)
-                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        PanelEstadosLayout.setVerticalGroup(
-            PanelEstadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelEstadosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
-                .addGroup(PanelEstadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel32)
-                    .addComponent(codestatusventa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel31)
-                    .addComponent(estadopago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
-                .addGroup(PanelEstadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(savestatusventa, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancelstatusventa, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(PanelEstadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
-                    .addComponent(buscarstatusventa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel30)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-
-        PanelAdministracion.addTab("Estado de venta", PanelEstados);
-
         PanelComunas.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         comunatable.setBackground(new java.awt.Color(250, 250, 250));
@@ -1663,30 +1454,6 @@ public class Administracion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_buscarcomunaActionPerformed
 
-    private void codestatusventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codestatusventaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_codestatusventaActionPerformed
-
-    private void cancelstatusventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelstatusventaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cancelstatusventaActionPerformed
-
-    private void savestatusventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savestatusventaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_savestatusventaActionPerformed
-
-    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox5ActionPerformed
-
-    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton23ActionPerformed
-
-    private void buscarstatusventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarstatusventaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buscarstatusventaActionPerformed
-
     private void usuariosBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuariosBtnCancelActionPerformed
         this.usuariosTextName.setText("");
         this.usuariosTextPassw.setText("");
@@ -1939,7 +1706,6 @@ public class Administracion extends javax.swing.JFrame {
     public javax.swing.JPanel PanelBancos;
     private javax.swing.JPanel PanelClientes;
     private javax.swing.JPanel PanelComunas;
-    private javax.swing.JPanel PanelEstados;
     private javax.swing.JPanel PanelRrss;
     private javax.swing.JPanel PanelUsuarios;
     public javax.swing.JButton RrssBtnCancel;
@@ -1962,26 +1728,20 @@ public class Administracion extends javax.swing.JFrame {
     public javax.swing.JTextField bancosTextcode;
     public javax.swing.JTextField buscarclient;
     public javax.swing.JTextField buscarcomuna;
-    private javax.swing.JTextField buscarstatusventa;
     private javax.swing.ButtonGroup buttonGroup1;
     public javax.swing.JButton cancelclient;
     public javax.swing.JButton cancelcomuna;
-    private javax.swing.JButton cancelstatusventa;
     public javax.swing.JTextField clientesDv;
     public javax.swing.JRadioButton clientestadoactiv1;
     public javax.swing.JRadioButton clientestadodesactiv1;
     public javax.swing.JTable clienttable;
-    private javax.swing.JTextField codestatusventa;
     public javax.swing.JTextField codetxtcomuna;
     public javax.swing.JRadioButton comunaestadoactiv;
     public javax.swing.JRadioButton comunaestadodesactiv;
     public javax.swing.JTable comunatable;
-    private javax.swing.JComboBox<String> estadopago;
     public javax.swing.JTextField fonoclient;
-    private javax.swing.JButton jButton23;
     public javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2002,13 +1762,8 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
@@ -2029,13 +1784,11 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     public javax.swing.JTextField nameclient;
     public javax.swing.JTextField namecomuna;
@@ -2043,8 +1796,6 @@ public class Administracion extends javax.swing.JFrame {
     public javax.swing.JTextField rutclient;
     public javax.swing.JButton saveclient;
     public javax.swing.JButton savecomuna;
-    private javax.swing.JButton savestatusventa;
-    private javax.swing.JTable statusventatable;
     public javax.swing.JButton usuariosBtnAdd;
     public javax.swing.JButton usuariosBtnCancel;
     public javax.swing.JTextField usuariosDv;
